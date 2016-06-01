@@ -16,7 +16,7 @@ public struct BikeCityProvider {
      - parameter success: Success closure
      - parameter failure: Failure closure
      */
-    public static func findNearestCity(location: CLLocation, success: (nearestCity: City)->(), failure: ()->()) {
+    public static func findNearestCity(location: CLLocation, success: (nearestCity: City?)->(), failure: ()->()) {
         
         APIClient.get { (success, object) in
             if success {
@@ -27,7 +27,7 @@ public struct BikeCityProvider {
                     var cities = [City]()
                     
                     // Parse each city dictionary
-                    for cityDict in network{
+                    for cityDict in network {
                         if let href = cityDict["href"] as? String, locationDict = cityDict["location"] as? [String:AnyObject], latitude = locationDict["latitude"] as? Double, longitude = locationDict["longitude"] as? Double {
                             let location = CLLocation(latitude: latitude, longitude: longitude)
                             let bikeCity = City(href: href, location: location)
@@ -36,15 +36,17 @@ public struct BikeCityProvider {
                     }
                     
                     // Now calculate the nearest city based on user's location
-                    for city in cities {
-                        
-                    }
+                    var nearestCity = cities.map({ return ($0, distanceBetweenLocations(location, location: $0.location))}).reduce(cities.first){$0.1 < $1.1 ? $0 : $1}
                     
                 }
             } else {
                 failure()
             }
         }
+    }
+    
+    private static func distanceBetweenLocations(center: CLLocation, location: CLLocation) -> CLLocationDistance {
+        return center.distanceFromLocation(location)
     }
 }
 
