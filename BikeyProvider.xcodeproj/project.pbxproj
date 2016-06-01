@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4657D6431CFF0B7B004670B4 /* BikeyProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 4657D6421CFF0B7B004670B4 /* BikeyProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4657D64A1CFF0B7C004670B4 /* BikeyProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4657D63F1CFF0B7B004670B4 /* BikeyProvider.framework */; };
 		4657D64F1CFF0B7C004670B4 /* BikeyProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D64E1CFF0B7C004670B4 /* BikeyProviderTests.swift */; };
+		4657D65E1CFF0DD7004670B4 /* CityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D65C1CFF0DD7004670B4 /* CityProvider.swift */; };
+		4657D65F1CFF0DD7004670B4 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D65D1CFF0DD7004670B4 /* StationProvider.swift */; };
+		4657D6621CFF0E0E004670B4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6601CFF0E0E004670B4 /* City.swift */; };
+		4657D6631CFF0E0E004670B4 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6611CFF0E0E004670B4 /* Station.swift */; };
+		4657D6651CFF0E1B004670B4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6641CFF0E1B004670B4 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +28,15 @@
 
 /* Begin PBXFileReference section */
 		4657D63F1CFF0B7B004670B4 /* BikeyProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BikeyProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4657D6421CFF0B7B004670B4 /* BikeyProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BikeyProvider.h; sourceTree = "<group>"; };
 		4657D6441CFF0B7B004670B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4657D6491CFF0B7C004670B4 /* BikeyProviderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeyProviderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4657D64E1CFF0B7C004670B4 /* BikeyProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeyProviderTests.swift; sourceTree = "<group>"; };
 		4657D6501CFF0B7C004670B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4657D65C1CFF0DD7004670B4 /* CityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityProvider.swift; path = Providers/CityProvider.swift; sourceTree = "<group>"; };
+		4657D65D1CFF0DD7004670B4 /* StationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StationProvider.swift; path = Providers/StationProvider.swift; sourceTree = "<group>"; };
+		4657D6601CFF0E0E004670B4 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = Model/City.swift; sourceTree = "<group>"; };
+		4657D6611CFF0E0E004670B4 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Station.swift; path = Model/Station.swift; sourceTree = "<group>"; };
+		4657D6641CFF0E1B004670B4 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = APIClient/APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +79,9 @@
 		4657D6411CFF0B7B004670B4 /* BikeyProvider */ = {
 			isa = PBXGroup;
 			children = (
-				4657D6421CFF0B7B004670B4 /* BikeyProvider.h */,
+				4657D65B1CFF0D97004670B4 /* Provider */,
+				4657D65A1CFF0D93004670B4 /* Model */,
+				4657D6591CFF0D8A004670B4 /* APIClient */,
 				4657D6441CFF0B7B004670B4 /* Info.plist */,
 			);
 			path = BikeyProvider;
@@ -86,6 +96,32 @@
 			path = BikeyProviderTests;
 			sourceTree = "<group>";
 		};
+		4657D6591CFF0D8A004670B4 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				4657D6641CFF0E1B004670B4 /* APIClient.swift */,
+			);
+			name = APIClient;
+			sourceTree = "<group>";
+		};
+		4657D65A1CFF0D93004670B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4657D6601CFF0E0E004670B4 /* City.swift */,
+				4657D6611CFF0E0E004670B4 /* Station.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4657D65B1CFF0D97004670B4 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				4657D65C1CFF0DD7004670B4 /* CityProvider.swift */,
+				4657D65D1CFF0DD7004670B4 /* StationProvider.swift */,
+			);
+			name = Provider;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -93,7 +129,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4657D6431CFF0B7B004670B4 /* BikeyProvider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4657D65E1CFF0DD7004670B4 /* CityProvider.swift in Sources */,
+				4657D65F1CFF0DD7004670B4 /* StationProvider.swift in Sources */,
+				4657D6631CFF0E0E004670B4 /* Station.swift in Sources */,
+				4657D6651CFF0E1B004670B4 /* APIClient.swift in Sources */,
+				4657D6621CFF0E0E004670B4 /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +350,7 @@
 		4657D6541CFF0B7C004670B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -320,12 +361,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.BikeyProvider;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		4657D6551CFF0B7C004670B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
