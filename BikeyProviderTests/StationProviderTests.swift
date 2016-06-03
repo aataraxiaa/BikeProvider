@@ -1,15 +1,14 @@
 //
-//  BikeyProviderTests.swift
-//  BikeyProviderTests
+//  StationProviderTests.swift
+//  BikeyProvider
 //
-//  Created by Peter Smith on 01/06/2016.
+//  Created by Peter Smith on 03/06/2016.
 //  Copyright © 2016 Pete Smith. All rights reserved.
 //
 
 import XCTest
-@testable import BikeyProvider
 
-class BikeyProviderTests: XCTestCase {
+class StationProviderTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
