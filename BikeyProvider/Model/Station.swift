@@ -13,9 +13,10 @@ import CoreLocation
  */
 public struct Station {
     
+    let id: String
     let name: String
     let bikes: Int
     let spaces: Int
     let location: CLLocation
-    let lastUpdated: NSDate
+    let lastUpdated: String
 }

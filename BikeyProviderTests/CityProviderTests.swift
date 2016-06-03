@@ -10,9 +10,13 @@ import XCTest
 import CoreLocation
 @testable import BikeyProvider
 
+struct CityProviderTestsConstants {
+    static let dublinBikeName = "dublinbikes"
+}
+
 class CityProviderTests: XCTestCase {
     
-    let dublinLocation = CLLocation(latitude: 53.3498, longitude: 6.2603)
+    let dublinLocation = CLLocation(latitude: 53.3498, longitude: -6.2603)
 
     override func setUp() {
         super.setUp()
@@ -30,8 +34,7 @@ class CityProviderTests: XCTestCase {
         let cityRetrievedExpectation = expectationWithDescription("Nearest City Retrieved")
         
         CityProvider.nearestCity(dublinLocation, successClosure: { nearestCity in
-            //XCTAssert(nearestCity != nil)
-            print(nearestCity)
+            XCTAssert(nearestCity != nil && nearestCity?.name == CityProviderTestsConstants.dublinBikeName)
             
             cityRetrievedExpectation.fulfill()
         }, failureClosure: {})

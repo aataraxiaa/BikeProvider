@@ -15,15 +15,15 @@ struct APIClientConstants {
 
 struct APIClient {
     
-    static func get(url: String = "", requestOption: String = "", completion: (success: Bool, object: AnyObject?) -> ()) {
+    static func get(url: String, completion: (success: Bool, object: AnyObject?) -> ()) {
         
         if let request = clientURLRequest(url) {
             dataTask(request, completion: completion)
         }
     }
     
-    private static func clientURLRequest(path: String) -> NSMutableURLRequest? {
-        if let url = NSURL(string: APIClientConstants.baseURL+path+APIClientConstants.requestOptions) {
+    private static func clientURLRequest(url: String) -> NSMutableURLRequest? {
+        if let url = NSURL(string: url) {
             let request = NSMutableURLRequest(URL: url)
             return request
         }

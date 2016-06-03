@@ -5,14 +5,16 @@
 //  Created by Peter Smith on 03/06/2016.
 //  Copyright © 2016 Pete Smith. All rights reserved.
 //
-
 import XCTest
+import CoreLocation
+@testable import BikeyProvider
 
 class StationProviderTests: XCTestCase {
     
+    let dublinLocation = CLLocation(latitude: 53.3498, longitude: 6.2603)
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
@@ -20,16 +22,14 @@ class StationProviderTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAsynchronousStations() {
+        
+        // Create an expectation object.
+        // This test only has one, but it's possible to wait on multiple expectations.
+        let cityRetrievedExpectation = expectationWithDescription("Nearest City Retrieved")
+        
+        CityProvider.nearestCity(dublinLocation, successClosure: { nearestCity in
+         
+        }, failureClosure: {})
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

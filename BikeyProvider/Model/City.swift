@@ -12,11 +12,14 @@ import CoreLocation
  *  City model
  */
 public struct City {
+    
+    let name: String
     let href: String
     let location: CLLocation
     var stations = [Station]()
     
-    init(href: String, location: CLLocation) {
+    init(name: String, href: String, location: CLLocation) {
+        self.name = name
         self.href = href
         self.location = location
     }

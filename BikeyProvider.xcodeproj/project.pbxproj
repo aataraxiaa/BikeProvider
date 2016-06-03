@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460C84D81D01BD7A002A2F3B /* StationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C84D71D01BD7A002A2F3B /* StationProviderTests.swift */; };
 		4657D64A1CFF0B7C004670B4 /* BikeyProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4657D63F1CFF0B7B004670B4 /* BikeyProvider.framework */; };
-		4657D64F1CFF0B7C004670B4 /* BikeyProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D64E1CFF0B7C004670B4 /* BikeyProviderTests.swift */; };
 		4657D65E1CFF0DD7004670B4 /* CityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D65C1CFF0DD7004670B4 /* CityProvider.swift */; };
 		4657D65F1CFF0DD7004670B4 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D65D1CFF0DD7004670B4 /* StationProvider.swift */; };
 		4657D6621CFF0E0E004670B4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6601CFF0E0E004670B4 /* City.swift */; };
@@ -28,10 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		460C84D71D01BD7A002A2F3B /* StationProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationProviderTests.swift; sourceTree = "<group>"; };
 		4657D63F1CFF0B7B004670B4 /* BikeyProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BikeyProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4657D6441CFF0B7B004670B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4657D6491CFF0B7C004670B4 /* BikeyProviderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeyProviderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4657D64E1CFF0B7C004670B4 /* BikeyProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeyProviderTests.swift; sourceTree = "<group>"; };
 		4657D6501CFF0B7C004670B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4657D65C1CFF0DD7004670B4 /* CityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityProvider.swift; path = Providers/CityProvider.swift; sourceTree = "<group>"; };
 		4657D65D1CFF0DD7004670B4 /* StationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StationProvider.swift; path = Providers/StationProvider.swift; sourceTree = "<group>"; };
@@ -92,9 +92,9 @@
 		4657D64D1CFF0B7C004670B4 /* BikeyProviderTests */ = {
 			isa = PBXGroup;
 			children = (
-				4657D64E1CFF0B7C004670B4 /* BikeyProviderTests.swift */,
 				4657D6501CFF0B7C004670B4 /* Info.plist */,
 				65A0F46C1CFF78E200D24882 /* CityProviderTests.swift */,
+				460C84D71D01BD7A002A2F3B /* StationProviderTests.swift */,
 			);
 			path = BikeyProviderTests;
 			sourceTree = "<group>";
@@ -244,8 +244,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4657D64F1CFF0B7C004670B4 /* BikeyProviderTests.swift in Sources */,
 				65A0F46D1CFF78E200D24882 /* CityProviderTests.swift in Sources */,
+				460C84D81D01BD7A002A2F3B /* StationProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
