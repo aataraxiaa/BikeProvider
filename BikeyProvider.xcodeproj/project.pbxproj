@@ -14,6 +14,7 @@
 		4657D6621CFF0E0E004670B4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6601CFF0E0E004670B4 /* City.swift */; };
 		4657D6631CFF0E0E004670B4 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6611CFF0E0E004670B4 /* Station.swift */; };
 		4657D6651CFF0E1B004670B4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6641CFF0E1B004670B4 /* APIClient.swift */; };
+		65A0F46D1CFF78E200D24882 /* CityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0F46C1CFF78E200D24882 /* CityProviderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		4657D6601CFF0E0E004670B4 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = Model/City.swift; sourceTree = "<group>"; };
 		4657D6611CFF0E0E004670B4 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Station.swift; path = Model/Station.swift; sourceTree = "<group>"; };
 		4657D6641CFF0E1B004670B4 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = APIClient/APIClient.swift; sourceTree = "<group>"; };
+		65A0F46C1CFF78E200D24882 /* CityProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityProviderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				4657D64E1CFF0B7C004670B4 /* BikeyProviderTests.swift */,
 				4657D6501CFF0B7C004670B4 /* Info.plist */,
+				65A0F46C1CFF78E200D24882 /* CityProviderTests.swift */,
 			);
 			path = BikeyProviderTests;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4657D64F1CFF0B7C004670B4 /* BikeyProviderTests.swift in Sources */,
+				65A0F46D1CFF78E200D24882 /* CityProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +425,7 @@
 				4657D6551CFF0B7C004670B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4657D6561CFF0B7C004670B4 /* Build configuration list for PBXNativeTarget "BikeyProviderTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +434,7 @@
 				4657D6581CFF0B7C004670B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

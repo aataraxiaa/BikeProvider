@@ -8,7 +8,7 @@
 
 import CoreLocation
 
-public struct BikeCityProvider {
+public struct CityProvider {
     
     /**
      Get all available cities
@@ -16,7 +16,7 @@ public struct BikeCityProvider {
      - parameter success: Success closure
      - parameter failure: Failure closure
      */
-    public static func findNearestCity(location: CLLocation, success: (nearestCity: City?)->(), failure: ()->()) {
+    public static func nearestCity(location: CLLocation, successClosure: (nearestCity: City?)->(), failureClosure: ()->()) {
         
         APIClient.get { (success, object) in
             if success {
@@ -36,11 +36,20 @@ public struct BikeCityProvider {
                     }
                     
                     // Now calculate the nearest city based on user's location
-                    var nearestCity = cities.map({ return ($0, distanceBetweenLocations(location, location: $0.location))}).reduce(cities.first){$0.1 < $1.1 ? $0 : $1}
+                    let nearestCityAndDistance = cities.map({ ($0, distanceBetweenLocations(location, location: $0.location)) }).minElement(){
+                        $0.1 < $1.1
+                    }
+
+                    // Call our success closuse with with the nearest city if we have it or nil
+                    if let city = nearestCityAndDistance?.0 {
+                        successClosure(nearestCity: city)
+                    } else {
+                        successClosure(nearestCity: nil)
+                    }
                     
                 }
             } else {
-                failure()
+                failureClosure()
             }
         }
     }
