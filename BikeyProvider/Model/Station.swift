@@ -22,7 +22,7 @@ public struct Station {
     public let sellsTickets: Bool
     public var distance = "Unknown"
     
-    mutating func distanceFromLocation(currentLocation: CLLocation) {
+    public mutating func distanceFromLocation(currentLocation: CLLocation) {
         
         let distance = currentLocation.distanceFromLocation(location)
         
