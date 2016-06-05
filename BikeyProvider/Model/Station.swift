@@ -20,4 +20,12 @@ public struct Station {
     public let location: CLLocation
     public let lastUpdated: String
     public let sellsTickets: Bool
+    public var distance = "Unknown"
+    
+    mutating func distanceFromLocation(currentLocation: CLLocation) {
+        
+        let distance = currentLocation.distanceFromLocation(location)
+        
+        self.distance = (distance < 500 ? String.localizedStringWithFormat(NSLocalizedString("bikey.bikeStation.distance.metresAway", comment: "%i M AWAY"), Int(round(distance))) : String.localizedStringWithFormat(NSLocalizedString("bikey.bikeStation.distance.kmAway", comment: "%i KM AWAY"), Int(round(distance/1000))))
+    }
 }
