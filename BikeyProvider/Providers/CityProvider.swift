@@ -18,7 +18,9 @@ public struct CityProvider {
      */
     public static func nearestCity(location: CLLocation, successClosure: (nearestCity: City?)->(), failureClosure: ()->()) {
         
-        APIClient.get("http://api.citybik.es/v2/networks/"){(success, object) in
+        let url = Constants.API.baseURL + Constants.API.networks
+        
+        APIClient.get(url){(success, object) in
             if success {
                 
                 // Success, parse the city data
@@ -36,7 +38,7 @@ public struct CityProvider {
                     }
                     
                     // Now calculate the nearest city based on user's location
-                    let nearestCityAndDistance = cities.map({ ($0, distanceBetweenLocations(location, location: $0.location)) }).minElement(){
+                    let nearestCityAndDistance = cities.map({ ($0, distanceBetweenLocations(location, locationB: $0.location)) }).minElement(){
                         $0.1 < $1.1
                     }
 
@@ -54,8 +56,16 @@ public struct CityProvider {
         }
     }
     
-    private static func distanceBetweenLocations(center: CLLocation, location: CLLocation) -> CLLocationDistance {
-        return center.distanceFromLocation(location)
+    /**
+     Calculate the distance between two locations
+     
+     - parameter locationA: From
+     - parameter locationB: To
+     
+     - returns: Distance between locations
+     */
+    private static func distanceBetweenLocations(locationA: CLLocation, locationB: CLLocation) -> CLLocationDistance {
+        return locationA.distanceFromLocation(locationB)
     }
 }
 

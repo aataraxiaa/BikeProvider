@@ -14,6 +14,9 @@
 		4657D6621CFF0E0E004670B4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6601CFF0E0E004670B4 /* City.swift */; };
 		4657D6631CFF0E0E004670B4 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6611CFF0E0E004670B4 /* Station.swift */; };
 		4657D6651CFF0E1B004670B4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6641CFF0E1B004670B4 /* APIClient.swift */; };
+		656683061D03EE1D005225EC /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683051D03EE1D005225EC /* LocationProvider.swift */; };
+		656683081D03F0B1005225EC /* DirectionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683071D03F0B1005225EC /* DirectionsProvider.swift */; };
+		6566830A1D03F4E1005225EC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683091D03F4E1005225EC /* Constants.swift */; };
 		65A0F46D1CFF78E200D24882 /* CityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0F46C1CFF78E200D24882 /* CityProviderTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +41,9 @@
 		4657D6601CFF0E0E004670B4 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = Model/City.swift; sourceTree = "<group>"; };
 		4657D6611CFF0E0E004670B4 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Station.swift; path = Model/Station.swift; sourceTree = "<group>"; };
 		4657D6641CFF0E1B004670B4 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = APIClient/APIClient.swift; sourceTree = "<group>"; };
+		656683051D03EE1D005225EC /* LocationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationProvider.swift; path = Providers/LocationProvider.swift; sourceTree = "<group>"; };
+		656683071D03F0B1005225EC /* DirectionsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectionsProvider.swift; path = Providers/DirectionsProvider.swift; sourceTree = "<group>"; };
+		656683091D03F4E1005225EC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = SupportingFiles/Constants.swift; sourceTree = "<group>"; };
 		65A0F46C1CFF78E200D24882 /* CityProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityProviderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +90,7 @@
 				4657D65B1CFF0D97004670B4 /* Provider */,
 				4657D65A1CFF0D93004670B4 /* Model */,
 				4657D6591CFF0D8A004670B4 /* APIClient */,
-				4657D6441CFF0B7B004670B4 /* Info.plist */,
+				6566830B1D03F5AD005225EC /* SupportingFiles */,
 			);
 			path = BikeyProvider;
 			sourceTree = "<group>";
@@ -121,8 +127,19 @@
 			children = (
 				4657D65C1CFF0DD7004670B4 /* CityProvider.swift */,
 				4657D65D1CFF0DD7004670B4 /* StationProvider.swift */,
+				656683051D03EE1D005225EC /* LocationProvider.swift */,
+				656683071D03F0B1005225EC /* DirectionsProvider.swift */,
 			);
 			name = Provider;
+			sourceTree = "<group>";
+		};
+		6566830B1D03F5AD005225EC /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				656683091D03F4E1005225EC /* Constants.swift */,
+				4657D6441CFF0B7B004670B4 /* Info.plist */,
+			);
+			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,8 +252,11 @@
 				4657D65E1CFF0DD7004670B4 /* CityProvider.swift in Sources */,
 				4657D65F1CFF0DD7004670B4 /* StationProvider.swift in Sources */,
 				4657D6631CFF0E0E004670B4 /* Station.swift in Sources */,
+				656683061D03EE1D005225EC /* LocationProvider.swift in Sources */,
 				4657D6651CFF0E1B004670B4 /* APIClient.swift in Sources */,
+				656683081D03F0B1005225EC /* DirectionsProvider.swift in Sources */,
 				4657D6621CFF0E0E004670B4 /* City.swift in Sources */,
+				6566830A1D03F4E1005225EC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

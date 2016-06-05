@@ -18,18 +18,34 @@ class StationProviderTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testAsynchronousStations() {
+    func testGetStations() {
         
         // Create an expectation object.
-        // This test only has one, but it's possible to wait on multiple expectations.
-        let cityRetrievedExpectation = expectationWithDescription("Nearest City Retrieved")
+        let stationsRetrieved = expectationWithDescription("Stations retrieved")
         
         CityProvider.nearestCity(dublinLocation, successClosure: { nearestCity in
-         
-        }, failureClosure: {})
+            
+            if let city = nearestCity {
+                StationProvider.getStations(city.href, success: { stations in
+                    XCTAssert(stations?.count > 0)
+                    
+                    stationsRetrieved.fulfill()
+                    
+                }, failure: {
+                    XCTFail("Could not retrieve stations")
+                })
+            } else {
+                XCTFail("Could not locate nearest city")
+            }
+            
+        }, failureClosure: {
+            XCTFail("Could not locate nearest city")
+        })
+        
+        waitForExpectationsWithTimeout(10, handler: { error in })
+
     }
 }

@@ -20,8 +20,9 @@ public struct StationProvider {
      */
     static public func getStations(href: String, success: (([Station]?) -> Void), failure: (() -> Void)) -> Void {
         
-        // Use our api client to fetch the station information
-        APIClient.get(href, completion: { (resultSuccess, result) in
+        let url = Constants.API.baseURL+href+Constants.API.requestOptions
+        
+        APIClient.get(url){ (resultSuccess, result) in
             if resultSuccess {
                 
                 var stationCollection: [Station]?
@@ -39,6 +40,7 @@ public struct StationProvider {
                                 var installed = true, sellsTickets = true
                                 
                                 if let extra = station["extra"] as? [String:AnyObject] {
+                                    
                                     if let active = extra["installed"] as? Bool {
                                         installed = active
                                     }
@@ -51,9 +53,9 @@ public struct StationProvider {
                                 // Only add bike stations that are 'Installed' - i.e that are actually present and active
                                 if installed {
                                     
-                                    // TODO: CREATE STATION AND PARSE NAME
+                                    let stationName = stationDisplayName(name)
                                     let location = CLLocation(latitude: latitude, longitude: longitude)
-                                    let station = Station(id: stationId, name: name, bikes: bikes, spaces: slots, location: location, lastUpdated: lastUpdated)
+                                    let station = Station(id: stationId, name: stationName, bikes: bikes, spaces: slots, location: location, lastUpdated: lastUpdated, sellsTickets: sellsTickets)
                                     
                                     // Add to stations collection
                                     stationCollection?.append(station)
@@ -70,10 +72,27 @@ public struct StationProvider {
             } else {
                 failure()
             }
-        })
+        }
     }
     
-    private static func parseStationName(inout station: Station) {
-
+    /**
+     Parse a returned station name to get a better formatted display name
+     
+     - parameter name: Station name
+     
+     - returns: Formatted station name
+     */
+    private static func stationDisplayName(name: String) -> String {
+        
+        var formattedName = name
+        
+        // Format the name
+        let delimiter = "- "
+        let splitString = name.componentsSeparatedByString(delimiter)
+        if splitString.count > 1 {
+            formattedName = splitString[1]
+        }
+        
+        return formattedName
     }
 }

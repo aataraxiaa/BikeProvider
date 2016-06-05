@@ -19,4 +19,5 @@ public struct Station {
     let spaces: Int
     let location: CLLocation
     let lastUpdated: String
+    let sellsTickets: Bool
 }

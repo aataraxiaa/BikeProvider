@@ -8,11 +8,6 @@
 
 import Foundation
 
-struct APIClientConstants {
-    static let baseURL = "http://api.citybik.es/v2/networks/"
-    static let requestOptions = "?fields=stations"
-}
-
 struct APIClient {
     
     static func get(url: String, completion: (success: Bool, object: AnyObject?) -> ()) {
@@ -36,10 +31,14 @@ struct APIClient {
         
         session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            dispatch_async(dispatch_get_main_queue(), {
+                
                 if let data = data, json = try? NSJSONSerialization.JSONObjectWithData(data, options: []), response = response as? NSHTTPURLResponse where 200...299 ~= response.statusCode {
+                    
                     completion(success: true, object: json)
+                    
                 } else {
+                    
                     completion(success: false, object: nil)
                 }
             })
