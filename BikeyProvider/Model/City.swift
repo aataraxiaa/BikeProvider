@@ -13,10 +13,9 @@ import CoreLocation
  */
 public struct City {
     
-    let name: String
-    let href: String
-    let location: CLLocation
-    var stations = [Station]()
+    public let name: String
+    public let href: String
+    public let location: CLLocation
     
     init(name: String, href: String, location: CLLocation) {
         self.name = name

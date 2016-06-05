@@ -13,11 +13,11 @@ import CoreLocation
  */
 public struct Station {
     
-    let id: String
-    let name: String
-    let bikes: Int
-    let spaces: Int
-    let location: CLLocation
-    let lastUpdated: String
-    let sellsTickets: Bool
+    public let id: String
+    public let name: String
+    public let bikes: Int
+    public let spaces: Int
+    public let location: CLLocation
+    public let lastUpdated: String
+    public let sellsTickets: Bool
 }
