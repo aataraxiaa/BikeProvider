@@ -61,7 +61,7 @@ public struct DirectionsProvider {
         
     }
     
-    private static func cancelCurrentDirectionsRequest() {
+    public static func cancelCurrentRequest() {
         activeDirectionsRequest?.cancel()
     }
 }
