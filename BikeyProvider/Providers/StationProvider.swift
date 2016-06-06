@@ -55,7 +55,7 @@ public struct StationProvider {
                                     
                                     let stationName = stationDisplayName(name)
                                     let location = CLLocation(latitude: latitude, longitude: longitude)
-                                    let station = Station(id: stationId, name: stationName, bikes: bikes, spaces: slots, location: location, lastUpdated: lastUpdated, sellsTickets: sellsTickets, distance: "Unknown")
+                                    let station = Station(id: stationId, name: stationName, bikes: bikes, spaces: slots, location: location, lastUpdated: lastUpdated, sellsTickets: sellsTickets)
                                     
                                     // Add to stations collection
                                     stationCollection?.append(station)
