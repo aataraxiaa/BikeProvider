@@ -18,18 +18,16 @@ public struct StationProvider {
      - parameter success: Success closure
      - parameter failure: Failure closure
      */
-    static public func getStations(href: String, success: (([Station]?) -> Void), failure: (() -> Void)) -> Void {
+    static public func getStations(href: String, success: (([Station]) -> Void), failure: (() -> Void)) -> Void {
         
         let url = Constants.API.baseURL+href+Constants.API.requestOptions
         
         APIClient.get(url){ (resultSuccess, result) in
             if resultSuccess {
                 
-                var stationCollection: [Station]?
-                
                 if let json = result, network = json["network"] as? [String: AnyObject], stations = network["stations"] as? [[String: AnyObject]] {
                     
-                    stationCollection = [Station]()
+                    var stationCollection = [Station]()
                     
                     for station in stations {
                         if let stationId = station["id"] as? String {
@@ -58,7 +56,7 @@ public struct StationProvider {
                                     let station = Station(id: stationId, name: stationName, bikes: bikes, spaces: slots, location: location, lastUpdated: lastUpdated, sellsTickets: sellsTickets)
                                     
                                     // Add to stations collection
-                                    stationCollection?.append(station)
+                                    stationCollection.append(station)
                                 }
                             }
                         }

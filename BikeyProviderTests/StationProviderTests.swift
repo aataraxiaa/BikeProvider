@@ -28,18 +28,14 @@ class StationProviderTests: XCTestCase {
         
         CityProvider.nearestCity(dublinLocation, successClosure: { nearestCity in
             
-            if let city = nearestCity {
-                StationProvider.getStations(city.href, success: { stations in
-                    XCTAssert(stations?.count > 0)
+                StationProvider.getStations(nearestCity.href, success: { stations in
+                    XCTAssert(stations.count > 0)
                     
                     stationsRetrieved.fulfill()
                     
                 }, failure: {
                     XCTFail("Could not retrieve stations")
                 })
-            } else {
-                XCTFail("Could not locate nearest city")
-            }
             
         }, failureClosure: {
             XCTFail("Could not locate nearest city")

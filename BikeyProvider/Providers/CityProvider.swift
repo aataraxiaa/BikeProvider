@@ -16,7 +16,7 @@ public struct CityProvider {
      - parameter success: Success closure
      - parameter failure: Failure closure
      */
-    public static func nearestCity(location: CLLocation, successClosure: (nearestCity: City?)->(), failureClosure: ()->()) {
+    public static func nearestCity(location: CLLocation, successClosure: (nearestCity: City)->(), failureClosure: ()->()) {
         
         let url = Constants.API.baseURL + Constants.API.networks
         
@@ -46,7 +46,7 @@ public struct CityProvider {
                     if let city = nearestCityAndDistance?.0 {
                         successClosure(nearestCity: city)
                     } else {
-                        successClosure(nearestCity: nil)
+                        failureClosure()
                     }
                     
                 }
