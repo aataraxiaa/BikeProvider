@@ -30,9 +30,9 @@ public struct CityProvider {
                     
                     // Parse each city dictionary
                     for cityDict in networks {
-                        if let name = cityDict["name"] as? String, href = cityDict["href"] as? String, locationDict = cityDict["location"] as? [String:AnyObject], latitude = locationDict["latitude"] as? Double, longitude = locationDict["longitude"] as? Double {
+                        if let href = cityDict["href"] as? String, locationDict = cityDict["location"] as? [String:AnyObject], cityName = locationDict["city"] as? String, latitude = locationDict["latitude"] as? Double, longitude = locationDict["longitude"] as? Double {
                             let location = CLLocation(latitude: latitude, longitude: longitude)
-                            let bikeCity = City(name: name, href: href, location: location)
+                            let bikeCity = City(name: cityName, href: href, location: location)
                             cities.append(bikeCity)
                         }
                     }
