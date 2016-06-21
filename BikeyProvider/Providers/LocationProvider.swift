@@ -15,9 +15,10 @@ private struct LocationProviderConstants {
 /**
  *  Location Provider delegate protocol
  */
-public protocol LocationProviderDelegate {
+@objc public protocol LocationProviderDelegate {
     func locationRetrieved(currentLocation: CLLocation)
     func locationAccessDenied()
+    optional func headingChanged(heading: CLHeading)
 }
 
 /// Singleton which provides location services via a delegate
@@ -33,6 +34,7 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
     private var locman = CLLocationManager()
     private var startTime: NSDate!
     private var trying = false
+    private var updatingHeading = false
     
     // MARK: - Initialization
     private override init() {
@@ -63,6 +65,10 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
         delegate?.locationRetrieved(loc!)
     }
     
+    public func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        self.delegate?.headingChanged?(newHeading)
+    }
+    
     // MARK: - Public functions
     
     public func getLocation() {
@@ -82,8 +88,29 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
     
     public func stopTrying () {
         locman.stopUpdatingLocation()
-        startTime = nil
+        locman.stopUpdatingHeading()
+        updatingHeading = false
         trying = false
+        startTime = nil
+    }
+    
+    public func getHeading() {
+        if !CLLocationManager.headingAvailable() {
+            return
+        }
+        
+        if updatingHeading {
+            return
+        }
+        
+        self.locman.headingFilter = 5
+        self.locman.headingOrientation = .Portrait
+        updatingHeading = true
+        self.locman.startUpdatingHeading()
+    }
+    
+    func stopTryingHeading() {
+        
     }
 
     // MARK: - Location helper functions
