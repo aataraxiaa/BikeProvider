@@ -19,6 +19,7 @@ private struct LocationProviderConstants {
     func locationRetrieved(currentLocation: CLLocation)
     func locationAccessDenied()
     optional func headingChanged(heading: CLHeading)
+    optional func locationAccessAuthorizationChanged()
 }
 
 /// Singleton which provides location services via a delegate
@@ -67,6 +68,10 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
     
     public func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         self.delegate?.headingChanged?(newHeading)
+    }
+    
+    public func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        delegate?.locationAccessAuthorizationChanged?()
     }
     
     // MARK: - Public functions
