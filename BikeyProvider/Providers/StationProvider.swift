@@ -38,8 +38,12 @@ public struct StationProvider {
                     for station in stations {
                         if let stationId = station["id"] as? String {
                             
-                            if let bikes = station["free_bikes"] as? Int, slots = station["empty_slots"] as? Int, lastUpdated = station["timestamp"] as? String, latitude = station["latitude"] as? Double,
+                            if let lastUpdated = station["timestamp"] as? String, latitude = station["latitude"] as? Double,
                                 longitude = station["longitude"] as? Double, name = station["name"] as? String {
+                                
+                                // These are failable, so keep them out of conditional binding
+                                let bikes = station["free_bikes"] as? Int ?? 0
+                                let slots = station["empty_slots"] as? Int ?? 0
                                 
                                 var installed = true, sellsTickets = true
                                 
@@ -86,30 +90,25 @@ public struct StationProvider {
      
      - returns: Formatted station name
      */
-    private static func stationDisplayName(name: String) -> String {
+    static func stationDisplayName(name: String) -> String {
         
         var formattedName = name
-        
-        if delimiter == nil {
-            // We need to handle three known types of delimiters -> "- ", "-", and " : "
-            if name.containsString("- ") {
-                delimiter = "- "
-            } else if name.containsString("-") {
-                delimiter = "-"
-            } else if name.containsString(" : ") {
-                delimiter = " : "
-            }
+
+        if name.containsString("- ") {
+            delimiter = "- "
+        } else if name.containsString("-") {
+            delimiter = "-"
+        } else if name.containsString(" : ") {
+            delimiter = " : "
         }
         
         if let delimiter = delimiter {
             let splitString = name.componentsSeparatedByString(delimiter)
-            if splitString.count > 1 {
-                formattedName = splitString[1]
-            }
+            let formattedSlice = splitString.dropFirst()
             
+            formattedName =  formattedSlice.reduce("") { $0 + " " + $1 }
             return formattedName
         }
-        
         return name
     }
 }

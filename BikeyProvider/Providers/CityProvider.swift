@@ -56,6 +56,38 @@ public struct CityProvider {
         }
     }
     
+    public static func allCities(successClosure: ([City] -> Void), failureClosure: () -> Void) {
+        let url = Constants.API.baseURL + Constants.API.networks
+        
+        APIClient.get(url){(success, object) in
+            if success {
+                
+                // Success, parse the city data
+                if let json = object, networks = json["networks"] as? [[String : AnyObject]] {
+                    
+                    var cities = [City]()
+                    
+                    // Parse each city dictionary
+                    for cityDict in networks {
+                        if let href = cityDict["href"] as? String, locationDict = cityDict["location"] as? [String:AnyObject], cityName = locationDict["city"] as? String, latitude = locationDict["latitude"] as? Double, longitude = locationDict["longitude"] as? Double {
+                            let location = CLLocation(latitude: latitude, longitude: longitude)
+                            let bikeCity = City(name: cityName, href: href, location: location)
+                            cities.append(bikeCity)
+                        }
+                    }
+                    
+                    if cities.count > 0 {
+                        successClosure(cities)
+                    } else {
+                        failureClosure()
+                    }
+                }
+            } else {
+                failureClosure()
+            }
+        }
+    }
+    
     /**
      Calculate the distance between two locations
      
