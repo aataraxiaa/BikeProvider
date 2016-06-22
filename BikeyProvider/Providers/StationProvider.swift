@@ -94,7 +94,7 @@ public struct StationProvider {
             // We need to handle three known types of delimiters -> "- ", "-", and " : "
             if name.containsString("- ") {
                 delimiter = "- "
-            } else if name.containsString("") {
+            } else if name.containsString("-") {
                 delimiter = "-"
             } else if name.containsString(" : ") {
                 delimiter = " : "
