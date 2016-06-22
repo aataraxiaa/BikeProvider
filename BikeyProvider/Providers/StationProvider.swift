@@ -9,7 +9,13 @@
 import Foundation
 import CoreLocation
 
+/**
+ *  Fetches stations
+ */
 public struct StationProvider {
+    
+    /// The delimiter to use for formatting our station name
+    static var delimiter: String?
     
     /**
      Get a cities stations
@@ -84,13 +90,26 @@ public struct StationProvider {
         
         var formattedName = name
         
-        // Format the name
-        let delimiter = "- "
-        let splitString = name.componentsSeparatedByString(delimiter)
-        if splitString.count > 1 {
-            formattedName = splitString[1]
+        if delimiter == nil {
+            // We need to handle three known types of delimiters -> "- ", "-", and " : "
+            if name.containsString("- ") {
+                delimiter = "- "
+            } else if name.containsString("") {
+                delimiter = "-"
+            } else if name.containsString(" : ") {
+                delimiter = " : "
+            }
         }
         
-        return formattedName
+        if let delimiter = delimiter {
+            let splitString = name.componentsSeparatedByString(delimiter)
+            if splitString.count > 1 {
+                formattedName = splitString[1]
+            }
+            
+            return formattedName
+        }
+        
+        return name
     }
 }
