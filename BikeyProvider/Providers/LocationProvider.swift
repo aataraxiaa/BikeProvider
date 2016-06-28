@@ -19,7 +19,7 @@ private struct LocationProviderConstants {
     func locationRetrieved(currentLocation: CLLocation)
     func locationAccessDenied()
     optional func headingChanged(heading: CLHeading)
-    optional func locationAccessAuthorizationChanged()
+    optional func locationAccessStatusChanged(accessGranted: Bool)
 }
 
 /// Singleton which provides location services via a delegate
@@ -71,10 +71,19 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
     }
     
     public func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        delegate?.locationAccessAuthorizationChanged?()
+        switch status {
+        case .AuthorizedAlways, .AuthorizedWhenInUse:
+            delegate?.locationAccessStatusChanged?(true)
+        default:
+            delegate?.locationAccessStatusChanged?(false)
+        }
     }
     
     // MARK: - Public functions
+    
+    public func requestAlwaysAuthorization() {
+        locman.requestAlwaysAuthorization()
+    }
     
     public func getLocation() {
         if !determineStatus() {
@@ -134,7 +143,7 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
         case .AuthorizedAlways, .AuthorizedWhenInUse:
             return true
         case .NotDetermined:
-            locman.requestAlwaysAuthorization()
+            requestAlwaysAuthorization()
             return true
         case .Restricted:
             delegate?.locationAccessDenied()
