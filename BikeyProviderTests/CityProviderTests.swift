@@ -47,6 +47,26 @@ class CityProviderTests: XCTestCase {
         })
     }
     
+    func testNearestTwoCities() {
+        
+        // Create expectation
+        let nearestTwoCitiesExpectation = expectationWithDescription("Cities within radius retrieved")
+        
+        CityProvider.nearestCities(2, location: newYorkWestLocation, successClosure: { cities in
+            XCTAssert(cities.count == 2)
+            
+            nearestTwoCitiesExpectation.fulfill()
+            
+            }, failureClosure: {
+                XCTFail("Could not locate cities within radius")
+        })
+        
+        waitForExpectationsWithTimeout(5, handler: { error in
+            
+        })
+        
+    }
+    
     func testCitiesWithinRadius() {
         
         // Create expectation

@@ -81,43 +81,4 @@ public struct StationProvider {
             }
         }
     }
-    
-    /**
-     Parse a returned station name to get a better formatted display name
-     
-     - parameter name: Station name
-     
-     - returns: Formatted station name
-     */
-    static func stationDisplayName(name: String) -> String {
-        
-        var formattedName = name
-
-        if name.containsString("- ") {
-            delimiter = "- "
-        } else if name.containsString("-") {
-            delimiter = "-"
-        } else if name.containsString(" : ") {
-            delimiter = " : "
-        }
-        
-        if let delimiter = delimiter {
-            let splitString = name.componentsSeparatedByString(delimiter)
-            let formattedSlice = splitString.dropFirst()
-            
-            if formattedSlice.count > 1 {
-                formattedName =  formattedSlice.reduce("") { $0 + " " + $1 }
-            } else if let name = formattedSlice.first {
-                formattedName =  name
-            }
-            
-            
-            guard formattedName != "" && formattedName != " " else {
-                return name
-            }
-            
-            return formattedName
-        }
-        return name
-    }
 }
