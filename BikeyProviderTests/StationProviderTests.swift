@@ -86,34 +86,4 @@ class StationProviderTests: XCTestCase {
             waitForExpectationsWithTimeout(10, handler: { error in })
         }
     }
-    
-    func testFormatStationNamesDelimiterOne() {
-        
-        // Create array of names to format
-        let names = Array(count: 100, repeatedValue: "12345 - suffix")
-        
-        for name in names {
-            XCTAssert(StationProvider.stationDisplayName(name) == "suffix")
-        }
-    }
-    
-    func testFormatStationNamesDelimiterTwo() {
-        
-        // Create array of names to format
-        let names = Array(count: 100, repeatedValue: "54321-suffix")
-        
-        for name in names {
-            XCTAssert(StationProvider.stationDisplayName(name) == "suffix")
-        }
-    }
-    
-    func testFormatStationNamesDelimiterThree() {
-        
-        // Create array of names to format
-        let names = Array(count: 100, repeatedValue: "12345 : suffix")
-        
-        for name in names {
-            XCTAssert(StationProvider.stationDisplayName(name) == "suffix")
-        }
-    }
 }

@@ -72,7 +72,7 @@ class CityProviderTests: XCTestCase {
         // Create expectation
         let citiesWithinRadiusExpectation = expectationWithDescription("Cities within radius retrieved")
         
-        CityProvider.cities(within: radius, location: newYorkWestLocation, successClosure: { cities in
+        CityProvider.cities(within: radius, limit: 2, location: newYorkWestLocation, successClosure: { cities in
             XCTAssert(cities.count == 2)
             
             citiesWithinRadiusExpectation.fulfill()

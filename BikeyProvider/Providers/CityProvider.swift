@@ -104,7 +104,7 @@ public struct CityProvider {
      - parameter successClosure: Success closure
      - parameter failureClosure: Failure closure
      */
-    public static func cities(within radius: Double, location: CLLocation, successClosure: (cities: [City])->(), failureClosure: ()->()) {
+    public static func cities(within radius: Double, limit: Int, location: CLLocation, successClosure: (cities: [City])->(), failureClosure: ()->()) {
         let url = Constants.API.baseURL + Constants.API.networks
         
         APIClient.get(url){(success, object) in
@@ -131,7 +131,15 @@ public struct CityProvider {
                     
                     // Call our success closure
                     if citiesWithinRadius.count > 0 {
-                        successClosure(cities: citiesWithinRadius)
+                        
+                        guard limit < citiesWithinRadius.count else {
+                            successClosure(cities: citiesWithinRadius)
+                            return
+                        }
+                        
+                        let limitedCities = citiesWithinRadius[0..<limit]
+                        successClosure(cities: Array(limitedCities))
+                        
                     } else if let nearestCityAndDistance = citiesAndDistances.minElement( { $0.1 < $1.1 } ) {
                         successClosure(cities: [nearestCityAndDistance.0])
                     } else {
