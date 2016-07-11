@@ -11,12 +11,15 @@ import CoreLocation
 @testable import BikeyProvider
 
 struct CityProviderTestsConstants {
-    static let dublinBikeName = "dublinbikes"
+    static let dublinBikeName = "Dublin"
 }
 
 class CityProviderTests: XCTestCase {
     
     let dublinLocation = CLLocation(latitude: 53.3498, longitude: -6.2603)
+    let newYorkWestLocation = CLLocation(latitude: 40.746172, longitude: -73.992681)
+    
+    let radius: Double = 20000
 
     override func setUp() {
         super.setUp()
@@ -39,8 +42,28 @@ class CityProviderTests: XCTestCase {
             XCTFail("Could not locate nearest city")
         })
         
-        waitForExpectationsWithTimeout(10, handler: { error in
+        waitForExpectationsWithTimeout(5, handler: { error in
             
         })
+    }
+    
+    func testCitiesWithinRadius() {
+        
+        // Create expectation
+        let citiesWithinRadiusExpectation = expectationWithDescription("Cities within radius retrieved")
+        
+        CityProvider.cities(within: radius, location: newYorkWestLocation, successClosure: { cities in
+            XCTAssert(cities.count == 2)
+            
+            citiesWithinRadiusExpectation.fulfill()
+            
+        }, failureClosure: {
+            XCTFail("Could not locate cities within radius")
+        })
+        
+        waitForExpectationsWithTimeout(5, handler: { error in
+            
+        })
+
     }
 }

@@ -61,9 +61,8 @@ public struct StationProvider {
                                 // Only add bike stations that are 'Installed' - i.e that are actually present and active
                                 if installed {
                                     
-                                    let stationName = stationDisplayName(name)
                                     let location = CLLocation(latitude: latitude, longitude: longitude)
-                                    let station = Station(id: stationId, name: stationName, bikes: bikes, spaces: slots, location: location, lastUpdated: lastUpdated, sellsTickets: sellsTickets)
+                                    let station = Station(id: stationId, name: name, bikes: bikes, spaces: slots, location: location, lastUpdated: lastUpdated, sellsTickets: sellsTickets)
                                     
                                     // Add to stations collection
                                     stationCollection.append(station)
@@ -106,7 +105,17 @@ public struct StationProvider {
             let splitString = name.componentsSeparatedByString(delimiter)
             let formattedSlice = splitString.dropFirst()
             
-            formattedName =  formattedSlice.reduce("") { $0 + " " + $1 }
+            if formattedSlice.count > 1 {
+                formattedName =  formattedSlice.reduce("") { $0 + " " + $1 }
+            } else if let name = formattedSlice.first {
+                formattedName =  name
+            }
+            
+            
+            guard formattedName != "" && formattedName != " " else {
+                return name
+            }
+            
             return formattedName
         }
         return name

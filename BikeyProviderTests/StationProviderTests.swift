@@ -11,9 +11,10 @@ import CoreLocation
 
 class StationProviderTests: XCTestCase {
     
-    let dublin = CLLocation(latitude: 53.3498, longitude: 6.2603)
+    let dublin = CLLocation(latitude: 53.3498, longitude: -6.2603)
     let marseille = CLLocation(latitude: 43.296482, longitude: 5.36978)
     let darmstadt = CLLocation(latitude: 49.8707135, longitude: 8.6527299)
+    let hoboken = CLLocation(latitude: 40.747780, longitude: -74.032774)
     
     override func setUp() {
         super.setUp()
@@ -28,7 +29,7 @@ class StationProviderTests: XCTestCase {
         // Create an expectation object.
         let stationsRetrieved = expectationWithDescription("Stations retrieved")
         
-        CityProvider.nearestCity(marseille, successClosure: { nearestCity in
+        CityProvider.nearestCity(dublin, successClosure: { nearestCity in
             
                 StationProvider.getStations(nearestCity.href, success: { stations in
                     XCTAssert(stations.count > 0)

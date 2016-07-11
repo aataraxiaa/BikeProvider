@@ -17,7 +17,7 @@ public struct City {
     public let href: String
     public let location: CLLocation
     
-    init(name: String, href: String, location: CLLocation) {
+    public init(name: String, href: String, location: CLLocation) {
         self.name = name
         self.href = href
         self.location = location
