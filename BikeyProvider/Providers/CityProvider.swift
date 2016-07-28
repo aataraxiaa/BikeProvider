@@ -20,7 +20,7 @@ public struct CityProvider {
         
         let url = Constants.API.baseURL + Constants.API.networks
         
-        APIClient.get(url){(success, object) in
+        APIClient.get(url, fail){(success, object) in
             if success {
                 
                 // Success, parse the city data
