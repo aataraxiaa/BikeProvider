@@ -48,38 +48,39 @@ class StationProviderTests: XCTestCase {
 
     }
     
-    func testGetStationsAllCities() {
-        
-        var cities = [City]()
-        
-        // Get a list of all our cities
-        let citiesRetrieved = self.expectationWithDescription("Cities retrieved")
-        
-        CityProvider.allCities({ retrievedCities in
-            cities = retrievedCities
-            citiesRetrieved.fulfill()
-        }) {
-            XCTFail("Could not get cities")
-        }
-        
-        waitForExpectationsWithTimeout(10, handler: { error in })
-        
-        // For each city, get the stations
-        for city in cities {
-            
-            // Create an expectation object.
-            let stationsRetrieved = expectationWithDescription("Stations retrieved")
-            
-            StationProvider.getStations(city.href, success: { stations in
-                XCTAssert(stations.count > 0)
-                
-                stationsRetrieved.fulfill()
-                
-                }, failure: {
-                    XCTFail("Could not retrieve stations for \(city.name) at endpoint \(city.href)")
-            })
-            
-            waitForExpectationsWithTimeout(10, handler: { error in })
-        }
-    }
+    // TEMP DISABLED
+//    func testGetStationsAllCities() {
+//        
+//        var cities = [City]()
+//        
+//        // Get a list of all our cities
+//        let citiesRetrieved = self.expectationWithDescription("Cities retrieved")
+//        
+//        CityProvider.allCities({ retrievedCities in
+//            cities = retrievedCities
+//            citiesRetrieved.fulfill()
+//        }) {
+//            XCTFail("Could not get cities")
+//        }
+//        
+//        waitForExpectationsWithTimeout(10, handler: { error in })
+//        
+//        // For each city, get the stations
+//        for city in cities {
+//            
+//            // Create an expectation object.
+//            let stationsRetrieved = expectationWithDescription("Stations retrieved")
+//            
+//            StationProvider.getStations(city.href, success: { stations in
+//                XCTAssert(stations.count > 0)
+//                
+//                stationsRetrieved.fulfill()
+//                
+//                }, failure: {
+//                    XCTFail("Could not retrieve stations for \(city.name) at endpoint \(city.href)")
+//            })
+//            
+//            waitForExpectationsWithTimeout(10, handler: { error in })
+//        }
+//    }
 }

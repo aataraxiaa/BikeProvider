@@ -1,3 +1,6 @@
 language: objective-c
 osx_image: xcode7.3
-script: xcodebuild -project BikeyProvider.xcodeproj -target BikeyProvider -sdk iphonesimulator
+script:  
+  - xctool -project BikeyProvider.xcodeproj -scheme BikeyProvider -sdk iphonesimulator
+  - xctool test -project BikeyProvider.xcodeproj -scheme BikeyProvider -sdk iphonesimulator
+   
