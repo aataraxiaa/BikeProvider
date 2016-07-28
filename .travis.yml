@@ -1,2 +1,4 @@
 language: objective-c
 osx_image: xcode7.3
+xcode_project: BikeyProvider.xcodeproj # path to your xcodeproj folder
+xcode_scheme: BikeyProviderTests
