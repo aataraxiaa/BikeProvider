@@ -33,11 +33,7 @@ class StationProviderTests: XCTestCase {
             
                 StationProvider.getStations(nearestCity.href, success: { stations in
                     XCTAssert(stations.count > 0)
-                    
-                    for station in stations {
-                        print(station.name)
-                    }
-                    
+    
                     stationsRetrieved.fulfill()
                     
                 }, failure: {
@@ -80,7 +76,7 @@ class StationProviderTests: XCTestCase {
                 stationsRetrieved.fulfill()
                 
                 }, failure: {
-                    XCTFail("Could not retrieve stations")
+                    XCTFail("Could not retrieve stations for \(city.name) at endpoint \(city.href)")
             })
             
             waitForExpectationsWithTimeout(10, handler: { error in })
