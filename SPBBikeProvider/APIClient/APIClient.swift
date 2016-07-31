@@ -8,8 +8,19 @@
 
 import Foundation
 
+/**
+ ### API client
+ 
+ An API client for performing API requests
+ */
 struct APIClient {
     
+    /**
+     Perform GET requests using the specified URL
+     
+     - parameter url:        The URL endpoint
+     - parameter completion: Completion closure expression
+     */
     static func get(url: String, completion: (success: Bool, object: AnyObject?) -> ()) {
         
         if let request = clientURLRequest(url) {

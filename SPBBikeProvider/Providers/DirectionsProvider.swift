@@ -9,7 +9,9 @@
 import MapKit
 
 /**
- *  Handles direction requests using MapKit directions
+ ### DirectionsProvider
+ 
+ Performs direction requests using MapKit directions
  */
 public struct DirectionsProvider {
     
@@ -61,6 +63,9 @@ public struct DirectionsProvider {
         
     }
     
+    /**
+     Cancel any current direction request
+     */
     public static func cancelCurrentRequest() {
         activeDirectionsRequest?.cancel()
     }

@@ -6,6 +6,9 @@
 //  Copyright © 2016 Pete Smith. All rights reserved.
 //
 
+/**
+ ### Constants used by the framework
+ */
 struct Constants {
     
     struct API {

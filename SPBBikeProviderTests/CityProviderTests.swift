@@ -8,7 +8,6 @@
 
 import XCTest
 import CoreLocation
-@testable import BikeyProvider
 
 struct CityProviderTestsConstants {
     static let dublinBikeName = "Dublin"

@@ -9,7 +9,11 @@
 import CoreLocation
 
 /**
- *  Bike Station model
+ ### Station
+ 
+ A Station represents a bike share station.
+ 
+ It has associated bikes & spaces
  */
 public struct Station {
     

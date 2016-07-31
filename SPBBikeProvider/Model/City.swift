@@ -9,7 +9,9 @@
 import CoreLocation
 
 /**
- *  City model
+ ### City
+ 
+ A City represents a geographical city which has available bike share information
  */
 public struct City {
     

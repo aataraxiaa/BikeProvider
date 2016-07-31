@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		460C84D81D01BD7A002A2F3B /* StationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C84D71D01BD7A002A2F3B /* StationProviderTests.swift */; };
-		4657D64A1CFF0B7C004670B4 /* BikeyProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4657D63F1CFF0B7B004670B4 /* BikeyProvider.framework */; };
+		4657D64A1CFF0B7C004670B4 /* SPBBikeProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4657D63F1CFF0B7B004670B4 /* SPBBikeProvider.framework */; };
 		4657D65E1CFF0DD7004670B4 /* CityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D65C1CFF0DD7004670B4 /* CityProvider.swift */; };
 		4657D65F1CFF0DD7004670B4 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D65D1CFF0DD7004670B4 /* StationProvider.swift */; };
 		4657D6621CFF0E0E004670B4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6601CFF0E0E004670B4 /* City.swift */; };
@@ -32,9 +32,9 @@
 
 /* Begin PBXFileReference section */
 		460C84D71D01BD7A002A2F3B /* StationProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationProviderTests.swift; sourceTree = "<group>"; };
-		4657D63F1CFF0B7B004670B4 /* BikeyProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BikeyProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4657D63F1CFF0B7B004670B4 /* SPBBikeProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPBBikeProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4657D6441CFF0B7B004670B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4657D6491CFF0B7C004670B4 /* BikeyProviderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeyProviderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4657D6491CFF0B7C004670B4 /* SPBBikeProvider.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPBBikeProvider.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4657D6501CFF0B7C004670B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4657D65C1CFF0DD7004670B4 /* CityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityProvider.swift; path = Providers/CityProvider.swift; sourceTree = "<group>"; };
 		4657D65D1CFF0DD7004670B4 /* StationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StationProvider.swift; path = Providers/StationProvider.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4657D64A1CFF0B7C004670B4 /* BikeyProvider.framework in Frameworks */,
+				4657D64A1CFF0B7C004670B4 /* SPBBikeProvider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,8 +69,8 @@
 		4657D6351CFF0B7B004670B4 = {
 			isa = PBXGroup;
 			children = (
-				4657D6411CFF0B7B004670B4 /* BikeyProvider */,
-				4657D64D1CFF0B7C004670B4 /* BikeyProviderTests */,
+				4657D6411CFF0B7B004670B4 /* SPBBikeProvider */,
+				4657D64D1CFF0B7C004670B4 /* SPBBikeProviderTests */,
 				4657D6401CFF0B7B004670B4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,13 +78,13 @@
 		4657D6401CFF0B7B004670B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4657D63F1CFF0B7B004670B4 /* BikeyProvider.framework */,
-				4657D6491CFF0B7C004670B4 /* BikeyProviderTests.xctest */,
+				4657D63F1CFF0B7B004670B4 /* SPBBikeProvider.framework */,
+				4657D6491CFF0B7C004670B4 /* SPBBikeProvider.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4657D6411CFF0B7B004670B4 /* BikeyProvider */ = {
+		4657D6411CFF0B7B004670B4 /* SPBBikeProvider */ = {
 			isa = PBXGroup;
 			children = (
 				4657D65B1CFF0D97004670B4 /* Provider */,
@@ -92,17 +92,17 @@
 				4657D6591CFF0D8A004670B4 /* APIClient */,
 				6566830B1D03F5AD005225EC /* SupportingFiles */,
 			);
-			path = BikeyProvider;
+			path = SPBBikeProvider;
 			sourceTree = "<group>";
 		};
-		4657D64D1CFF0B7C004670B4 /* BikeyProviderTests */ = {
+		4657D64D1CFF0B7C004670B4 /* SPBBikeProviderTests */ = {
 			isa = PBXGroup;
 			children = (
 				4657D6501CFF0B7C004670B4 /* Info.plist */,
 				65A0F46C1CFF78E200D24882 /* CityProviderTests.swift */,
 				460C84D71D01BD7A002A2F3B /* StationProviderTests.swift */,
 			);
-			path = BikeyProviderTests;
+			path = SPBBikeProviderTests;
 			sourceTree = "<group>";
 		};
 		4657D6591CFF0D8A004670B4 /* APIClient */ = {
@@ -155,9 +155,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4657D63E1CFF0B7B004670B4 /* BikeyProvider */ = {
+		4657D63E1CFF0B7B004670B4 /* SPBBikeProvider */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4657D6531CFF0B7C004670B4 /* Build configuration list for PBXNativeTarget "BikeyProvider" */;
+			buildConfigurationList = 4657D6531CFF0B7C004670B4 /* Build configuration list for PBXNativeTarget "SPBBikeProvider" */;
 			buildPhases = (
 				4657D63A1CFF0B7B004670B4 /* Sources */,
 				4657D63B1CFF0B7B004670B4 /* Frameworks */,
@@ -168,14 +168,14 @@
 			);
 			dependencies = (
 			);
-			name = BikeyProvider;
+			name = SPBBikeProvider;
 			productName = BikeyProvider;
-			productReference = 4657D63F1CFF0B7B004670B4 /* BikeyProvider.framework */;
+			productReference = 4657D63F1CFF0B7B004670B4 /* SPBBikeProvider.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4657D6481CFF0B7C004670B4 /* BikeyProviderTests */ = {
+		4657D6481CFF0B7C004670B4 /* SPBBikeProviderTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4657D6561CFF0B7C004670B4 /* Build configuration list for PBXNativeTarget "BikeyProviderTests" */;
+			buildConfigurationList = 4657D6561CFF0B7C004670B4 /* Build configuration list for PBXNativeTarget "SPBBikeProviderTests" */;
 			buildPhases = (
 				4657D6451CFF0B7C004670B4 /* Sources */,
 				4657D6461CFF0B7C004670B4 /* Frameworks */,
@@ -186,9 +186,9 @@
 			dependencies = (
 				4657D64C1CFF0B7C004670B4 /* PBXTargetDependency */,
 			);
-			name = BikeyProviderTests;
+			name = SPBBikeProviderTests;
 			productName = BikeyProviderTests;
-			productReference = 4657D6491CFF0B7C004670B4 /* BikeyProviderTests.xctest */;
+			productReference = 4657D6491CFF0B7C004670B4 /* SPBBikeProvider.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -212,7 +212,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4657D6391CFF0B7B004670B4 /* Build configuration list for PBXProject "BikeyProvider" */;
+			buildConfigurationList = 4657D6391CFF0B7B004670B4 /* Build configuration list for PBXProject "SPBBikeProvider" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -224,8 +224,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4657D63E1CFF0B7B004670B4 /* BikeyProvider */,
-				4657D6481CFF0B7C004670B4 /* BikeyProviderTests */,
+				4657D63E1CFF0B7B004670B4 /* SPBBikeProvider */,
+				4657D6481CFF0B7C004670B4 /* SPBBikeProviderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -277,7 +277,7 @@
 /* Begin PBXTargetDependency section */
 		4657D64C1CFF0B7C004670B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4657D63E1CFF0B7B004670B4 /* BikeyProvider */;
+			target = 4657D63E1CFF0B7B004670B4 /* SPBBikeProvider */;
 			targetProxy = 4657D64B1CFF0B7C004670B4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -384,12 +384,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = BikeyProvider/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SPBBikeProvider/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.BikeyProvider;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProvider;
+				PRODUCT_NAME = SPBBikeProvider;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -406,12 +406,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = BikeyProvider/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SPBBikeProvider/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.BikeyProvider;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProvider;
+				PRODUCT_NAME = SPBBikeProvider;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -420,27 +420,27 @@
 		4657D6571CFF0B7C004670B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = BikeyProviderTests/Info.plist;
+				INFOPLIST_FILE = SPBBikeProviderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.BikeyProviderTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProviderTests;
+				PRODUCT_NAME = SPBBikeProvider;
 			};
 			name = Debug;
 		};
 		4657D6581CFF0B7C004670B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = BikeyProviderTests/Info.plist;
+				INFOPLIST_FILE = SPBBikeProviderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.BikeyProviderTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProviderTests;
+				PRODUCT_NAME = SPBBikeProvider;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4657D6391CFF0B7B004670B4 /* Build configuration list for PBXProject "BikeyProvider" */ = {
+		4657D6391CFF0B7B004670B4 /* Build configuration list for PBXProject "SPBBikeProvider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4657D6511CFF0B7C004670B4 /* Debug */,
@@ -449,7 +449,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4657D6531CFF0B7C004670B4 /* Build configuration list for PBXNativeTarget "BikeyProvider" */ = {
+		4657D6531CFF0B7C004670B4 /* Build configuration list for PBXNativeTarget "SPBBikeProvider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4657D6541CFF0B7C004670B4 /* Debug */,
@@ -458,7 +458,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4657D6561CFF0B7C004670B4 /* Build configuration list for PBXNativeTarget "BikeyProviderTests" */ = {
+		4657D6561CFF0B7C004670B4 /* Build configuration list for PBXNativeTarget "SPBBikeProviderTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4657D6571CFF0B7C004670B4 /* Debug */,

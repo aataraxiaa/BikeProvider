@@ -8,13 +8,22 @@
 
 import CoreLocation
 
+/**
+ 
+ ### CityProvider
+ 
+ Provides methods for fetching the nearest bike station cities, 
+ based on the parameters passed (e.g Current locaion)
+ 
+*/
 public struct CityProvider {
     
     /**
      Get all available cities
      
-     - parameter success: Success closure
-     - parameter failure: Failure closure
+     - parameter location:      The location used to calculate the nearest cities
+     - parameter success:       Success closure
+     - parameter failure:       Failure closure
      */
     public static func nearestCity(location: CLLocation, successClosure: (nearestCity: City)->(), failureClosure: ()->()) {
         
@@ -56,6 +65,14 @@ public struct CityProvider {
         }
     }
     
+    /**
+     Get the nearest cities, bound by limit, based on the location passed
+     
+     - parameter limit:          The number of nearest cities to fetching
+     - parameter location:       The location used to calculate the nearest cities
+     - parameter successClosure: Success closure
+     - parameter failureClosure: Failure closure
+     */
     public static func nearestCities(limit: Int, location: CLLocation, successClosure: (cities: [City])->(), failureClosure: ()->()) {
         
         let url = Constants.API.baseURL + Constants.API.networks
@@ -97,10 +114,12 @@ public struct CityProvider {
     }
     
     /**
-     Get cities within a certain radius
+     Get the nearest cities, bound by limit, based on the location passed, 
+     and within a certain radius
      
      - parameter radius:         The radius in metres
-     - parameter location:       The relative location
+     - parameter limit:          The number of nearest cities to fetching
+     - parameter location:       The location used to calculate the nearest cities
      - parameter successClosure: Success closure
      - parameter failureClosure: Failure closure
      */
@@ -153,6 +172,12 @@ public struct CityProvider {
         }
     }
     
+    /**
+     Get all available bike station cities
+     
+     - parameter successClosure: Success closure
+     - parameter failureClosure: Failure closure
+     */
     public static func allCities(successClosure: ([City] -> Void), failureClosure: () -> Void) {
         let url = Constants.API.baseURL + Constants.API.networks
         

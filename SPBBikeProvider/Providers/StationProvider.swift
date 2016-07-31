@@ -6,16 +6,14 @@
 //  Copyright © 2016 Pete Smith. All rights reserved.
 //
 
-import Foundation
 import CoreLocation
 
 /**
- *  Fetches stations
+ ### StationProvider
+ 
+ Provides methods for fetching the nearest bike stations for a specified city
  */
 public struct StationProvider {
-    
-    /// The delimiter to use for formatting our station name
-    static var delimiter: String?
     
     /**
      Get a cities stations

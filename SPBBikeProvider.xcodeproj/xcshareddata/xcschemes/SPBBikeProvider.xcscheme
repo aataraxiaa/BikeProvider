@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4657D63E1CFF0B7B004670B4"
-               BuildableName = "BikeyProvider.framework"
-               BlueprintName = "BikeyProvider"
-               ReferencedContainer = "container:BikeyProvider.xcodeproj">
+               BuildableName = "SPBBikeProvider.framework"
+               BlueprintName = "SPBBikeProvider"
+               ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4657D6481CFF0B7C004670B4"
-               BuildableName = "BikeyProviderTests.xctest"
-               BlueprintName = "BikeyProviderTests"
-               ReferencedContainer = "container:BikeyProvider.xcodeproj">
+               BuildableName = "SPBBikeProvider.xctest"
+               BlueprintName = "SPBBikeProviderTests"
+               ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4657D63E1CFF0B7B004670B4"
-            BuildableName = "BikeyProvider.framework"
-            BlueprintName = "BikeyProvider"
-            ReferencedContainer = "container:BikeyProvider.xcodeproj">
+            BuildableName = "SPBBikeProvider.framework"
+            BlueprintName = "SPBBikeProvider"
+            ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4657D63E1CFF0B7B004670B4"
-            BuildableName = "BikeyProvider.framework"
-            BlueprintName = "BikeyProvider"
-            ReferencedContainer = "container:BikeyProvider.xcodeproj">
+            BuildableName = "SPBBikeProvider.framework"
+            BlueprintName = "SPBBikeProvider"
+            ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4657D63E1CFF0B7B004670B4"
-            BuildableName = "BikeyProvider.framework"
-            BlueprintName = "BikeyProvider"
-            ReferencedContainer = "container:BikeyProvider.xcodeproj">
+            BuildableName = "SPBBikeProvider.framework"
+            BlueprintName = "SPBBikeProvider"
+            ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

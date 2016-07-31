@@ -7,7 +7,6 @@
 //
 import XCTest
 import CoreLocation
-@testable import BikeyProvider
 
 class StationProviderTests: XCTestCase {
     
