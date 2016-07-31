@@ -34,7 +34,7 @@
 		460C84D71D01BD7A002A2F3B /* StationProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationProviderTests.swift; sourceTree = "<group>"; };
 		4657D63F1CFF0B7B004670B4 /* SPBBikeProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPBBikeProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4657D6441CFF0B7B004670B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4657D6491CFF0B7C004670B4 /* SPBBikeProvider.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPBBikeProvider.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4657D6491CFF0B7C004670B4 /* SPBBikeProviderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPBBikeProviderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4657D6501CFF0B7C004670B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4657D65C1CFF0DD7004670B4 /* CityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityProvider.swift; path = Providers/CityProvider.swift; sourceTree = "<group>"; };
 		4657D65D1CFF0DD7004670B4 /* StationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StationProvider.swift; path = Providers/StationProvider.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				4657D63F1CFF0B7B004670B4 /* SPBBikeProvider.framework */,
-				4657D6491CFF0B7C004670B4 /* SPBBikeProvider.xctest */,
+				4657D6491CFF0B7C004670B4 /* SPBBikeProviderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,7 +188,7 @@
 			);
 			name = SPBBikeProviderTests;
 			productName = BikeyProviderTests;
-			productReference = 4657D6491CFF0B7C004670B4 /* SPBBikeProvider.xctest */;
+			productReference = 4657D6491CFF0B7C004670B4 /* SPBBikeProviderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -423,7 +423,7 @@
 				INFOPLIST_FILE = SPBBikeProviderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProviderTests;
-				PRODUCT_NAME = SPBBikeProvider;
+				PRODUCT_NAME = SPBBikeProviderTests;
 			};
 			name = Debug;
 		};
@@ -433,7 +433,7 @@
 				INFOPLIST_FILE = SPBBikeProviderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProviderTests;
-				PRODUCT_NAME = SPBBikeProvider;
+				PRODUCT_NAME = SPBBikeProviderTests;
 			};
 			name = Release;
 		};

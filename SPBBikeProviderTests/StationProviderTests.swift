@@ -7,6 +7,7 @@
 //
 import XCTest
 import CoreLocation
+@testable import SPBBikeProvider
 
 class StationProviderTests: XCTestCase {
     
