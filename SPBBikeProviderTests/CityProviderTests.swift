@@ -32,9 +32,9 @@ class CityProviderTests: XCTestCase {
     func testNearestCity() {
         
         // Create an expectation object.
-        let cityRetrievedExpectation = expectationWithDescription("Nearest city retrieved")
+        let cityRetrievedExpectation = expectation(description: "Nearest city retrieved")
         
-        CityProvider.nearestCity(dublinLocation, successClosure: { nearestCity in
+        CityProvider.city(near: dublinLocation, successClosure: { nearestCity in
             XCTAssert(nearestCity.name == CityProviderTestsConstants.dublinBikeName)
             
             cityRetrievedExpectation.fulfill()
@@ -42,7 +42,7 @@ class CityProviderTests: XCTestCase {
             XCTFail("Could not locate nearest city")
         })
         
-        waitForExpectationsWithTimeout(5, handler: { error in
+        waitForExpectations(timeout: 5, handler: { error in
             
         })
     }
@@ -50,9 +50,9 @@ class CityProviderTests: XCTestCase {
     func testNearestTwoCities() {
         
         // Create expectation
-        let nearestTwoCitiesExpectation = expectationWithDescription("Cities within radius retrieved")
+        let nearestTwoCitiesExpectation = expectation(description: "Cities within radius retrieved")
         
-        CityProvider.nearestCities(2, location: newYorkWestLocation, successClosure: { cities in
+        CityProvider.cities(near: newYorkWestLocation, limit: 2, successClosure: { cities in
             XCTAssert(cities.count == 2)
             
             nearestTwoCitiesExpectation.fulfill()
@@ -61,7 +61,7 @@ class CityProviderTests: XCTestCase {
                 XCTFail("Could not locate cities within radius")
         })
         
-        waitForExpectationsWithTimeout(5, handler: { error in
+        waitForExpectations(timeout: 5, handler: { error in
             
         })
         
@@ -70,9 +70,9 @@ class CityProviderTests: XCTestCase {
     func testCitiesWithinRadius() {
         
         // Create expectation
-        let citiesWithinRadiusExpectation = expectationWithDescription("Cities within radius retrieved")
+        let citiesWithinRadiusExpectation = expectation(description: "Cities within radius retrieved")
         
-        CityProvider.cities(within: radius, limit: 2, location: newYorkWestLocation, successClosure: { cities in
+        CityProvider.cities(near: newYorkWestLocation, within: radius, limit: 2, successClosure: { cities in
             XCTAssert(cities.count == 2)
             
             citiesWithinRadiusExpectation.fulfill()
@@ -81,7 +81,7 @@ class CityProviderTests: XCTestCase {
             XCTFail("Could not locate cities within radius")
         })
         
-        waitForExpectationsWithTimeout(5, handler: { error in
+        waitForExpectations(timeout: 5, handler: { error in
             
         })
 

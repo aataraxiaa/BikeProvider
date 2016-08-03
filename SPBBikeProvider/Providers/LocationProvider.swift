@@ -13,11 +13,19 @@ import CoreLocation
  
  Location Provider delegate protocol
  */
-@objc public protocol LocationProviderDelegate {
-    func locationRetrieved(currentLocation: CLLocation)
-    func locationAccessDenied()
-    optional func headingChanged(heading: CLHeading)
-    optional func locationAccessStatusChanged(accessGranted: Bool)
+public protocol LocationProviderDelegate {
+    func retrieved(location: CLLocation)
+    func accessDenied()
+    func retrieved(heading: CLHeading)
+    func locationAccess(isGranted: Bool)
+}
+
+/**
+ Empty extension to make some delegate methods optional
+ */
+extension LocationProviderDelegate {
+    func retrieved(heading: CLHeading) {}
+    func locationAccess(isGranted: Bool){}
 }
 
 /** 
@@ -37,7 +45,7 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
     
     // MARK: - Private properties
     private var locman = CLLocationManager()
-    private var startTime: NSDate!
+    private var startTime: Date!
     private var trying = false
     private var updatingHeading = false
     
@@ -46,7 +54,7 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
         super.init()
         locman.delegate = self
         locman.desiredAccuracy = kCLLocationAccuracyBest
-        locman.activityType = .Fitness
+        locman.activityType = .fitness
         locman.pausesLocationUpdatesAutomatically = true
     }
     
@@ -65,7 +73,7 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
      */
     public func getLocation() {
         if !determineStatus() {
-            delegate?.locationAccessDenied()
+            delegate?.accessDenied()
             return
         }
         
@@ -102,41 +110,35 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
         }
         
         self.locman.headingFilter = 5
-        self.locman.headingOrientation = .Portrait
+        self.locman.headingOrientation = .portrait
         updatingHeading = true
         self.locman.startUpdatingHeading()
     }
     
     // MARK: - CLLocationManager Delegate
     
-    public func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         stopUpdates()
         
-        delegate?.locationAccessDenied()
+        delegate?.accessDenied()
     }
     
-    public func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let loc = locations.last
-        let acc = loc!.horizontalAccuracy
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last, location.horizontalAccuracy > 0 && location.horizontalAccuracy < requiredAccuracy else { return }
         
-        if acc < 0 || acc > requiredAccuracy {
-            return // wait for the next one
-        }
-        
-        // Location retrieved!!
-        delegate?.locationRetrieved(loc!)
+        delegate?.retrieved(location: location)
     }
     
-    public func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        self.delegate?.headingChanged?(newHeading)
+    public func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        self.delegate?.retrieved(heading: newHeading)
     }
     
-    public func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
-        case .AuthorizedAlways, .AuthorizedWhenInUse:
-            delegate?.locationAccessStatusChanged?(true)
+        case .authorizedAlways, .authorizedWhenInUse:
+            delegate?.locationAccess(isGranted: true)
         default:
-            delegate?.locationAccessStatusChanged?(false)
+            delegate?.locationAccess(isGranted: false)
         }
     }
 
@@ -153,16 +155,16 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
         let status = CLLocationManager.authorizationStatus()
         
         switch status {
-        case .AuthorizedAlways, .AuthorizedWhenInUse:
+        case .authorizedAlways, .authorizedWhenInUse:
             return true
-        case .NotDetermined:
+        case .notDetermined:
             requestAlwaysAuthorization()
             return true
-        case .Restricted:
-            delegate?.locationAccessDenied()
+        case .restricted:
+            delegate?.accessDenied()
             return false
-        case .Denied:
-            delegate?.locationAccessDenied()
+        case .denied:
+            delegate?.accessDenied()
             return false
         }
     }

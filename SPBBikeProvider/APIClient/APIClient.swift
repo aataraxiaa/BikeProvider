@@ -21,30 +21,30 @@ struct APIClient {
      - parameter url:        The URL endpoint
      - parameter completion: Completion closure expression
      */
-    static func get(url: String, completion: (success: Bool, object: AnyObject?) -> ()) {
+    static func get(from url: String, completion: (success: Bool, object: AnyObject?) -> ()) {
         
         if let request = clientURLRequest(url) {
-            dataTask(request, completion: completion)
+            dataTask(for: request, completion: completion)
         }
     }
     
-    private static func clientURLRequest(url: String) -> NSMutableURLRequest? {
-        if let url = NSURL(string: url) {
-            let request = NSMutableURLRequest(URL: url)
+    private static func clientURLRequest(_ url: String) -> URLRequest? {
+        if let url = URL(string: url) {
+            let request = URLRequest(url: url)
             return request
         }
         return nil
     }
     
-    private static func dataTask(request: NSMutableURLRequest, completion: (success: Bool, object: AnyObject?) -> ()) {
+    private static func dataTask(for request: URLRequest, completion: (success: Bool, object: AnyObject?) -> ()) {
         
-        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+        session.dataTask(with: request) { (data, response, error) -> Void in
             
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async(execute: {
                 
-                if let data = data, json = try? NSJSONSerialization.JSONObjectWithData(data, options: []), response = response as? NSHTTPURLResponse where 200...299 ~= response.statusCode {
+                if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []), let response = response as? HTTPURLResponse,  200...299 ~= response.statusCode {
                     
                     completion(success: true, object: json)
                     

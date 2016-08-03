@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4657D6481CFF0B7C004670B4"
-               BuildableName = "SPBBikeProvider.xctest"
+               BuildableName = "SPBBikeProviderTests.xctest"
                BlueprintName = "SPBBikeProviderTests"
                ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
             </BuildableReference>

@@ -26,7 +26,7 @@ public struct DirectionsProvider {
      - parameter success: Success closure which takes a route
      - parameter failure: Failure closure
      */
-    public static func getDirections(start: CLLocation, end: CLLocation, success: ((route: MKRoute) -> Void), failure: (() -> Void)) {
+    public static func directions(from start: CLLocation, to end: CLLocation, success: ((route: MKRoute) -> Void), failure: (() -> Void)) {
         
         // Cancel any pending directions requests
         activeDirectionsRequest?.cancel()
@@ -41,13 +41,11 @@ public struct DirectionsProvider {
         let req = MKDirectionsRequest()
         req.source = sourceMapItem
         req.destination = destinationMapItem
-        req.transportType = MKDirectionsTransportType.Walking
+        req.transportType = MKDirectionsTransportType.walking
         activeDirectionsRequest = MKDirections(request:req)
         
         // Perform the directions request
-        activeDirectionsRequest?.calculateDirectionsWithCompletionHandler ({
-            (response: MKDirectionsResponse?, error: NSError?) -> Void in
-            
+        activeDirectionsRequest?.calculate { response, error in
             if response == nil && error != nil {
                 print("Directions error: \(error)")
                 
@@ -59,8 +57,7 @@ public struct DirectionsProvider {
             if let route = response?.routes[0] {
                 success(route: route)
             }
-        })
-        
+        }
     }
     
     /**
