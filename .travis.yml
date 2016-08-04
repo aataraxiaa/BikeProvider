@@ -1,5 +1,17 @@
 language: objective-c
 osx_image: xcode8
-script:  
-  - xcodebuild -project SPBBikeProvider.xcodeproj CODE_SIGNING_REQUIRED=NO
-   
+
+before_script:
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dev.cer.enc -d -a -out scripts/certs/dev.cer
+- openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dev.p12.enc -d -a -out scripts/certs/dev.p12
+
+script:
+- xcodebuild -project SPBBikeProvider.xcodeproj
+
+after_script:
+- ./scripts/remove-key.sh
+
+env:
+  global:
+  - secure: NEryYr8KqXlFb990VdOe7lWm86ZblsFjuo5Ij0Rl7JguMG7nB7tWKxfl2rSi98wbpFt2mtD5A1tz6x15HnV6lxjyQQI65LZAh7KeUzApmqSUmGKkLyuC7QrdFrn1PmaptWS55Qu59ZW84rpbvHwi/gRSnmeWNvae71rFpHx5d1StGR9hhH+IHmqM20BRmsBZzY8It7gzi8JmnJY0D3jskZjnahD51rFi/FEgkpbMpLhqbjporuUXOegXFJlO6dA36dunGScw02zwZWgoGF+vEOi+anFRzvuIzORjsR9RIf8nxGwOe5sjlhOz8pUMb1jPrnDPxQcwDXGcbCm5On21wHOtrZG+oj/KDYsHEfYLQWcTfiuyBo2M1G7kXsFkE2uLXWE0EXWk4P967pL7cwlu8XWf4zfQmdvppR82jtlsaLtTeuBPKwZ5Fny5CNGGqmq7/nTi1cxZkhFGq7QC7cMZU2J8pMnr1dos7D1bHP4CHnC72OX13GO+atwYad3CN/eHtDwXQKo8HTafjmjByIPTTXVptNoMGphMcfBi6iQ+F03N4/ZA/KQSMP1dDexky1XEpXlrgXlAtKqDe9hj8UzeUwUBY/Pt74nUbSKaNuqIuaO7GWhz1mywj12ThdL7DtzouyB8VJbOSR1j5adWIn1h/y7OaJiurg3DbifUHuSl124=
+  - secure: xqFVaYKTHPbyVysT6YWbwTNN+5f1Ga9XkVwi6tvhFDyCqmEMFuhiP9SGzELo2YF2wND67LzbzvQ6ML4MnYnzve6PvcLB7JjViYuBrBm9xo5ZCIHji6sBEU0lO/5H5j/e3fxNCX/HRNRgEaICG8d14CWfoSjSluhTNH8AZRy3Tl+XCJVGeaA34CC11LlCxWiekLuHAepk+O3eElrVZ7ST51GEtOxpJPNNDNvkpl2GRNn7iQKItrIswSjJ+XXMdNHTkUE9wvZrAbdeloXq/GdRvvzG3TEnLhfaIxGEC2bzanYFFrQ7chNgzyn1wmg2uzCa+HhhS309B/9S5c60BzTdHuceMX8wgS9Du3FqwTnhx5HrfHOw7U+62Cq06c7qfUcvU2Ec8VXm2i1dshYuT32gYq4wTkrrglCCqZqZ1Hr6B9nItYH+sku4EngLJdLcvIYKLmgsFQa9dT7TOQI+T5ygnRm9Mw+G+Xz+IQx8Chw47/3iUEJubaFWNWLyEbAB9b5xuIrL5Ct57TefJUC5vzgA5OH9l1Aa67aNirXOO7X3S7n1efu4u3YqVBrxXAb8q/fncJKDwZ0sozBiTIwzAibEP/+H23xkKpc83K0Z2dbSjmcGstxKWyZmPzeK/7mGt0Eqs0Zey8jQxmIvu/7cpJWtVjdhgLelz+Po3Y8C6XLWa10=
