@@ -6,7 +6,7 @@ before_script:
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dev.p12.enc -d -a -out scripts/certs/dev.p12
 
 script:
-- xcodebuild -project SPBBikeProvider.xcodeproj
+- xcodebuild -project SPBBikeProvider.xcodeproj -configuration Debug
 
 after_script:
 - ./scripts/remove-key.sh
