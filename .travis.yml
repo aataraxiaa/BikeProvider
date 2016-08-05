@@ -2,6 +2,7 @@ language: objective-c
 osx_image: xcode8
 
 before_script:
+- security find-identity -p codesigning ~/Library/Keychains/ios-build.keychain
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dev.cer.enc -d -a -out scripts/certs/dev.cer
 - openssl aes-256-cbc -k "$ENCRYPTION_SECRET" -in scripts/certs/dev.p12.enc -d -a -out scripts/certs/dev.p12
 

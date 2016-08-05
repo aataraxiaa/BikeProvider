@@ -208,6 +208,7 @@
 					};
 					4657D6481CFF0B7C004670B4 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 49CJ89TL4W;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -427,6 +428,7 @@
 		4657D6571CFF0B7C004670B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 49CJ89TL4W;
 				INFOPLIST_FILE = SPBBikeProviderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProviderTests;
@@ -438,6 +440,7 @@
 		4657D6581CFF0B7C004670B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 49CJ89TL4W;
 				INFOPLIST_FILE = SPBBikeProviderTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProviderTests;
@@ -457,7 +460,7 @@
 				4657D6521CFF0B7C004670B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		4657D6531CFF0B7C004670B4 /* Build configuration list for PBXNativeTarget "SPBBikeProvider" */ = {
 			isa = XCConfigurationList;
@@ -466,7 +469,7 @@
 				4657D6551CFF0B7C004670B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		4657D6561CFF0B7C004670B4 /* Build configuration list for PBXNativeTarget "SPBBikeProviderTests" */ = {
 			isa = XCConfigurationList;
@@ -475,7 +478,7 @@
 				4657D6581CFF0B7C004670B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
