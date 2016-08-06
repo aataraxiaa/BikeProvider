@@ -23,7 +23,7 @@ public protocol LocationProviderDelegate {
 /**
  Empty extension to make some delegate methods optional
  */
-extension LocationProviderDelegate {
+public extension LocationProviderDelegate {
     func retrieved(heading: CLHeading) {}
     func locationAccess(isGranted: Bool){}
 }
