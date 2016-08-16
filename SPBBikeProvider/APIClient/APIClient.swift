@@ -21,7 +21,7 @@ struct APIClient {
      - parameter url:        The URL endpoint
      - parameter completion: Completion closure expression
      */
-    static func get(from url: String, completion: (success: Bool, object: AnyObject?) -> ()) {
+    static func get(from url: String, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
         
         if let request = clientURLRequest(url) {
             dataTask(for: request, completion: completion)
@@ -33,10 +33,11 @@ struct APIClient {
             let request = URLRequest(url: url)
             return request
         }
+        
         return nil
     }
     
-    private static func dataTask(for request: URLRequest, completion: (success: Bool, object: AnyObject?) -> ()) {
+    private static func dataTask(for request: URLRequest, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
@@ -44,13 +45,13 @@ struct APIClient {
             
             DispatchQueue.main.async(execute: {
                 
-                if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []), let response = response as? HTTPURLResponse,  200...299 ~= response.statusCode {
+                if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []) , let response = response as? HTTPURLResponse,  200...299 ~= response.statusCode {
                     
-                    completion(success: true, object: json)
+                    completion(true, json as AnyObject)
                     
                 } else {
                     
-                    completion(success: false, object: nil)
+                    completion(false, nil)
                 }
             })
             

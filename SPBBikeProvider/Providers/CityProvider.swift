@@ -25,7 +25,7 @@ public struct CityProvider {
      - parameter success:       Success closure
      - parameter failure:       Failure closure
      */
-    public static func city(near location: CLLocation, successClosure: (nearestCity: City)->(), failureClosure: ()->()) {
+    public static func city(near location: CLLocation, successClosure: @escaping (_ nearestCity: City)->(), failureClosure: @escaping ()->()) {
         
         let url = Constants.API.baseURL + Constants.API.networks
         
@@ -53,7 +53,7 @@ public struct CityProvider {
 
                     // Call our success closuse with with the nearest city if we have it or nil
                     if let city = nearestCityAndDistance?.0 {
-                        successClosure(nearestCity: city)
+                        successClosure(city)
                     } else {
                         failureClosure()
                     }
@@ -73,7 +73,7 @@ public struct CityProvider {
      - parameter successClosure: Success closure
      - parameter failureClosure: Failure closure
      */
-    public static func cities(near location: CLLocation, limit: Int, successClosure: (cities: [City])->(), failureClosure: ()->()) {
+    public static func cities(near location: CLLocation, limit: Int, successClosure: @escaping (_ cities: [City])->(), failureClosure: @escaping ()->()) {
         
         let url = Constants.API.baseURL + Constants.API.networks
         
@@ -99,12 +99,12 @@ public struct CityProvider {
                     
                     // Return early with all sorted cities if the number of cities we want (our limit) is greater than the total number of cities
                     guard limit < nearestCities.count else {
-                        successClosure(cities: nearestCities)
+                        successClosure(nearestCities)
                         return
                     }
                     
                     let limitedCities = nearestCities[0..<limit]
-                    successClosure(cities: Array(limitedCities))
+                    successClosure(Array(limitedCities))
                     
                 }
             } else {
@@ -123,7 +123,7 @@ public struct CityProvider {
      - parameter successClosure: Success closure
      - parameter failureClosure: Failure closure
      */
-    public static func cities(near location: CLLocation, within radius: Double, limit: Int, successClosure: (cities: [City])->(), failureClosure: ()->()) {
+    public static func cities(near location: CLLocation, within radius: Double, limit: Int, successClosure: @escaping (_ cities: [City])->(), failureClosure: @escaping ()->()) {
         let url = Constants.API.baseURL + Constants.API.networks
         
         APIClient.get(from: url){(success, object) in
@@ -152,15 +152,15 @@ public struct CityProvider {
                     if citiesWithinRadius.count > 0 {
                         
                         guard limit < citiesWithinRadius.count else {
-                            successClosure(cities: citiesWithinRadius)
+                            successClosure(citiesWithinRadius)
                             return
                         }
                         
                         let limitedCities = citiesWithinRadius[0..<limit]
-                        successClosure(cities: Array(limitedCities))
+                        successClosure(Array(limitedCities))
                         
                     } else if let nearestCityAndDistance = citiesAndDistances.min( by: { $0.1 < $1.1 } ) {
-                        successClosure(cities: [nearestCityAndDistance.0])
+                        successClosure([nearestCityAndDistance.0])
                     } else {
                         failureClosure()
                     }
@@ -178,7 +178,7 @@ public struct CityProvider {
      - parameter successClosure: Success closure
      - parameter failureClosure: Failure closure
      */
-    public static func allCities(_ successClosure: (([City]) -> Void), failureClosure: () -> Void) {
+    public static func allCities(_ successClosure: (([City]) -> Void), failureClosure: @escaping () -> Void) {
         let url = Constants.API.baseURL + Constants.API.networks
         
         APIClient.get(from: url){(success, object) in
