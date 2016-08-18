@@ -16,7 +16,11 @@ import CoreLocation
 public protocol LocationProviderDelegate {
     func retrieved(location: CLLocation)
     func accessDenied()
-    func retrieved(heading: CLHeading)
+    
+    #if os(iOS)
+        func retrieved(heading: CLHeading)
+    #endif
+
     func locationAccess(isGranted: Bool)
 }
 
@@ -55,8 +59,11 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
         locman.delegate = self
         locman.desiredAccuracy = kCLLocationAccuracyBest
         
-        //locman.activityType = .fitness
-        //locman.pausesLocationUpdatesAutomatically = true
+        #if os(iOS)
+            locman.activityType = .fitness
+            locman.pausesLocationUpdatesAutomatically = true
+        #endif
+        
     }
     
     // MARK: - Public Methods
@@ -65,7 +72,9 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
      Request location access authorization
      */
     public func requestAlwaysAuthorization() {
-       // locman.requestAlwaysAuthorization()
+        #if os(iOS)
+            locman.requestAlwaysAuthorization()
+        #endif
     }
     
     /**
@@ -92,7 +101,11 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
      */
     public func stopUpdates () {
         locman.stopUpdatingLocation()
-        //locman.stopUpdatingHeading()
+        
+        #if os(iOS)
+            locman.stopUpdatingHeading()
+        #endif
+        
         updatingHeading = false
         trying = false
         startTime = nil
@@ -110,10 +123,13 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
             return
         }
         
-        //self.locman.headingFilter = 5
-        //self.locman.headingOrientation = .portrait
+        #if os(iOS)
+            self.locman.headingFilter = 5
+            self.locman.headingOrientation = .portrait
+            self.locman.startUpdatingHeading()
+        #endif
+        
         updatingHeading = true
-       // self.locman.startUpdatingHeading()
     }
     
     // MARK: - CLLocationManager Delegate
@@ -130,9 +146,11 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
         delegate?.retrieved(location: location)
     }
     
-   // public func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-  //     self.delegate?.retrieved(heading: newHeading)
-    //}
+    #if os(iOS)
+    public func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        self.delegate?.retrieved(heading: newHeading)
+    }
+    #endif
     
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
