@@ -14,6 +14,19 @@
 		4657D6621CFF0E0E004670B4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6601CFF0E0E004670B4 /* City.swift */; };
 		4657D6631CFF0E0E004670B4 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6611CFF0E0E004670B4 /* Station.swift */; };
 		4657D6651CFF0E1B004670B4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6641CFF0E1B004670B4 /* APIClient.swift */; };
+		465F27161D65E08600B3B639 /* SPBBikeProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465F270D1D65E08600B3B639 /* SPBBikeProvider.framework */; };
+		465F271B1D65E08600B3B639 /* SPBBikeProvidermacOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465F271A1D65E08600B3B639 /* SPBBikeProvidermacOSTests.swift */; };
+		465F271D1D65E08600B3B639 /* SPBBikeProvidermacOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 465F270F1D65E08600B3B639 /* SPBBikeProvidermacOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		465F27241D65E15B00B3B639 /* CityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D65C1CFF0DD7004670B4 /* CityProvider.swift */; };
+		465F27251D65E15B00B3B639 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D65D1CFF0DD7004670B4 /* StationProvider.swift */; };
+		465F27261D65E15B00B3B639 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683051D03EE1D005225EC /* LocationProvider.swift */; };
+		465F27271D65E15B00B3B639 /* DirectionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683071D03F0B1005225EC /* DirectionsProvider.swift */; };
+		465F27281D65E15B00B3B639 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6601CFF0E0E004670B4 /* City.swift */; };
+		465F27291D65E15B00B3B639 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6611CFF0E0E004670B4 /* Station.swift */; };
+		465F272A1D65E15B00B3B639 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6641CFF0E1B004670B4 /* APIClient.swift */; };
+		465F272B1D65E15B00B3B639 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683091D03F4E1005225EC /* Constants.swift */; };
+		465F272C1D65E16500B3B639 /* CityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0F46C1CFF78E200D24882 /* CityProviderTests.swift */; };
+		465F272D1D65E16500B3B639 /* StationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C84D71D01BD7A002A2F3B /* StationProviderTests.swift */; };
 		656683061D03EE1D005225EC /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683051D03EE1D005225EC /* LocationProvider.swift */; };
 		656683081D03F0B1005225EC /* DirectionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683071D03F0B1005225EC /* DirectionsProvider.swift */; };
 		6566830A1D03F4E1005225EC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683091D03F4E1005225EC /* Constants.swift */; };
@@ -28,6 +41,13 @@
 			remoteGlobalIDString = 4657D63E1CFF0B7B004670B4;
 			remoteInfo = BikeyProvider;
 		};
+		465F27171D65E08600B3B639 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4657D6361CFF0B7B004670B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 465F270C1D65E08600B3B639;
+			remoteInfo = SPBBikeProvidermacOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +61,12 @@
 		4657D6601CFF0E0E004670B4 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = Model/City.swift; sourceTree = "<group>"; };
 		4657D6611CFF0E0E004670B4 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Station.swift; path = Model/Station.swift; sourceTree = "<group>"; };
 		4657D6641CFF0E1B004670B4 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = APIClient/APIClient.swift; sourceTree = "<group>"; };
+		465F270D1D65E08600B3B639 /* SPBBikeProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPBBikeProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		465F270F1D65E08600B3B639 /* SPBBikeProvidermacOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBBikeProvidermacOS.h; sourceTree = "<group>"; };
+		465F27101D65E08600B3B639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		465F27151D65E08600B3B639 /* SPBBikeProvidermacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPBBikeProvidermacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		465F271A1D65E08600B3B639 /* SPBBikeProvidermacOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPBBikeProvidermacOSTests.swift; sourceTree = "<group>"; };
+		465F271C1D65E08600B3B639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		656683051D03EE1D005225EC /* LocationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationProvider.swift; path = Providers/LocationProvider.swift; sourceTree = "<group>"; };
 		656683071D03F0B1005225EC /* DirectionsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectionsProvider.swift; path = Providers/DirectionsProvider.swift; sourceTree = "<group>"; };
 		656683091D03F4E1005225EC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = SupportingFiles/Constants.swift; sourceTree = "<group>"; };
@@ -63,6 +89,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		465F27091D65E08600B3B639 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		465F27121D65E08600B3B639 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				465F27161D65E08600B3B639 /* SPBBikeProvider.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -71,6 +112,8 @@
 			children = (
 				4657D6411CFF0B7B004670B4 /* SPBBikeProvider */,
 				4657D64D1CFF0B7C004670B4 /* SPBBikeProviderTests */,
+				465F270E1D65E08600B3B639 /* SPBBikeProvidermacOS */,
+				465F27191D65E08600B3B639 /* SPBBikeProvidermacOSTests */,
 				4657D6401CFF0B7B004670B4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +123,8 @@
 			children = (
 				4657D63F1CFF0B7B004670B4 /* SPBBikeProvider.framework */,
 				4657D6491CFF0B7C004670B4 /* SPBBikeProviderTests.xctest */,
+				465F270D1D65E08600B3B639 /* SPBBikeProvider.framework */,
+				465F27151D65E08600B3B639 /* SPBBikeProvidermacOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +178,24 @@
 			name = Provider;
 			sourceTree = "<group>";
 		};
+		465F270E1D65E08600B3B639 /* SPBBikeProvidermacOS */ = {
+			isa = PBXGroup;
+			children = (
+				465F270F1D65E08600B3B639 /* SPBBikeProvidermacOS.h */,
+				465F27101D65E08600B3B639 /* Info.plist */,
+			);
+			path = SPBBikeProvidermacOS;
+			sourceTree = "<group>";
+		};
+		465F27191D65E08600B3B639 /* SPBBikeProvidermacOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				465F271A1D65E08600B3B639 /* SPBBikeProvidermacOSTests.swift */,
+				465F271C1D65E08600B3B639 /* Info.plist */,
+			);
+			path = SPBBikeProvidermacOSTests;
+			sourceTree = "<group>";
+		};
 		6566830B1D03F5AD005225EC /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +212,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		465F270A1D65E08600B3B639 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				465F271D1D65E08600B3B639 /* SPBBikeProvidermacOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,13 +262,49 @@
 			productReference = 4657D6491CFF0B7C004670B4 /* SPBBikeProviderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		465F270C1D65E08600B3B639 /* SPBBikeProvidermacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 465F27221D65E08600B3B639 /* Build configuration list for PBXNativeTarget "SPBBikeProvidermacOS" */;
+			buildPhases = (
+				465F27081D65E08600B3B639 /* Sources */,
+				465F27091D65E08600B3B639 /* Frameworks */,
+				465F270A1D65E08600B3B639 /* Headers */,
+				465F270B1D65E08600B3B639 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SPBBikeProvidermacOS;
+			productName = SPBBikeProvidermacOS;
+			productReference = 465F270D1D65E08600B3B639 /* SPBBikeProvider.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		465F27141D65E08600B3B639 /* SPBBikeProvidermacOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 465F27231D65E08600B3B639 /* Build configuration list for PBXNativeTarget "SPBBikeProvidermacOSTests" */;
+			buildPhases = (
+				465F27111D65E08600B3B639 /* Sources */,
+				465F27121D65E08600B3B639 /* Frameworks */,
+				465F27131D65E08600B3B639 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				465F27181D65E08600B3B639 /* PBXTargetDependency */,
+			);
+			name = SPBBikeProvidermacOSTests;
+			productName = SPBBikeProvidermacOSTests;
+			productReference = 465F27151D65E08600B3B639 /* SPBBikeProvidermacOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		4657D6361CFF0B7B004670B4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Pete Smith";
 				TargetAttributes = {
@@ -211,6 +318,16 @@
 						DevelopmentTeam = 49CJ89TL4W;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
+					};
+					465F270C1D65E08600B3B639 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 685TU6GG3L;
+						ProvisioningStyle = Automatic;
+					};
+					465F27141D65E08600B3B639 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 685TU6GG3L;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -228,6 +345,8 @@
 			targets = (
 				4657D63E1CFF0B7B004670B4 /* SPBBikeProvider */,
 				4657D6481CFF0B7C004670B4 /* SPBBikeProviderTests */,
+				465F270C1D65E08600B3B639 /* SPBBikeProvidermacOS */,
+				465F27141D65E08600B3B639 /* SPBBikeProvidermacOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -241,6 +360,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4657D6471CFF0B7C004670B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		465F270B1D65E08600B3B639 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		465F27131D65E08600B3B639 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -274,6 +407,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		465F27081D65E08600B3B639 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				465F27261D65E15B00B3B639 /* LocationProvider.swift in Sources */,
+				465F272A1D65E15B00B3B639 /* APIClient.swift in Sources */,
+				465F27281D65E15B00B3B639 /* City.swift in Sources */,
+				465F27241D65E15B00B3B639 /* CityProvider.swift in Sources */,
+				465F27271D65E15B00B3B639 /* DirectionsProvider.swift in Sources */,
+				465F27291D65E15B00B3B639 /* Station.swift in Sources */,
+				465F27251D65E15B00B3B639 /* StationProvider.swift in Sources */,
+				465F272B1D65E15B00B3B639 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		465F27111D65E08600B3B639 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				465F272D1D65E16500B3B639 /* StationProviderTests.swift in Sources */,
+				465F271B1D65E08600B3B639 /* SPBBikeProvidermacOSTests.swift in Sources */,
+				465F272C1D65E16500B3B639 /* CityProviderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -281,6 +439,11 @@
 			isa = PBXTargetDependency;
 			target = 4657D63E1CFF0B7B004670B4 /* SPBBikeProvider */;
 			targetProxy = 4657D64B1CFF0B7C004670B4 /* PBXContainerItemProxy */;
+		};
+		465F27181D65E08600B3B639 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 465F270C1D65E08600B3B639 /* SPBBikeProvidermacOS */;
+			targetProxy = 465F27171D65E08600B3B639 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -326,6 +489,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -371,6 +535,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -455,6 +620,100 @@
 			};
 			name = Release;
 		};
+		465F271E1D65E08600B3B639 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 685TU6GG3L;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SPBBikeProvidermacOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProvidermacOS;
+				PRODUCT_NAME = SPBBikeProvider;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		465F271F1D65E08600B3B639 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 685TU6GG3L;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SPBBikeProvidermacOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProvidermacOS;
+				PRODUCT_NAME = SPBBikeProvider;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		465F27201D65E08600B3B639 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 685TU6GG3L;
+				INFOPLIST_FILE = SPBBikeProvidermacOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProvidermacOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		465F27211D65E08600B3B639 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 685TU6GG3L;
+				INFOPLIST_FILE = SPBBikeProvidermacOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProvidermacOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -484,6 +743,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
+		};
+		465F27221D65E08600B3B639 /* Build configuration list for PBXNativeTarget "SPBBikeProvidermacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				465F271E1D65E08600B3B639 /* Debug */,
+				465F271F1D65E08600B3B639 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		465F27231D65E08600B3B639 /* Build configuration list for PBXNativeTarget "SPBBikeProvidermacOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				465F27201D65E08600B3B639 /* Debug */,
+				465F27211D65E08600B3B639 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

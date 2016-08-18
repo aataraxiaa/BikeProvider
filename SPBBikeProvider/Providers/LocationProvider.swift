@@ -54,8 +54,9 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
         super.init()
         locman.delegate = self
         locman.desiredAccuracy = kCLLocationAccuracyBest
-        locman.activityType = .fitness
-        locman.pausesLocationUpdatesAutomatically = true
+        
+        //locman.activityType = .fitness
+        //locman.pausesLocationUpdatesAutomatically = true
     }
     
     // MARK: - Public Methods
@@ -64,7 +65,7 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
      Request location access authorization
      */
     public func requestAlwaysAuthorization() {
-        locman.requestAlwaysAuthorization()
+       // locman.requestAlwaysAuthorization()
     }
     
     /**
@@ -91,7 +92,7 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
      */
     public func stopUpdates () {
         locman.stopUpdatingLocation()
-        locman.stopUpdatingHeading()
+        //locman.stopUpdatingHeading()
         updatingHeading = false
         trying = false
         startTime = nil
@@ -109,10 +110,10 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
             return
         }
         
-        self.locman.headingFilter = 5
-        self.locman.headingOrientation = .portrait
+        //self.locman.headingFilter = 5
+        //self.locman.headingOrientation = .portrait
         updatingHeading = true
-        self.locman.startUpdatingHeading()
+       // self.locman.startUpdatingHeading()
     }
     
     // MARK: - CLLocationManager Delegate
@@ -129,9 +130,9 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
         delegate?.retrieved(location: location)
     }
     
-    public func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        self.delegate?.retrieved(heading: newHeading)
-    }
+   // public func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+  //     self.delegate?.retrieved(heading: newHeading)
+    //}
     
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
