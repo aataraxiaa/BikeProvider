@@ -19,8 +19,8 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
   SPBBikeProvider is a tiny, convenient framework for fetching city bike share information.
-  It uses the citybik.es API and the users location to fetch the nearest available city and 
-  bike station information. 
+  It uses the citybik.es API and the users location to fetch the nearest available city and
+  bike station information.
 
   The framework was built to accomodate Bikey, my bike share app available on the app store.
                        DESC
@@ -31,7 +31,11 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/superpeteblaze/SPBBikeProvider.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/superpeteblaze'
 
+  spec.platform = :ios
+  spec.platform = :osx
+  
   s.ios.deployment_target = '8.1'
+  s.osx.deployment_target = '10.11'
 
   s.source_files = "SPBBikeProvider/**/*.{swift}"
 
