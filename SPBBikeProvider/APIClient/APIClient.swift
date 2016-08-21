@@ -28,7 +28,7 @@ struct APIClient {
         }
     }
     
-    private static func clientURLRequest(_ url: String) -> URLRequest? {
+    fileprivate static func clientURLRequest(_ url: String) -> URLRequest? {
         if let url = URL(string: url) {
             let request = URLRequest(url: url)
             return request
@@ -37,7 +37,7 @@ struct APIClient {
         return nil
     }
     
-    private static func dataTask(for request: URLRequest, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
+    fileprivate static func dataTask(for request: URLRequest, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
@@ -55,6 +55,6 @@ struct APIClient {
                 }
             })
             
-            }.resume()
+        }.resume()
     }
 }

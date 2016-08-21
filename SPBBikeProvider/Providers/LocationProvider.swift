@@ -163,7 +163,7 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
 
     // MARK: - Location helper methods
     
-    private func determineStatus() -> Bool {
+    fileprivate func determineStatus() -> Bool {
         let ok = CLLocationManager.locationServicesEnabled()
         
         if !ok {

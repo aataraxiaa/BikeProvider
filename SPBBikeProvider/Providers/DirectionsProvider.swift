@@ -16,7 +16,7 @@ import MapKit
 public struct DirectionsProvider {
     
     // Keep track of the active direction request so we can cancel if needed
-    private static var activeDirectionsRequest: MKDirections?
+    fileprivate static var activeDirectionsRequest: MKDirections?
     
     /**
      Retrieve directions between two locations
