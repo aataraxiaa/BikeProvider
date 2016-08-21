@@ -31,8 +31,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/superpeteblaze/SPBBikeProvider.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/superpeteblaze'
 
-  spec.platform = :ios
-  spec.platform = :osx
+  s.platform = :ios
+  s.platform = :osx
   s.ios.deployment_target = '8.1'
   s.osx.deployment_target = '10.11'
 
