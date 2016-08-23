@@ -7,11 +7,14 @@
 
 ## Usage
 
-Simply import the framework and start making requests.
+* Import the framework 'import SPBBikeProvider'
+* Make a request (nearest city, stations etc.) and consume the response
+
+Simple as that
 
 ## Requirements
 
-Uses CoreLocation to calculate the nearest city bike station.
+Uses CoreLocation to calculate the nearest city bike station city & stations.
 
 ## Installation
 
