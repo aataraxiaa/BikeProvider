@@ -5,16 +5,16 @@
 [![License](https://img.shields.io/cocoapods/l/SPBBikeProvider.svg?style=flat)](http://cocoapods.org/pods/SPBBikeProvider)
 [![Platform](https://img.shields.io/cocoapods/p/SPBBikeProvider.svg?style=flat)](http://cocoapods.org/pods/SPBBikeProvider)
 
-## Usage
+## Description
+SPBBikeProvider is a tiny, convenient framework for fetching city bike share information.
+It uses the citybik.es API and the users location to fetch the nearest available city and
+bike station information.
 
-* Import the framework 'import SPBBikeProvider'
-* Make a request (nearest city, stations etc.) and consume the response
-
-Simple as that
+The framework was built to accommodate Bikey, my bike share app available on the app store.
 
 ## Requirements
 
-Uses CoreLocation to calculate the nearest city bike station city & stations.
+Uses CoreLocation to retrieve location.
 
 ## Installation
 
@@ -24,6 +24,21 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "SPBBikeProvider"
 ```
+
+## Usage
+
+* Import the framework 'import SPBBikeProvider'
+* Make a request (nearest city, stations etc.) and consume the response
+
+Simple as that
+
+## Examples
+
+#### Nearest city
+
+#### Stations
+
+See the sample project for fuller examples.
 
 ## Author
 

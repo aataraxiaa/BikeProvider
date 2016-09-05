@@ -9,27 +9,33 @@
 /* Begin PBXBuildFile section */
 		460C84D81D01BD7A002A2F3B /* StationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C84D71D01BD7A002A2F3B /* StationProviderTests.swift */; };
 		4657D64A1CFF0B7C004670B4 /* SPBBikeProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4657D63F1CFF0B7B004670B4 /* SPBBikeProvider.framework */; };
-		4657D65E1CFF0DD7004670B4 /* CityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D65C1CFF0DD7004670B4 /* CityProvider.swift */; };
-		4657D65F1CFF0DD7004670B4 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D65D1CFF0DD7004670B4 /* StationProvider.swift */; };
-		4657D6621CFF0E0E004670B4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6601CFF0E0E004670B4 /* City.swift */; };
-		4657D6631CFF0E0E004670B4 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6611CFF0E0E004670B4 /* Station.swift */; };
-		4657D6651CFF0E1B004670B4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6641CFF0E1B004670B4 /* APIClient.swift */; };
 		465F27161D65E08600B3B639 /* SPBBikeProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465F270D1D65E08600B3B639 /* SPBBikeProvider.framework */; };
 		465F271D1D65E08600B3B639 /* SPBBikeProvidermacOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 465F270F1D65E08600B3B639 /* SPBBikeProvidermacOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		465F27241D65E15B00B3B639 /* CityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D65C1CFF0DD7004670B4 /* CityProvider.swift */; };
-		465F27251D65E15B00B3B639 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D65D1CFF0DD7004670B4 /* StationProvider.swift */; };
-		465F27261D65E15B00B3B639 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683051D03EE1D005225EC /* LocationProvider.swift */; };
-		465F27271D65E15B00B3B639 /* DirectionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683071D03F0B1005225EC /* DirectionsProvider.swift */; };
-		465F27281D65E15B00B3B639 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6601CFF0E0E004670B4 /* City.swift */; };
-		465F27291D65E15B00B3B639 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6611CFF0E0E004670B4 /* Station.swift */; };
-		465F272A1D65E15B00B3B639 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4657D6641CFF0E1B004670B4 /* APIClient.swift */; };
-		465F272B1D65E15B00B3B639 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683091D03F4E1005225EC /* Constants.swift */; };
 		465F272C1D65E16500B3B639 /* CityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0F46C1CFF78E200D24882 /* CityProviderTests.swift */; };
 		465F272D1D65E16500B3B639 /* StationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C84D71D01BD7A002A2F3B /* StationProviderTests.swift */; };
-		656683061D03EE1D005225EC /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683051D03EE1D005225EC /* LocationProvider.swift */; };
-		656683081D03F0B1005225EC /* DirectionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683071D03F0B1005225EC /* DirectionsProvider.swift */; };
-		6566830A1D03F4E1005225EC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656683091D03F4E1005225EC /* Constants.swift */; };
 		65A0F46D1CFF78E200D24882 /* CityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0F46C1CFF78E200D24882 /* CityProviderTests.swift */; };
+		65CE89371D7DD9C400AB1B53 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89351D7DD9C400AB1B53 /* City.swift */; };
+		65CE89381D7DD9C400AB1B53 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89361D7DD9C400AB1B53 /* Station.swift */; };
+		65CE893A1D7DD9CD00AB1B53 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89391D7DD9CD00AB1B53 /* APIClient.swift */; };
+		65CE893C1D7DD9D700AB1B53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893B1D7DD9D700AB1B53 /* Constants.swift */; };
+		65CE89411D7DD9E000AB1B53 /* CityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893D1D7DD9E000AB1B53 /* CityProvider.swift */; };
+		65CE89421D7DD9E000AB1B53 /* DirectionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893E1D7DD9E000AB1B53 /* DirectionsProvider.swift */; };
+		65CE89431D7DD9E000AB1B53 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893F1D7DD9E000AB1B53 /* LocationProvider.swift */; };
+		65CE89441D7DD9E000AB1B53 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89401D7DD9E000AB1B53 /* StationProvider.swift */; };
+		65CE89451D7DD9E800AB1B53 /* CityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893D1D7DD9E000AB1B53 /* CityProvider.swift */; };
+		65CE89461D7DD9E800AB1B53 /* DirectionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893E1D7DD9E000AB1B53 /* DirectionsProvider.swift */; };
+		65CE89471D7DD9E800AB1B53 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893F1D7DD9E000AB1B53 /* LocationProvider.swift */; };
+		65CE89481D7DD9E800AB1B53 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89401D7DD9E000AB1B53 /* StationProvider.swift */; };
+		65CE89491D7DD9EC00AB1B53 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89351D7DD9C400AB1B53 /* City.swift */; };
+		65CE894A1D7DD9EC00AB1B53 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89361D7DD9C400AB1B53 /* Station.swift */; };
+		65CE894B1D7DD9EF00AB1B53 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89391D7DD9CD00AB1B53 /* APIClient.swift */; };
+		65CE894C1D7DD9F500AB1B53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893B1D7DD9D700AB1B53 /* Constants.swift */; };
+		65CE894E1D7DDA2200AB1B53 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE894D1D7DDA2200AB1B53 /* TableViewController.swift */; };
+		65CE89531D7DDA5B00AB1B53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CE894F1D7DDA5B00AB1B53 /* LaunchScreen.storyboard */; };
+		65CE89541D7DDA5B00AB1B53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CE89511D7DDA5B00AB1B53 /* Main.storyboard */; };
+		65CE89561D7DDA7200AB1B53 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65CE89551D7DDA7200AB1B53 /* Info.plist */; };
+		65E7A15B1D7DD37D0087C336 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E7A15A1D7DD37D0087C336 /* AppDelegate.swift */; };
+		65E7A1621D7DD37D0087C336 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E7A1611D7DD37D0087C336 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,25 +56,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		460C84D71D01BD7A002A2F3B /* StationProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationProviderTests.swift; sourceTree = "<group>"; };
+		460C84D71D01BD7A002A2F3B /* StationProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StationProviderTests.swift; path = ../Tests/StationProviderTests.swift; sourceTree = "<group>"; };
 		4657D63F1CFF0B7B004670B4 /* SPBBikeProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPBBikeProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4657D6441CFF0B7B004670B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4657D6441CFF0B7B004670B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Code/SupportingFiles/Info.plist; sourceTree = "<group>"; };
 		4657D6491CFF0B7C004670B4 /* SPBBikeProviderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPBBikeProviderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4657D6501CFF0B7C004670B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4657D65C1CFF0DD7004670B4 /* CityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityProvider.swift; path = Providers/CityProvider.swift; sourceTree = "<group>"; };
-		4657D65D1CFF0DD7004670B4 /* StationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StationProvider.swift; path = Providers/StationProvider.swift; sourceTree = "<group>"; };
-		4657D6601CFF0E0E004670B4 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = Model/City.swift; sourceTree = "<group>"; };
-		4657D6611CFF0E0E004670B4 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Station.swift; path = Model/Station.swift; sourceTree = "<group>"; };
-		4657D6641CFF0E1B004670B4 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = APIClient/APIClient.swift; sourceTree = "<group>"; };
+		4657D6501CFF0B7C004670B4 /* iOSInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = iOSInfo.plist; path = ../Tests/iOSInfo.plist; sourceTree = "<group>"; };
 		465F270D1D65E08600B3B639 /* SPBBikeProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SPBBikeProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		465F270F1D65E08600B3B639 /* SPBBikeProvidermacOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SPBBikeProvidermacOS.h; sourceTree = "<group>"; };
-		465F27101D65E08600B3B639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		465F270F1D65E08600B3B639 /* SPBBikeProvidermacOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPBBikeProvidermacOS.h; path = Code/SupportingFiles/SPBBikeProvidermacOS.h; sourceTree = SOURCE_ROOT; };
+		465F27101D65E08600B3B639 /* macOSInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = macOSInfo.plist; path = Code/SupportingFiles/macOSInfo.plist; sourceTree = SOURCE_ROOT; };
 		465F27151D65E08600B3B639 /* SPBBikeProvidermacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SPBBikeProvidermacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		465F271C1D65E08600B3B639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		656683051D03EE1D005225EC /* LocationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationProvider.swift; path = Providers/LocationProvider.swift; sourceTree = "<group>"; };
-		656683071D03F0B1005225EC /* DirectionsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectionsProvider.swift; path = Providers/DirectionsProvider.swift; sourceTree = "<group>"; };
-		656683091D03F4E1005225EC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = SupportingFiles/Constants.swift; sourceTree = "<group>"; };
-		65A0F46C1CFF78E200D24882 /* CityProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityProviderTests.swift; sourceTree = "<group>"; };
+		465F271C1D65E08600B3B639 /* macOSInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = macOSInfo.plist; path = ../Tests/macOSInfo.plist; sourceTree = "<group>"; };
+		65A0F46C1CFF78E200D24882 /* CityProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityProviderTests.swift; path = ../Tests/CityProviderTests.swift; sourceTree = "<group>"; };
+		65CE89351D7DD9C400AB1B53 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = City.swift; path = Code/Model/City.swift; sourceTree = SOURCE_ROOT; };
+		65CE89361D7DD9C400AB1B53 /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Station.swift; path = Code/Model/Station.swift; sourceTree = SOURCE_ROOT; };
+		65CE89391D7DD9CD00AB1B53 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = Code/APIClient/APIClient.swift; sourceTree = SOURCE_ROOT; };
+		65CE893B1D7DD9D700AB1B53 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Code/SupportingFiles/Constants.swift; sourceTree = SOURCE_ROOT; };
+		65CE893D1D7DD9E000AB1B53 /* CityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityProvider.swift; path = Code/Providers/CityProvider.swift; sourceTree = SOURCE_ROOT; };
+		65CE893E1D7DD9E000AB1B53 /* DirectionsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectionsProvider.swift; path = Code/Providers/DirectionsProvider.swift; sourceTree = SOURCE_ROOT; };
+		65CE893F1D7DD9E000AB1B53 /* LocationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationProvider.swift; path = Code/Providers/LocationProvider.swift; sourceTree = SOURCE_ROOT; };
+		65CE89401D7DD9E000AB1B53 /* StationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StationProvider.swift; path = Code/Providers/StationProvider.swift; sourceTree = SOURCE_ROOT; };
+		65CE894D1D7DDA2200AB1B53 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = Sample/TableViewController.swift; sourceTree = "<group>"; };
+		65CE89501D7DDA5B00AB1B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sample/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		65CE89521D7DDA5B00AB1B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sample/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65CE89551D7DDA7200AB1B53 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sample/Info.plist; sourceTree = "<group>"; };
+		65CE89571D7DDA9F00AB1B53 /* NewYork.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NewYork.gpx; sourceTree = "<group>"; };
+		65E7A1581D7DD37D0087C336 /* SPBBikeProviderSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPBBikeProviderSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65E7A15A1D7DD37D0087C336 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Sample/AppDelegate.swift; sourceTree = "<group>"; };
+		65E7A1611D7DD37D0087C336 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Sample/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,16 +116,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		65E7A1551D7DD37D0087C336 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4657D6351CFF0B7B004670B4 = {
 			isa = PBXGroup;
 			children = (
-				4657D6411CFF0B7B004670B4 /* SPBBikeProvider */,
-				4657D64D1CFF0B7C004670B4 /* SPBBikeProviderTests */,
-				465F270E1D65E08600B3B639 /* SPBBikeProvidermacOS */,
-				465F27191D65E08600B3B639 /* SPBBikeProvidermacOSTests */,
+				65E7A1531D7DD1BB0087C336 /* Sample */,
+				4657D6411CFF0B7B004670B4 /* Code */,
+				4657D64D1CFF0B7C004670B4 /* Tests */,
 				4657D6401CFF0B7B004670B4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,11 +143,12 @@
 				4657D6491CFF0B7C004670B4 /* SPBBikeProviderTests.xctest */,
 				465F270D1D65E08600B3B639 /* SPBBikeProvider.framework */,
 				465F27151D65E08600B3B639 /* SPBBikeProvidermacOSTests.xctest */,
+				65E7A1581D7DD37D0087C336 /* SPBBikeProviderSample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4657D6411CFF0B7B004670B4 /* SPBBikeProvider */ = {
+		4657D6411CFF0B7B004670B4 /* Code */ = {
 			isa = PBXGroup;
 			children = (
 				4657D65B1CFF0D97004670B4 /* Provider */,
@@ -135,32 +156,36 @@
 				4657D6591CFF0D8A004670B4 /* APIClient */,
 				6566830B1D03F5AD005225EC /* SupportingFiles */,
 			);
+			name = Code;
 			path = SPBBikeProvider;
 			sourceTree = "<group>";
 		};
-		4657D64D1CFF0B7C004670B4 /* SPBBikeProviderTests */ = {
+		4657D64D1CFF0B7C004670B4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4657D6501CFF0B7C004670B4 /* Info.plist */,
+				465F271C1D65E08600B3B639 /* macOSInfo.plist */,
+				4657D6501CFF0B7C004670B4 /* iOSInfo.plist */,
 				65A0F46C1CFF78E200D24882 /* CityProviderTests.swift */,
 				460C84D71D01BD7A002A2F3B /* StationProviderTests.swift */,
 			);
+			name = Tests;
 			path = SPBBikeProviderTests;
 			sourceTree = "<group>";
 		};
 		4657D6591CFF0D8A004670B4 /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
-				4657D6641CFF0E1B004670B4 /* APIClient.swift */,
+				65CE89391D7DD9CD00AB1B53 /* APIClient.swift */,
 			);
 			name = APIClient;
+			path = Code/APIClient;
 			sourceTree = "<group>";
 		};
 		4657D65A1CFF0D93004670B4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4657D6601CFF0E0E004670B4 /* City.swift */,
-				4657D6611CFF0E0E004670B4 /* Station.swift */,
+				65CE89351D7DD9C400AB1B53 /* City.swift */,
+				65CE89361D7DD9C400AB1B53 /* Station.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -168,38 +193,70 @@
 		4657D65B1CFF0D97004670B4 /* Provider */ = {
 			isa = PBXGroup;
 			children = (
-				4657D65C1CFF0DD7004670B4 /* CityProvider.swift */,
-				4657D65D1CFF0DD7004670B4 /* StationProvider.swift */,
-				656683051D03EE1D005225EC /* LocationProvider.swift */,
-				656683071D03F0B1005225EC /* DirectionsProvider.swift */,
+				65CE893D1D7DD9E000AB1B53 /* CityProvider.swift */,
+				65CE893E1D7DD9E000AB1B53 /* DirectionsProvider.swift */,
+				65CE893F1D7DD9E000AB1B53 /* LocationProvider.swift */,
+				65CE89401D7DD9E000AB1B53 /* StationProvider.swift */,
 			);
 			name = Provider;
-			sourceTree = "<group>";
-		};
-		465F270E1D65E08600B3B639 /* SPBBikeProvidermacOS */ = {
-			isa = PBXGroup;
-			children = (
-				465F270F1D65E08600B3B639 /* SPBBikeProvidermacOS.h */,
-				465F27101D65E08600B3B639 /* Info.plist */,
-			);
-			path = SPBBikeProvidermacOS;
-			sourceTree = "<group>";
-		};
-		465F27191D65E08600B3B639 /* SPBBikeProvidermacOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				465F271C1D65E08600B3B639 /* Info.plist */,
-			);
-			path = SPBBikeProvidermacOSTests;
+			path = Code/Providers;
 			sourceTree = "<group>";
 		};
 		6566830B1D03F5AD005225EC /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				656683091D03F4E1005225EC /* Constants.swift */,
+				65CE893B1D7DD9D700AB1B53 /* Constants.swift */,
+				465F270F1D65E08600B3B639 /* SPBBikeProvidermacOS.h */,
+				465F27101D65E08600B3B639 /* macOSInfo.plist */,
 				4657D6441CFF0B7B004670B4 /* Info.plist */,
 			);
 			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		65CE89581D7DDAB900AB1B53 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				65CE894D1D7DDA2200AB1B53 /* TableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		65CE89591D7DDAC100AB1B53 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				65E7A1611D7DD37D0087C336 /* Assets.xcassets */,
+				65CE89551D7DDA7200AB1B53 /* Info.plist */,
+				65CE89571D7DDA9F00AB1B53 /* NewYork.gpx */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		65CE895A1D7DDACB00AB1B53 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				65CE894F1D7DDA5B00AB1B53 /* LaunchScreen.storyboard */,
+				65CE89511D7DDA5B00AB1B53 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		65CE895B1D7DDAD200AB1B53 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				65E7A15A1D7DD37D0087C336 /* AppDelegate.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		65E7A1531D7DD1BB0087C336 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				65CE89591D7DDAC100AB1B53 /* SupportingFiles */,
+				65CE895A1D7DDACB00AB1B53 /* Storyboards */,
+				65CE895B1D7DDAD200AB1B53 /* Main */,
+				65CE89581D7DDAB900AB1B53 /* ViewControllers */,
+			);
+			name = Sample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +352,23 @@
 			productReference = 465F27151D65E08600B3B639 /* SPBBikeProvidermacOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		65E7A1571D7DD37D0087C336 /* SPBBikeProviderSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65E7A1671D7DD37D0087C336 /* Build configuration list for PBXNativeTarget "SPBBikeProviderSample" */;
+			buildPhases = (
+				65E7A1541D7DD37D0087C336 /* Sources */,
+				65E7A1551D7DD37D0087C336 /* Frameworks */,
+				65E7A1561D7DD37D0087C336 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SPBBikeProviderSample;
+			productName = SPBBikeProviderSample;
+			productReference = 65E7A1581D7DD37D0087C336 /* SPBBikeProviderSample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -318,12 +392,17 @@
 					};
 					465F270C1D65E08600B3B639 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 685TU6GG3L;
+						DevelopmentTeam = 49CJ89TL4W;
 						ProvisioningStyle = Automatic;
 					};
 					465F27141D65E08600B3B639 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 685TU6GG3L;
+						ProvisioningStyle = Automatic;
+					};
+					65E7A1571D7DD37D0087C336 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 49CJ89TL4W;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -334,6 +413,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4657D6351CFF0B7B004670B4;
 			productRefGroup = 4657D6401CFF0B7B004670B4 /* Products */;
@@ -344,6 +424,7 @@
 				4657D6481CFF0B7C004670B4 /* SPBBikeProviderTests */,
 				465F270C1D65E08600B3B639 /* SPBBikeProvidermacOS */,
 				465F27141D65E08600B3B639 /* SPBBikeProvidermacOSTests */,
+				65E7A1571D7DD37D0087C336 /* SPBBikeProviderSample */,
 			);
 		};
 /* End PBXProject section */
@@ -353,6 +434,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65CE89531D7DDA5B00AB1B53 /* LaunchScreen.storyboard in Resources */,
+				65CE89541D7DDA5B00AB1B53 /* Main.storyboard in Resources */,
+				65CE89561D7DDA7200AB1B53 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +461,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		65E7A1561D7DD37D0087C336 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65E7A1621D7DD37D0087C336 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -384,14 +476,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4657D65E1CFF0DD7004670B4 /* CityProvider.swift in Sources */,
-				4657D65F1CFF0DD7004670B4 /* StationProvider.swift in Sources */,
-				4657D6631CFF0E0E004670B4 /* Station.swift in Sources */,
-				656683061D03EE1D005225EC /* LocationProvider.swift in Sources */,
-				4657D6651CFF0E1B004670B4 /* APIClient.swift in Sources */,
-				656683081D03F0B1005225EC /* DirectionsProvider.swift in Sources */,
-				4657D6621CFF0E0E004670B4 /* City.swift in Sources */,
-				6566830A1D03F4E1005225EC /* Constants.swift in Sources */,
+				65CE89381D7DD9C400AB1B53 /* Station.swift in Sources */,
+				65CE89371D7DD9C400AB1B53 /* City.swift in Sources */,
+				65CE893A1D7DD9CD00AB1B53 /* APIClient.swift in Sources */,
+				65CE893C1D7DD9D700AB1B53 /* Constants.swift in Sources */,
+				65CE89421D7DD9E000AB1B53 /* DirectionsProvider.swift in Sources */,
+				65CE89441D7DD9E000AB1B53 /* StationProvider.swift in Sources */,
+				65CE89411D7DD9E000AB1B53 /* CityProvider.swift in Sources */,
+				65CE894E1D7DDA2200AB1B53 /* TableViewController.swift in Sources */,
+				65CE89431D7DD9E000AB1B53 /* LocationProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,14 +501,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				465F27261D65E15B00B3B639 /* LocationProvider.swift in Sources */,
-				465F272A1D65E15B00B3B639 /* APIClient.swift in Sources */,
-				465F27281D65E15B00B3B639 /* City.swift in Sources */,
-				465F27241D65E15B00B3B639 /* CityProvider.swift in Sources */,
-				465F27271D65E15B00B3B639 /* DirectionsProvider.swift in Sources */,
-				465F27291D65E15B00B3B639 /* Station.swift in Sources */,
-				465F27251D65E15B00B3B639 /* StationProvider.swift in Sources */,
-				465F272B1D65E15B00B3B639 /* Constants.swift in Sources */,
+				65CE89471D7DD9E800AB1B53 /* LocationProvider.swift in Sources */,
+				65CE894B1D7DD9EF00AB1B53 /* APIClient.swift in Sources */,
+				65CE89491D7DD9EC00AB1B53 /* City.swift in Sources */,
+				65CE89481D7DD9E800AB1B53 /* StationProvider.swift in Sources */,
+				65CE89461D7DD9E800AB1B53 /* DirectionsProvider.swift in Sources */,
+				65CE894A1D7DD9EC00AB1B53 /* Station.swift in Sources */,
+				65CE89451D7DD9E800AB1B53 /* CityProvider.swift in Sources */,
+				65CE894C1D7DD9F500AB1B53 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +518,14 @@
 			files = (
 				465F272D1D65E16500B3B639 /* StationProviderTests.swift in Sources */,
 				465F272C1D65E16500B3B639 /* CityProviderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65E7A1541D7DD37D0087C336 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65E7A15B1D7DD37D0087C336 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +543,25 @@
 			targetProxy = 465F27171D65E08600B3B639 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		65CE894F1D7DDA5B00AB1B53 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65CE89501D7DDA5B00AB1B53 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		65CE89511D7DDA5B00AB1B53 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65CE89521D7DDA5B00AB1B53 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4657D6511CFF0B7C004670B4 /* Debug */ = {
@@ -552,7 +672,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/SPBBikeProvider/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Code/SupportingFiles/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -576,7 +696,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/SPBBikeProvider/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Code/SupportingFiles/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -592,9 +712,10 @@
 		4657D6571CFF0B7C004670B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 49CJ89TL4W;
-				INFOPLIST_FILE = SPBBikeProviderTests/Info.plist;
+				INFOPLIST_FILE = SPBBikeProviderTests/iOSInfo.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProviderTests;
 				PRODUCT_NAME = SPBBikeProviderTests;
@@ -605,9 +726,10 @@
 		4657D6581CFF0B7C004670B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 49CJ89TL4W;
-				INFOPLIST_FILE = SPBBikeProviderTests/Info.plist;
+				INFOPLIST_FILE = SPBBikeProviderTests/iOSInfo.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProviderTests;
 				PRODUCT_NAME = SPBBikeProviderTests;
@@ -625,12 +747,12 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 685TU6GG3L;
+				DEVELOPMENT_TEAM = 49CJ89TL4W;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = SPBBikeProvidermacOS/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Code/SupportingFiles/macOSInfo.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -652,12 +774,12 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 685TU6GG3L;
+				DEVELOPMENT_TEAM = 49CJ89TL4W;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = SPBBikeProvidermacOS/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Code/SupportingFiles/macOSInfo.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -679,7 +801,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 685TU6GG3L;
-				INFOPLIST_FILE = SPBBikeProvidermacOSTests/Info.plist;
+				INFOPLIST_FILE = SPBBikeProvidermacOSTests/macOSInfo.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProvidermacOSTests;
@@ -699,12 +821,46 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 685TU6GG3L;
-				INFOPLIST_FILE = SPBBikeProvidermacOSTests/Info.plist;
+				INFOPLIST_FILE = SPBBikeProvidermacOSTests/macOSInfo.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProvidermacOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		65E7A1681D7DD37D0087C336 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 49CJ89TL4W;
+				INFOPLIST_FILE = "$(SRCROOT)/Sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProviderSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		65E7A1691D7DD37D0087C336 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = 49CJ89TL4W;
+				INFOPLIST_FILE = "$(SRCROOT)/Sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProviderSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
@@ -754,6 +910,15 @@
 			buildConfigurations = (
 				465F27201D65E08600B3B639 /* Debug */,
 				465F27211D65E08600B3B639 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		65E7A1671D7DD37D0087C336 /* Build configuration list for PBXNativeTarget "SPBBikeProviderSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65E7A1681D7DD37D0087C336 /* Debug */,
+				65E7A1691D7DD37D0087C336 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
