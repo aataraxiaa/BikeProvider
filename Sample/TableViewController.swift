@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import CoreLocation
 import SPBBikeProvider
 
 class TableViewController: UITableViewController {
     
-    var location: CLLocation?
+    var location: CLLocation!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,25 @@ class TableViewController: UITableViewController {
 typealias LocationDelegate = TableViewController
 extension LocationDelegate: LocationProviderDelegate {
     
+    public func accessDenied() {}
+    
     func retrieved(location: CLLocation) {
+        self.location = location
         // We have location, so get the nearest city
+    }
+}
+
+typealias APIRequester = TableViewController
+extension APIRequester {
+    
+    private func getNearestCity() {
+        guard let location = location else { return }
+        
+        // Get the nearest city
+        CityProvider.city(near: location, successClosure: { city in
+            StationProvider.stations(in: city.href, success: {stations in
+                
+            }, failure: {})
+        }, failureClosure: {})
     }
 }

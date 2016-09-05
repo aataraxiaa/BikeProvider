@@ -30,10 +30,10 @@
 		65CE894A1D7DD9EC00AB1B53 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89361D7DD9C400AB1B53 /* Station.swift */; };
 		65CE894B1D7DD9EF00AB1B53 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89391D7DD9CD00AB1B53 /* APIClient.swift */; };
 		65CE894C1D7DD9F500AB1B53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893B1D7DD9D700AB1B53 /* Constants.swift */; };
-		65CE894E1D7DDA2200AB1B53 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE894D1D7DDA2200AB1B53 /* TableViewController.swift */; };
-		65CE89531D7DDA5B00AB1B53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CE894F1D7DDA5B00AB1B53 /* LaunchScreen.storyboard */; };
-		65CE89541D7DDA5B00AB1B53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CE89511D7DDA5B00AB1B53 /* Main.storyboard */; };
-		65CE89561D7DDA7200AB1B53 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65CE89551D7DDA7200AB1B53 /* Info.plist */; };
+		65CE895C1D7DEEE800AB1B53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CE89511D7DDA5B00AB1B53 /* Main.storyboard */; };
+		65CE895D1D7DEEEE00AB1B53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65CE894F1D7DDA5B00AB1B53 /* LaunchScreen.storyboard */; };
+		65CE895E1D7DEEF300AB1B53 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE894D1D7DDA2200AB1B53 /* TableViewController.swift */; };
+		65CE895F1D7DEEFE00AB1B53 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65CE89551D7DDA7200AB1B53 /* Info.plist */; };
 		65E7A15B1D7DD37D0087C336 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E7A15A1D7DD37D0087C336 /* AppDelegate.swift */; };
 		65E7A1621D7DD37D0087C336 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E7A1611D7DD37D0087C336 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -434,9 +434,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65CE89531D7DDA5B00AB1B53 /* LaunchScreen.storyboard in Resources */,
-				65CE89541D7DDA5B00AB1B53 /* Main.storyboard in Resources */,
-				65CE89561D7DDA7200AB1B53 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +462,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65CE895F1D7DEEFE00AB1B53 /* Info.plist in Resources */,
+				65CE895D1D7DEEEE00AB1B53 /* LaunchScreen.storyboard in Resources */,
 				65E7A1621D7DD37D0087C336 /* Assets.xcassets in Resources */,
+				65CE895C1D7DEEE800AB1B53 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +483,6 @@
 				65CE89421D7DD9E000AB1B53 /* DirectionsProvider.swift in Sources */,
 				65CE89441D7DD9E000AB1B53 /* StationProvider.swift in Sources */,
 				65CE89411D7DD9E000AB1B53 /* CityProvider.swift in Sources */,
-				65CE894E1D7DDA2200AB1B53 /* TableViewController.swift in Sources */,
 				65CE89431D7DD9E000AB1B53 /* LocationProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65E7A15B1D7DD37D0087C336 /* AppDelegate.swift in Sources */,
+				65CE895E1D7DEEF300AB1B53 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

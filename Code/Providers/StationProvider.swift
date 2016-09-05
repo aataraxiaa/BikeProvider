@@ -22,7 +22,7 @@ public struct StationProvider {
      - parameter success: Success closure
      - parameter failure: Failure closure
      */
-    static public func stations(in href: String, success: (([Station]) -> Void), failure: (() -> Void)) -> Void {
+    static public func stations(fromCityURL url: String, success: (([Station]) -> Void), failure: (() -> Void)) -> Void {
         
         let url = Constants.API.baseURL+href+Constants.API.requestOptions
         
