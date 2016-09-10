@@ -22,9 +22,9 @@ public struct StationProvider {
      - parameter success: Success closure
      - parameter failure: Failure closure
      */
-    static public func stations(fromCityURL url: String, success: (([Station]) -> Void), failure: (() -> Void)) -> Void {
+    static public func stations(fromCityURL url: String, success: @escaping (([Station]) -> Void), failure: @escaping (() -> Void)) -> Void {
         
-        let url = Constants.API.baseURL+href+Constants.API.requestOptions
+        let url = Constants.API.baseURL+url+Constants.API.requestOptions
         
         APIClient.get(from: url){ (resultSuccess, result) in
             if resultSuccess {

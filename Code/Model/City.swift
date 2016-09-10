@@ -16,12 +16,12 @@ import CoreLocation
 public struct City {
     
     public let name: String
-    public let href: String
+    public let url: String
     public let location: CLLocation
     
-    public init(name: String, href: String, location: CLLocation) {
+    public init(name: String, url: String, location: CLLocation) {
         self.name = name
-        self.href = href
+        self.url = url
         self.location = location
     }
 }

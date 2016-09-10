@@ -78,11 +78,20 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
     }
     
     /**
+     Request location access authorization
+     */
+    public func requestWhenInUseAuthorization() {
+        #if os(iOS)
+            locman.requestWhenInUseAuthorization()
+        #endif
+    }
+    
+    /**
      Get the current location
      Location is passed back to caller using the delegate
      */
-    public func getLocation() {
-        if !determineStatus() {
+    public func getLocation(withAuthScope authScope: CLAuthorizationStatus) {
+        if !determineStatus(withAuthScope: authScope) {
             delegate?.accessDenied()
             return
         }
@@ -163,7 +172,7 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
 
     // MARK: - Location helper methods
     
-    fileprivate func determineStatus() -> Bool {
+    fileprivate func determineStatus(withAuthScope authScope: CLAuthorizationStatus) -> Bool {
         let ok = CLLocationManager.locationServicesEnabled()
         
         if !ok {
@@ -177,7 +186,16 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
         case .authorizedAlways, .authorizedWhenInUse:
             return true
         case .notDetermined:
+            #if os(iOS)
+                if authScope == .authorizedWhenInUse {
+                    requestWhenInUseAuthorization()
+                } else {
+                    requestAlwaysAuthorization()
+                }
+            #endif
+            
             requestAlwaysAuthorization()
+            
             return true
         case .restricted:
             delegate?.accessDenied()

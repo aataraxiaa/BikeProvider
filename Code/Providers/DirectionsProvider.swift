@@ -26,7 +26,7 @@ public struct DirectionsProvider {
      - parameter success: Success closure which takes a route
      - parameter failure: Failure closure
      */
-    public static func directions(from start: CLLocation, to end: CLLocation, success: ((_ route: MKRoute) -> Void), failure: (() -> Void)) {
+    public static func directions(from start: CLLocation, to end: CLLocation, success: @escaping ((_ route: MKRoute) -> Void), failure: @escaping (() -> Void)) {
         
         // Cancel any pending directions requests
         activeDirectionsRequest?.cancel()

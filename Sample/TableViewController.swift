@@ -12,13 +12,16 @@ import SPBBikeProvider
 
 class TableViewController: UITableViewController {
     
-    var location: CLLocation!
+    // MARK: - Properties (Private)
+    fileprivate var location: CLLocation!
+    fileprivate var stations = [Station]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Start location updates
         LocationProvider.sharedInstance.delegate = self
+        LocationProvider.sharedInstance.getLocation(withAuthScope: .authorizedWhenInUse)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,13 +32,25 @@ class TableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return stations.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
+        
+        let index = indexPath.row
+        guard index < stations.count else { return cell }
+        
+        let station = stations[index]
+        
+        cell.textLabel?.text = station.name
+        cell.detailTextLabel?.text = "Bikes: \(station.bikes)"
+        
+        return cell
     }
 }
 
@@ -47,18 +62,23 @@ extension LocationDelegate: LocationProviderDelegate {
     func retrieved(location: CLLocation) {
         self.location = location
         // We have location, so get the nearest city
+        getStations()
     }
 }
 
 typealias APIRequester = TableViewController
 extension APIRequester {
     
-    private func getNearestCity() {
+    fileprivate func getStations() {
         guard let location = location else { return }
         
         // Get the nearest city
         CityProvider.city(near: location, successClosure: { city in
-            StationProvider.stations(in: city.href, success: {stations in
+            StationProvider.stations(fromCityURL: city.url, success: { [weak self] stations in
+                guard let strongSelf = self else { return }
+                
+                strongSelf.stations = stations
+                strongSelf.tableView.reloadData()
                 
             }, failure: {})
         }, failureClosure: {})
