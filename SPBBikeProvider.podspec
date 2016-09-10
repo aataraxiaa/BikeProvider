@@ -37,6 +37,5 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.11'
 
   s.source_files = "Code/**/*.{swift}"
-
-  # s.frameworks = 'Foundation', 'MapKit', 'CoreLocation'
+  s.frameworks = 'CoreLocation'
 end

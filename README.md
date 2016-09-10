@@ -11,8 +11,6 @@ SPBBikeProvider is a tiny, convenient framework for retrieving relevant city bik
 Based on the user's location, it uses the citybik.es API to to find the nearest city with bike share availability.
 It can then return relevant bike station information such as station location and number of available bikes etc.
 
-![Sample app screenshot](https://raw.githubusercontent.com/superpeteblaze/SPBBikeProvider/master/Assets/Screenshot.png)
-
 The framework was built to accommodate [Bikey](https://itunes.apple.com/ie/app/bikey/id1048962300?mt=8), my free bike share app available on the app store.
 
 ## Requirements
@@ -72,6 +70,8 @@ StationProvider.stations(fromCityURL: city.url, onSuccess: { stations in
 ```
 
 See the sample project for fuller examples.
+
+![Sample app screenshot](https://raw.githubusercontent.com/superpeteblaze/SPBBikeProvider/master/Assets/Screenshot.png)
 
 ## Author
 

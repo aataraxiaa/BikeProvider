@@ -147,11 +147,11 @@ public struct CityProvider {
      
      - returns: Distance between locations
      */
-    private static func distance(from locationA: CLLocation, to locationB: CLLocation) -> CLLocationDistance {
+    fileprivate static func distance(from locationA: CLLocation, to locationB: CLLocation) -> CLLocationDistance {
         return locationA.distance(from: locationB)
     }
     
-    private static func parseCities(fromJson json: [[String:AnyObject]]) -> [City] {
+    fileprivate static func parseCities(fromJson json: [[String:AnyObject]]) -> [City] {
         var cities = [City]()
         
         // Parse each city dictionary
