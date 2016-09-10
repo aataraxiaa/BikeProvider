@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SPBBikeProvider'
-  s.version          = '1.0'
+  s.version          = '2.0'
   s.summary          = 'Tiny Swift provider for fetching city bike share information based on the citybik.es API'
 
 # This description is used to generate tags and improve search results.
@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.1'
   s.osx.deployment_target = '10.11'
 
-  s.source_files = "SPBBikeProvider/Code/*.{swift}"
+  s.source_files = "Code/**/*.{swift}"
 
   # s.frameworks = 'Foundation', 'MapKit', 'CoreLocation'
 end
