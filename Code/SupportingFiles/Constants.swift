@@ -12,7 +12,7 @@
 struct Constants {
     
     struct API {
-        static let baseURL = "http://api.citybik.es"
+        static let baseURL = "https://api.citybik.es"
         static let networks = "/v2/networks"
         static let requestOptions = "?fields=stations"
     }

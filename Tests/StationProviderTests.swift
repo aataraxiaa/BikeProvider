@@ -27,24 +27,24 @@ class StationProviderTests: XCTestCase {
     func testGetStations() {
         
         // Create an expectation object.
-        let stationsRetrieved = expectationWithDescription("Stations retrieved")
+        let stationsRetrieved = expectation(description: "Stations retrieved")
         
-        CityProvider.nearestCity(dublin, successClosure: { nearestCity in
+        CityProvider.city(near: dublin, onSuccess: { nearestCity in
             
-                StationProvider.getStations(nearestCity.href, success: { stations in
-                    XCTAssert(stations.count > 0)
-    
-                    stationsRetrieved.fulfill()
-                    
-                }, failure: {
+            StationProvider.stations(fromCityURL: nearestCity.url, onSuccess: { stations in
+                XCTAssert(stations.count > 0)
+                
+                stationsRetrieved.fulfill()
+                
+                }, onFailure: {
                     XCTFail("Could not retrieve stations")
-                })
+            })
             
-        }, failureClosure: {
+            }, onFailure: {
             XCTFail("Could not locate nearest city")
         })
         
-        waitForExpectationsWithTimeout(10, handler: { error in })
+        waitForExpectations(timeout: 10, handler: { error in })
 
     }
     

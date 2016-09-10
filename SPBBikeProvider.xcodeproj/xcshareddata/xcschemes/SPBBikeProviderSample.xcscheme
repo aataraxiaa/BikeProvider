@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "0800"
-   version = "1.3">
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4657D63E1CFF0B7B004670B4"
-               BuildableName = "SPBBikeProvider.framework"
-               BlueprintName = "SPBBikeProvider"
+               BlueprintIdentifier = "65E7A1571D7DD37D0087C336"
+               BuildableName = "SPBBikeProviderSample.app"
+               BlueprintName = "SPBBikeProviderSample"
                ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,23 +28,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4657D6481CFF0B7C004670B4"
-               BuildableName = "SPBBikeProviderTests.xctest"
-               BlueprintName = "SPBBikeProviderTests"
-               ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4657D63E1CFF0B7B004670B4"
-            BuildableName = "SPBBikeProvider.framework"
-            BlueprintName = "SPBBikeProvider"
+            BlueprintIdentifier = "65E7A1571D7DD37D0087C336"
+            BuildableName = "SPBBikeProviderSample.app"
+            BlueprintName = "SPBBikeProviderSample"
             ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,17 +51,22 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4657D63E1CFF0B7B004670B4"
-            BuildableName = "SPBBikeProvider.framework"
-            BlueprintName = "SPBBikeProvider"
+            BlueprintIdentifier = "65E7A1571D7DD37D0087C336"
+            BuildableName = "SPBBikeProviderSample.app"
+            BlueprintName = "SPBBikeProviderSample"
             ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
+      <LocationScenarioReference
+         identifier = "../../NewYork.gpx"
+         referenceType = "0">
+      </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -79,15 +74,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4657D63E1CFF0B7B004670B4"
-            BuildableName = "SPBBikeProvider.framework"
-            BlueprintName = "SPBBikeProvider"
+            BlueprintIdentifier = "65E7A1571D7DD37D0087C336"
+            BuildableName = "SPBBikeProviderSample.app"
+            BlueprintName = "SPBBikeProviderSample"
             ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
