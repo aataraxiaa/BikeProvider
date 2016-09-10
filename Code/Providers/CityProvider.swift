@@ -25,9 +25,9 @@ public struct CityProvider {
      - parameter success:       Success closure
      - parameter failure:       Failure closure
      */
-    public static func city(near location: CLLocation, successClosure: @escaping (_ nearestCity: City)->(), failureClosure: @escaping ()->()) {
+    public static func city(near location: CLLocation, onSuccess success: @escaping (_ nearestCity: City)->(), onFailure failure: @escaping ()->()) {
         
-        let success = { (cities: [City]) in
+        let successClosure = { (cities: [City]) in
             // Now calculate the nearest city based on user's location
             let nearestCityAndDistance = cities.map({ ($0, distance(from: location, to: $0.location)) }).min() {
                 $0.1 < $1.1
@@ -35,13 +35,13 @@ public struct CityProvider {
             
             // Call our success closuse with with the nearest city if we have it or nil
             if let city = nearestCityAndDistance?.0 {
-                successClosure(city)
+                success(city)
             } else {
-                failureClosure()
+                failure()
             }
         }
         
-        CityProvider.allCities(success, failureClosure: failureClosure)
+        CityProvider.allCities(onSuccess: successClosure, onFailure: failure)
     }
     
     /**
@@ -52,23 +52,23 @@ public struct CityProvider {
      - parameter successClosure: Success closure
      - parameter failureClosure: Failure closure
      */
-    public static func cities(near location: CLLocation, limit: Int, successClosure: @escaping (_ cities: [City])->(), failureClosure: @escaping ()->()) {
+    public static func cities(near location: CLLocation, limit: Int, onSuccess success: @escaping (_ cities: [City])->(), onFailure failure: @escaping ()->()) {
         
-        let success = { (cities: [City]) in
+        let successClosure = { (cities: [City]) in
             // Now calculate the nearest city based on user's location
             let nearestCities = cities.map({ ($0, distance(from: location, to: $0.location)) }).sorted(by: { $0.1 < $1.1 }).map() { return $0.0 }
             
             // Return early with all sorted cities if the number of cities we want (our limit) is greater than the total number of cities
             guard limit < nearestCities.count else {
-                successClosure(nearestCities)
+                success(nearestCities)
                 return
             }
             
             let limitedCities = nearestCities[0..<limit]
-            successClosure(Array(limitedCities))
+            success(Array(limitedCities))
         }
         
-        CityProvider.allCities(success, failureClosure: failureClosure)
+        CityProvider.allCities(onSuccess: successClosure, onFailure: failure)
     }
     
     /**
@@ -81,9 +81,9 @@ public struct CityProvider {
      - parameter successClosure: Success closure
      - parameter failureClosure: Failure closure
      */
-    public static func cities(near location: CLLocation, within radius: Double, limit: Int, successClosure: @escaping (_ cities: [City])->(), failureClosure: @escaping ()->()) {
+    public static func cities(near location: CLLocation, within radius: Double, limit: Int, onSuccess success: @escaping (_ cities: [City])->(), onFailure failure: @escaping ()->()) {
         
-        let success = { (cities: [City]) in
+        let successClosure = { (cities: [City]) in
             // Now calculate cities within the radius parameter
             let citiesAndDistances = cities.map({ ($0, distance(from: location, to: $0.location)) })
             
@@ -93,21 +93,21 @@ public struct CityProvider {
             if citiesWithinRadius.count > 0 {
                 
                 guard limit < citiesWithinRadius.count else {
-                    successClosure(citiesWithinRadius)
+                    success(citiesWithinRadius)
                     return
                 }
                 
                 let limitedCities = citiesWithinRadius[0..<limit]
-                successClosure(Array(limitedCities))
+                success(Array(limitedCities))
                 
             } else if let nearestCityAndDistance = citiesAndDistances.min( by: { $0.1 < $1.1 } ) {
-                successClosure([nearestCityAndDistance.0])
+                success([nearestCityAndDistance.0])
             } else {
-                failureClosure()
+                failure()
             }
         }
         
-        CityProvider.allCities(success, failureClosure: failureClosure)
+        CityProvider.allCities(onSuccess: successClosure, onFailure: failure)
     }
     
     /**
@@ -116,11 +116,11 @@ public struct CityProvider {
      - parameter successClosure: Success closure
      - parameter failureClosure: Failure closure
      */
-    public static func allCities(_ successClosure: @escaping (([City]) -> Void), failureClosure: @escaping () -> Void) {
+    public static func allCities(onSuccess success: @escaping (([City]) -> Void), onFailure failure: @escaping () -> Void) {
         let url = Constants.API.baseURL + Constants.API.networks
         
-        APIClient.get(from: url){(success, object) in
-            if success {
+        APIClient.get(from: url){ (successFul, object) in
+            if successFul {
                 
                 // Success, parse the city data
                 if let json = object, let networks = json["networks"] as? [[String : AnyObject]] {
@@ -128,13 +128,13 @@ public struct CityProvider {
                     let cities = CityProvider.parseCities(fromJson: networks)
                     
                     if cities.count > 0 {
-                        successClosure(cities)
+                        success(cities)
                     } else {
-                        failureClosure()
+                        failure()
                     }
                 }
             } else {
-                failureClosure()
+                failure()
             }
         }
     }

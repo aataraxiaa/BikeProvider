@@ -29,18 +29,18 @@ class StationProviderTests: XCTestCase {
         // Create an expectation object.
         let stationsRetrieved = expectation(description: "Stations retrieved")
         
-        CityProvider.city(near: dublin, successClosure: { nearestCity in
+        CityProvider.city(near: dublin, onSuccess: { nearestCity in
             
-            StationProvider.stations(fromCityURL: nearestCity.url, success: { stations in
-                    XCTAssert(stations.count > 0)
-    
-                    stationsRetrieved.fulfill()
-                    
-                }, failure: {
+            StationProvider.stations(fromCityURL: nearestCity.url, onSuccess: { stations in
+                XCTAssert(stations.count > 0)
+                
+                stationsRetrieved.fulfill()
+                
+                }, onFailure: {
                     XCTFail("Could not retrieve stations")
-                })
+            })
             
-        }, failureClosure: {
+            }, onFailure: {
             XCTFail("Could not locate nearest city")
         })
         

@@ -103,7 +103,7 @@
 		65CE89501D7DDA5B00AB1B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sample/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65CE89521D7DDA5B00AB1B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sample/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65CE89551D7DDA7200AB1B53 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sample/Info.plist; sourceTree = "<group>"; };
-		65CE89571D7DDA9F00AB1B53 /* NewYork.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NewYork.gpx; sourceTree = "<group>"; };
+		65CE89571D7DDA9F00AB1B53 /* NewYork.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = NewYork.gpx; path = Sample/NewYork.gpx; sourceTree = "<group>"; };
 		65E7A1581D7DD37D0087C336 /* SPBBikeProviderSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPBBikeProviderSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E7A15A1D7DD37D0087C336 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Sample/AppDelegate.swift; sourceTree = "<group>"; };
 		65E7A1611D7DD37D0087C336 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Sample/Assets.xcassets; sourceTree = "<group>"; };

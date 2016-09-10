@@ -73,14 +73,14 @@ extension APIRequester {
         guard let location = location else { return }
         
         // Get the nearest city
-        CityProvider.city(near: location, successClosure: { city in
-            StationProvider.stations(fromCityURL: city.url, success: { [weak self] stations in
+        CityProvider.city(near: location, onSuccess: { city in
+            StationProvider.stations(fromCityURL: city.url, onSuccess: { [weak self] stations in
                 guard let strongSelf = self else { return }
                 
                 strongSelf.stations = stations
                 strongSelf.tableView.reloadData()
                 
-            }, failure: {})
-        }, failureClosure: {})
+                }, onFailure: {})
+            }, onFailure: {})
     }
 }

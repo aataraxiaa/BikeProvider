@@ -18,9 +18,9 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  SPBBikeProvider is a tiny, convenient framework for fetching city bike share information.
-  It uses the citybik.es API and the users location to fetch the nearest available city and
-  bike station information.
+  SPBBikeProvider is a tiny, convenient framework for retrieving relevant city bike share information.
+  Based on the user's location, it uses the citybik.es API to to find the nearest city with bike share availability.
+  It can then return relevant bike station information such as station location and number of available bikes etc.
 
   The framework was built to accomodate Bikey, my bike share app available on the app store.
                        DESC
@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.1'
   s.osx.deployment_target = '10.11'
 
-  s.source_files = "SPBBikeProvider/**/*.{swift}"
+  s.source_files = "SPBBikeProvider/Code/*.{swift}"
 
   # s.frameworks = 'Foundation', 'MapKit', 'CoreLocation'
 end

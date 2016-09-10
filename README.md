@@ -4,13 +4,16 @@
 [![Version](https://img.shields.io/cocoapods/v/SPBBikeProvider.svg?style=flat)](http://cocoapods.org/pods/SPBBikeProvider)
 [![License](https://img.shields.io/cocoapods/l/SPBBikeProvider.svg?style=flat)](http://cocoapods.org/pods/SPBBikeProvider)
 [![Platform](https://img.shields.io/cocoapods/p/SPBBikeProvider.svg?style=flat)](http://cocoapods.org/pods/SPBBikeProvider)
+[![Platform](https://img.shields.io/cocoapods/p/SPBBikeProvider.svg?style=flat)](http://cocoapods.org/pods/SPBBikeProvider)
 
 ## Description
-SPBBikeProvider is a tiny, convenient framework for fetching city bike share information.
-It uses the citybik.es API and the users location to fetch the nearest available city and
-bike station information.
+SPBBikeProvider is a tiny, convenient framework for retrieving relevant city bike share information.
+Based on the user's location, it uses the citybik.es API to to find the nearest city with bike share availability.
+It can then return relevant bike station information such as station location and number of available bikes etc.
 
-The framework was built to accommodate Bikey, my bike share app available on the app store.
+![Sample app screenshot](https://github.com/superpeteblaze/SPBBikeProvider/Assets/Screenshot.png)
+
+The framework was built to accommodate [Bikey](https://itunes.apple.com/ie/app/bikey/id1048962300?mt=8), my free bike share app available on the app store.
 
 ## Requirements
 
@@ -34,9 +37,39 @@ Simple as that
 
 ## Examples
 
+#### Location
+
+```
+LocationProvider.sharedInstance.delegate = self
+LocationProvider.sharedInstance.getLocation(withAuthScope: .authorizedWhenInUse)
+```
+...and in the location delegate...
+```
+func retrieved(location: CLLocation) {
+  // Do something with the location here
+}
+```
+
 #### Nearest city
 
+```
+CityProvider.city(near: location, onSuccess: { city in
+  // Do something with the city here
+}, onFailure: {
+  // Oh no, something went wrong
+})
+```
+
 #### Stations
+
+```
+StationProvider.stations(fromCityURL: city.url, onSuccess: { stations in
+  // Do something with the stations here
+}, onFailure: {
+  // Oh no, something went wrong
+})
+
+```
 
 See the sample project for fuller examples.
 
