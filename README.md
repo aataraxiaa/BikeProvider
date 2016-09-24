@@ -4,7 +4,6 @@
 [![Version](https://img.shields.io/cocoapods/v/BikeProvider.svg?style=flat)](http://cocoapods.org/pods/BikeProvider)
 [![License](https://img.shields.io/cocoapods/l/BikeProvider.svg?style=flat)](http://cocoapods.org/pods/BikeProvider)
 [![Platform](https://img.shields.io/cocoapods/p/BikeProvider.svg?style=flat)](http://cocoapods.org/pods/BikeProvider)
-[![Platform](https://img.shields.io/cocoapods/p/BikeProvider.svg?style=flat)](http://cocoapods.org/pods/BikeProvider)
 
 ## Description
 BikeProvider is a tiny, convenient framework for retrieving relevant city bike share information.
