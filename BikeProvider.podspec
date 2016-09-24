@@ -7,8 +7,8 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'SPBBikeProvider'
-  s.version          = '2.0'
+  s.name             = 'BikeProvider'
+  s.version          = '2.0.1'
   s.summary          = 'Tiny Swift provider for fetching city bike share information based on the citybik.es API'
 
 # This description is used to generate tags and improve search results.
@@ -18,17 +18,17 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-  SPBBikeProvider is a tiny, convenient framework for retrieving relevant city bike share information.
+  BikeProvider is a tiny, convenient framework for retrieving relevant city bike share information.
   Based on the user's location, it uses the citybik.es API to to find the nearest city with bike share availability.
   It can then return relevant bike station information such as station location and number of available bikes etc.
 
   The framework was built to accomodate Bikey, my bike share app available on the app store.
                        DESC
 
-  s.homepage         = 'https://github.com/superpeteblaze/SPBBikeProvider'
+  s.homepage         = 'https://github.com/superpeteblaze/BikeProvider'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Pete Smith' => 'peadar81@gmail.com' }
-  s.source           = { :git => 'https://github.com/superpeteblaze/SPBBikeProvider.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/superpeteblaze/BikeProvider.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/superpeteblaze'
 
   s.platform = :ios

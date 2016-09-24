@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "465F270C1D65E08600B3B639"
-               BuildableName = "SPBBikeProvider.framework"
+               BuildableName = "BikeProvider.framework"
                BlueprintName = "BikeProvidermacOS"
                ReferencedContainer = "container:BikeProvider.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "465F270C1D65E08600B3B639"
-            BuildableName = "SPBBikeProvider.framework"
+            BuildableName = "BikeProvider.framework"
             BlueprintName = "BikeProvidermacOS"
             ReferencedContainer = "container:BikeProvider.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "465F270C1D65E08600B3B639"
-            BuildableName = "SPBBikeProvider.framework"
+            BuildableName = "BikeProvider.framework"
             BlueprintName = "BikeProvidermacOS"
             ReferencedContainer = "container:BikeProvider.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "465F270C1D65E08600B3B639"
-            BuildableName = "SPBBikeProvider.framework"
+            BuildableName = "BikeProvider.framework"
             BlueprintName = "BikeProvidermacOS"
             ReferencedContainer = "container:BikeProvider.xcodeproj">
          </BuildableReference>
