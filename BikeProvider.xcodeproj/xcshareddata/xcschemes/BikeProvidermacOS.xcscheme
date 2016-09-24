@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "465F270C1D65E08600B3B639"
                BuildableName = "SPBBikeProvider.framework"
-               BlueprintName = "SPBBikeProvidermacOS"
-               ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
+               BlueprintName = "BikeProvidermacOS"
+               ReferencedContainer = "container:BikeProvider.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "465F27141D65E08600B3B639"
-               BuildableName = "SPBBikeProvidermacOSTests.xctest"
-               BlueprintName = "SPBBikeProvidermacOSTests"
-               ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
+               BuildableName = "BikeProvidermacOSTests.xctest"
+               BlueprintName = "BikeProvidermacOSTests"
+               ReferencedContainer = "container:BikeProvider.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "465F270C1D65E08600B3B639"
             BuildableName = "SPBBikeProvider.framework"
-            BlueprintName = "SPBBikeProvidermacOS"
-            ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
+            BlueprintName = "BikeProvidermacOS"
+            ReferencedContainer = "container:BikeProvider.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,8 +66,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "465F270C1D65E08600B3B639"
             BuildableName = "SPBBikeProvider.framework"
-            BlueprintName = "SPBBikeProvidermacOS"
-            ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
+            BlueprintName = "BikeProvidermacOS"
+            ReferencedContainer = "container:BikeProvider.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -84,8 +84,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "465F270C1D65E08600B3B639"
             BuildableName = "SPBBikeProvider.framework"
-            BlueprintName = "SPBBikeProvidermacOS"
-            ReferencedContainer = "container:SPBBikeProvider.xcodeproj">
+            BlueprintName = "BikeProvidermacOS"
+            ReferencedContainer = "container:BikeProvider.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

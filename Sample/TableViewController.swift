@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreLocation
-import SPBBikeProvider
+import BikeProvider
 
 class TableViewController: UITableViewController {
     
