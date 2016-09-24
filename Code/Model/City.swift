@@ -1,9 +1,11 @@
 //
-//  City.swift
-//  BikeyGo
+//  Created by Pete Smith
+//  http://www.petethedeveloper.com
 //
-//  Created by Pete Smith on 31/05/2016.
-//  Copyright © 2016 Pete Smith. All rights reserved.
+//
+//  License
+//  Copyright © 2016-present Pete Smith
+//  Released under an MIT license: http://opensource.org/licenses/MIT
 //
 
 import CoreLocation

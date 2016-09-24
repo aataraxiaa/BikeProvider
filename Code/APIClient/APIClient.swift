@@ -1,9 +1,11 @@
 //
-//  APIClient.swift
-//  Bikey
+//  Created by Pete Smith
+//  http://www.petethedeveloper.com
 //
-//  Created by Peter Smith on 01/02/2016.
-//  Copyright © 2016 Pete Smith. All rights reserved.
+//
+//  License
+//  Copyright © 2016-present Pete Smith
+//  Released under an MIT license: http://opensource.org/licenses/MIT
 //
 
 import Foundation
