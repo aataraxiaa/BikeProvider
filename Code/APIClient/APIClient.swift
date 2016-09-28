@@ -43,7 +43,7 @@ struct APIClient {
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        session.dataTask(with: request) { (data, response, error) -> Void in
+        session.dataTask(with: request) { (data, response, error) in
             
             DispatchQueue.main.async(execute: {
                 
@@ -58,5 +58,7 @@ struct APIClient {
             })
             
         }.resume()
+        
+        session.finishTasksAndInvalidate()
     }
 }
