@@ -48,6 +48,9 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
     // MARK: - Public properties
     public var delegate: LocationProviderDelegate?
     var requiredAccuracy: CLLocationAccuracy = 70
+    public var needsToRequestAccess: Bool {
+        return CLLocationManager.authorizationStatus() == .notDetermined
+    }
     
     // MARK: - Private properties
     private var locman = CLLocationManager()
