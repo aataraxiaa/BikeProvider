@@ -24,11 +24,11 @@ public struct StationProvider {
      - parameter success: Success closure
      - parameter failure: Failure closure
      */
-    static public func stations(fromCityURL url: String, onSuccess success: @escaping (([Station]) -> Void), onFailure failure: @escaping ((_ error: Error?) -> Void)) -> Void {
+    static public func stations(fromCityURL url: String, onSuccess success: @escaping (([Station]) -> Void), onFailure failure: @escaping ((_ error: Error) -> Void)) -> URLSessionDataTask? {
         
         let url = Constants.API.baseURL+url+Constants.API.requestOptions
         
-        APIClient.get(from: url, withSuccess: { (result) in
+        return APIClient.get(from: url, withSuccess: { (result) in
                 
             if let json = result, let network = json["network"] as? [String: AnyObject], let stations = network["stations"] as? [[String: AnyObject]] {
                 
@@ -72,9 +72,11 @@ public struct StationProvider {
                 
                 success(stationCollection)
             } else {
-                failure(nil)
+                failure(StationError.noStationsRetrieved)
             }
 
-        }, andFailure: { error in })
+        }, andFailure: { error in
+            failure(error)
+        })
     }
 }

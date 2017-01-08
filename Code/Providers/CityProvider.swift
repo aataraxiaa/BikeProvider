@@ -27,7 +27,7 @@ public struct CityProvider {
      - parameter success:       Success closure
      - parameter failure:       Failure closure
      */
-    public static func city(near location: CLLocation, onSuccess success: @escaping (_ nearestCity: City)->(), onFailure failure: @escaping (_ error: Error?)->()) {
+    public static func city(near location: CLLocation, onSuccess success: @escaping (_ nearestCity: City)->(), onFailure failure: @escaping (_ error: Error)->()) -> URLSessionDataTask? {
         
         let successClosure = { (cities: [City]) in
             // Now calculate the nearest city based on user's location
@@ -39,11 +39,11 @@ public struct CityProvider {
             if let city = nearestCityAndDistance?.0 {
                 success(city)
             } else {
-                failure(nil)
+                failure(CityError.noCityNearLocation)
             }
         }
         
-        CityProvider.allCities(onSuccess: successClosure, onFailure: failure)
+        return CityProvider.allCities(onSuccess: successClosure, onFailure: failure)
     }
     
     /**
@@ -54,7 +54,7 @@ public struct CityProvider {
      - parameter successClosure: Success closure
      - parameter failureClosure: Failure closure
      */
-    public static func cities(near location: CLLocation, limit: Int, onSuccess success: @escaping (_ cities: [City])->(), onFailure failure: @escaping (_ error: Error?)->()) {
+    public static func cities(near location: CLLocation, limit: Int, onSuccess success: @escaping (_ cities: [City])->(), onFailure failure: @escaping (_ error: Error)->()) -> URLSessionDataTask? {
         
         let successClosure = { (cities: [City]) in
             // Now calculate the nearest city based on user's location
@@ -70,7 +70,7 @@ public struct CityProvider {
             success(Array(limitedCities))
         }
         
-        CityProvider.allCities(onSuccess: successClosure, onFailure: failure)
+        return CityProvider.allCities(onSuccess: successClosure, onFailure: failure)
     }
     
     /**
@@ -83,7 +83,7 @@ public struct CityProvider {
      - parameter successClosure: Success closure
      - parameter failureClosure: Failure closure
      */
-    public static func cities(near location: CLLocation, within radius: Double, limit: Int, onSuccess success: @escaping (_ cities: [City])->(), onFailure failure: @escaping (_ error: Error?)->()) {
+    public static func cities(near location: CLLocation, within radius: Double, limit: Int, onSuccess success: @escaping (_ cities: [City])->(), onFailure failure: @escaping (_ error: Error)->()) -> URLSessionDataTask? {
         
         let successClosure = { (cities: [City]) in
             // Now calculate cities within the radius parameter
@@ -105,11 +105,11 @@ public struct CityProvider {
             } else if let nearestCityAndDistance = citiesAndDistances.min( by: { $0.1 < $1.1 } ) {
                 success([nearestCityAndDistance.0])
             } else {
-                failure(nil)
+                failure(CityError.noCityNearLocation)
             }
         }
         
-        CityProvider.allCities(onSuccess: successClosure, onFailure: failure)
+        return CityProvider.allCities(onSuccess: successClosure, onFailure: failure)
     }
     
     /**
@@ -118,10 +118,10 @@ public struct CityProvider {
      - parameter successClosure: Success closure
      - parameter failureClosure: Failure closure
      */
-    public static func allCities(onSuccess success: @escaping (([City]) -> Void), onFailure failure: @escaping (_ error: Error?) -> Void) {
+    public static func allCities(onSuccess success: @escaping (([City]) -> Void), onFailure failure: @escaping (_ error: Error) -> Void) -> URLSessionDataTask? {
         let url = Constants.API.baseURL + Constants.API.networks
         
-        APIClient.get(from: url, withSuccess: { (object) in
+        return APIClient.get(from: url, withSuccess: { (object) in
             
             // Success, parse the city data
             if let json = object, let networks = json["networks"] as? [[String : AnyObject]] {
@@ -131,7 +131,7 @@ public struct CityProvider {
                 if cities.count > 0 {
                     success(cities)
                 } else {
-                    failure(nil)
+                    failure(CityError.noCitiesRetrieved)
                 }
             }
             

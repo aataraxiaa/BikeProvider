@@ -1,9 +1,13 @@
 //
-//  StationError.swift
-//  BikeProvider
+//  Created by Pete Smith
+//  http://www.petethedeveloper.com
 //
-//  Created by Pete Smith on 08/01/2017.
-//  Copyright © 2017 Pete Smith. All rights reserved.
+//
+//  License
+//  Copyright © 2017-present Pete Smith
+//  Released under an MIT license: http://opensource.org/licenses/MIT
 //
 
-import Foundation
+public enum StationError: Error {
+    case noStationsRetrieved
+}

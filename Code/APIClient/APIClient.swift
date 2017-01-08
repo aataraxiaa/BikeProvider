@@ -25,20 +25,16 @@ struct APIClient {
      */
     static func get(from url: String, withSuccess success: @escaping (_ object: AnyObject?) -> Void, andFailure failure: @escaping (_ error: Error) -> Void) -> URLSessionDataTask? {
         
-        guard let request = clientURLRequest(url) else {
-            return nil
-        }
+        guard let request = clientURLRequest(url) else { return nil }
         
         return dataTask(for: request, withSuccess: success, andFailure: failure)
     }
     
     fileprivate static func clientURLRequest(_ url: String) -> URLRequest? {
-        if let url = URL(string: url) {
-            let request = URLRequest(url: url)
-            return request
-        }
+        guard let url = URL(string: url) else { return nil }
         
-        return nil
+        let request = URLRequest(url: url)
+        return request
     }
     
     fileprivate static func dataTask(for request: URLRequest,
@@ -49,8 +45,8 @@ struct APIClient {
         
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             
-            guard error == nil else {
-                failure(error!)
+            if let error = error {
+                failure(error)
                 return
             }
             
