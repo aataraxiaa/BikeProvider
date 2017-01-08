@@ -23,11 +23,13 @@ struct APIClient {
      - parameter url:        The URL endpoint
      - parameter completion: Completion closure expression
      */
-    static func get(from url: String, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
+    static func get(from url: String, withSuccess success: @escaping (_ object: AnyObject?) -> Void, andFailure failure: @escaping (_ error: Error) -> Void) -> URLSessionDataTask? {
         
-        if let request = clientURLRequest(url) {
-            dataTask(for: request, completion: completion)
+        guard let request = clientURLRequest(url) else {
+            return nil
         }
+        
+        return dataTask(for: request, withSuccess: success, andFailure: failure)
     }
     
     fileprivate static func clientURLRequest(_ url: String) -> URLRequest? {
@@ -39,26 +41,32 @@ struct APIClient {
         return nil
     }
     
-    fileprivate static func dataTask(for request: URLRequest, completion: @escaping (_ success: Bool, _ object: AnyObject?) -> ()) {
+    fileprivate static func dataTask(for request: URLRequest,
+                                     withSuccess success: @escaping (_ object: AnyObject?) -> Void,
+                                     andFailure failure: @escaping (_ error: Error) -> Void) -> URLSessionDataTask {
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
-        session.dataTask(with: request) { (data, response, error) in
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            
+            guard error == nil else {
+                failure(error!)
+                return
+            }
             
             DispatchQueue.main.async(execute: {
                 
                 if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []) , let response = response as? HTTPURLResponse,  200...299 ~= response.statusCode {
                     
-                    completion(true, json as AnyObject)
-                    
-                } else {
-                    
-                    completion(false, nil)
+                    success(json as AnyObject)
                 }
             })
-            
-        }.resume()
+        }
+        
+        dataTask.resume()
         
         session.finishTasksAndInvalidate()
+        
+        return dataTask
     }
 }
