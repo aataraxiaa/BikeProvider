@@ -18,6 +18,8 @@
 		659351161D840C700088C53D /* macOSInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6593510A1D840BAF0088C53D /* macOSInfo.plist */; };
 		65C631651E22D59800A32E43 /* CityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C631641E22D59800A32E43 /* CityError.swift */; };
 		65C631671E22D5B100A32E43 /* StationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C631661E22D5B100A32E43 /* StationError.swift */; };
+		65C6316A1E24244F00A32E43 /* CityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C631641E22D59800A32E43 /* CityError.swift */; };
+		65C6316B1E24245300A32E43 /* StationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C631661E22D5B100A32E43 /* StationError.swift */; };
 		65CE89371D7DD9C400AB1B53 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89351D7DD9C400AB1B53 /* City.swift */; };
 		65CE89381D7DD9C400AB1B53 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89361D7DD9C400AB1B53 /* Station.swift */; };
 		65CE893A1D7DD9CD00AB1B53 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89391D7DD9CD00AB1B53 /* APIClient.swift */; };
@@ -539,9 +541,11 @@
 				65CE89471D7DD9E800AB1B53 /* LocationProvider.swift in Sources */,
 				65CE894B1D7DD9EF00AB1B53 /* APIClient.swift in Sources */,
 				65CE89491D7DD9EC00AB1B53 /* City.swift in Sources */,
+				65C6316B1E24245300A32E43 /* StationError.swift in Sources */,
 				65CE89481D7DD9E800AB1B53 /* StationProvider.swift in Sources */,
 				65CE89461D7DD9E800AB1B53 /* DirectionsProvider.swift in Sources */,
 				65CE894A1D7DD9EC00AB1B53 /* Station.swift in Sources */,
+				65C6316A1E24244F00A32E43 /* CityError.swift in Sources */,
 				65CE89451D7DD9E800AB1B53 /* CityProvider.swift in Sources */,
 				65CE894C1D7DD9F500AB1B53 /* Constants.swift in Sources */,
 			);
