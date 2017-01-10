@@ -27,7 +27,9 @@ public struct CityProvider {
      - parameter success:       Success closure
      - parameter failure:       Failure closure
      */
-    public static func city(near location: CLLocation, onSuccess success: @escaping (_ nearestCity: City)->(), onFailure failure: @escaping (_ error: Error)->()) -> URLSessionDataTask? {
+    @discardableResult public static func city(near location: CLLocation,
+                            onSuccess success: @escaping (_ nearestCity: City)->(),
+                            onFailure failure: @escaping (_ error: Error)->()) -> URLSessionDataTask? {
         
         let successClosure = { (cities: [City]) in
             // Now calculate the nearest city based on user's location
@@ -54,7 +56,9 @@ public struct CityProvider {
      - parameter successClosure: Success closure
      - parameter failureClosure: Failure closure
      */
-    public static func cities(near location: CLLocation, limit: Int, onSuccess success: @escaping (_ cities: [City])->(), onFailure failure: @escaping (_ error: Error)->()) -> URLSessionDataTask? {
+    @discardableResult public static func cities(near location: CLLocation, limit: Int,
+                                                 onSuccess success: @escaping (_ cities: [City])->(),
+                                                 onFailure failure: @escaping (_ error: Error)->()) -> URLSessionDataTask? {
         
         let successClosure = { (cities: [City]) in
             // Now calculate the nearest city based on user's location
@@ -83,7 +87,10 @@ public struct CityProvider {
      - parameter successClosure: Success closure
      - parameter failureClosure: Failure closure
      */
-    public static func cities(near location: CLLocation, within radius: Double, limit: Int, onSuccess success: @escaping (_ cities: [City])->(), onFailure failure: @escaping (_ error: Error)->()) -> URLSessionDataTask? {
+    @discardableResult public static func cities(near location: CLLocation,
+                                                 within radius: Double, limit: Int,
+                                                 onSuccess success: @escaping (_ cities: [City])->(),
+                                                 onFailure failure: @escaping (_ error: Error)->()) -> URLSessionDataTask? {
         
         let successClosure = { (cities: [City]) in
             // Now calculate cities within the radius parameter
@@ -118,7 +125,8 @@ public struct CityProvider {
      - parameter successClosure: Success closure
      - parameter failureClosure: Failure closure
      */
-    public static func allCities(onSuccess success: @escaping (([City]) -> Void), onFailure failure: @escaping (_ error: Error) -> Void) -> URLSessionDataTask? {
+    @discardableResult public static func allCities(onSuccess success: @escaping (([City]) -> Void),
+                                                    onFailure failure: @escaping (_ error: Error) -> Void) -> URLSessionDataTask? {
         let url = Constants.API.baseURL + Constants.API.networks
         
         return APIClient.get(from: url, withSuccess: { (object) in

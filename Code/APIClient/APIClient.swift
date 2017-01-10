@@ -23,7 +23,9 @@ struct APIClient {
      - parameter url:        The URL endpoint
      - parameter completion: Completion closure expression
      */
-    static func get(from url: String, withSuccess success: @escaping (_ object: AnyObject?) -> Void, andFailure failure: @escaping (_ error: Error) -> Void) -> URLSessionDataTask? {
+    static func get(from url: String,
+                    withSuccess success: @escaping (_ object: AnyObject?) -> Void,
+                    andFailure failure: @escaping (_ error: Error) -> Void) -> URLSessionDataTask? {
         
         guard let request = clientURLRequest(url) else { return nil }
         

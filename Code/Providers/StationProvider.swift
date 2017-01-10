@@ -24,7 +24,9 @@ public struct StationProvider {
      - parameter success: Success closure
      - parameter failure: Failure closure
      */
-    static public func stations(fromCityURL url: String, onSuccess success: @escaping (([Station]) -> Void), onFailure failure: @escaping ((_ error: Error) -> Void)) -> URLSessionDataTask? {
+    @discardableResult static public func stations(fromCityURL url: String,
+                                                   onSuccess success: @escaping (([Station]) -> Void),
+                                                   onFailure failure: @escaping ((_ error: Error) -> Void)) -> URLSessionDataTask? {
         
         let url = Constants.API.baseURL+url+Constants.API.requestOptions
         
