@@ -10,7 +10,7 @@
 
 import XCTest
 import CoreLocation
-@testable import SPBBikeProvider
+@testable import BikeProvider
 
 class StationProviderTests: XCTestCase {
     
@@ -39,11 +39,11 @@ class StationProviderTests: XCTestCase {
                 
                 stationsRetrieved.fulfill()
                 
-                }, onFailure: {
+                }, onFailure: { _ in
                     XCTFail("Could not retrieve stations")
             })
             
-            }, onFailure: {
+            }, onFailure: { _ in
             XCTFail("Could not locate nearest city")
         })
         

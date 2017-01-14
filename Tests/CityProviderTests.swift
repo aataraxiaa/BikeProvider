@@ -10,7 +10,7 @@
 
 import XCTest
 import CoreLocation
-@testable import SPBBikeProvider
+@testable import BikeProvider
 
 struct CityProviderTestsConstants {
     static let dublinBikeName = "Dublin"
@@ -40,7 +40,7 @@ class CityProviderTests: XCTestCase {
             XCTAssert(nearestCity.name == CityProviderTestsConstants.dublinBikeName)
             
             cityRetrievedExpectation.fulfill()
-            }, onFailure: {
+            }, onFailure: { _ in
             XCTFail("Could not locate nearest city")
         })
         
@@ -59,7 +59,7 @@ class CityProviderTests: XCTestCase {
             
             nearestTwoCitiesExpectation.fulfill()
             
-            }, onFailure: {
+            }, onFailure: { _ in
                 XCTFail("Could not locate cities within radius")
         })
         
@@ -79,7 +79,7 @@ class CityProviderTests: XCTestCase {
             
             citiesWithinRadiusExpectation.fulfill()
             
-            }, onFailure: {
+            }, onFailure: { _ in
             XCTFail("Could not locate cities within radius")
         })
         
