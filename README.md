@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/BikeProvider.svg?style=flat)](http://cocoapods.org/pods/BikeProvider)
 
 ## Description
-BikeProvider is a tiny, convenient framework for retrieving relevant city bike share information.
+BikeProvider is a tiny, convenient library for retrieving relevant city bike share information.
 Based on the user's location, it uses the citybik.es API to to find the nearest city with bike share availability.
 It can then return relevant bike station information such as station location and number of available bikes etc.
 
