@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/superpeteblaze/BikeProvider'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Pete Smith' => 'peadar81@gmail.com' }
-  s.source           = { :git => 'https://github.com/superpeteblaze/BikeProvider.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/superpeteblaze/BikeProvider.git', :tag => "v#{s.version.to_s}" }
   s.social_media_url = 'https://twitter.com/superpeteblaze'
 
   s.platform = :ios

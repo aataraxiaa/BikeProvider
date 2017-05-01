@@ -61,7 +61,7 @@ extension LocationDelegate: LocationProviderDelegate {
     
     public func accessDenied() {}
     
-    func retrieved(location: CLLocation) {
+    func retrieved(_ location: CLLocation) {
         self.location = location
         // We have location, so get the nearest city
         getStations()
@@ -82,7 +82,7 @@ extension APIRequester {
                 strongSelf.stations = stations
                 strongSelf.tableView.reloadData()
                 
-                }, onFailure: {})
-            }, onFailure: {})
+                }, onFailure: { _ in })
+            }, onFailure: { _ in })
     }
 }

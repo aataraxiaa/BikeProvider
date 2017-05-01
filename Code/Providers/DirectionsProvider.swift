@@ -49,7 +49,6 @@ public struct DirectionsProvider {
         // Perform the directions request
         activeDirectionsRequest?.calculate { response, error in
             if response == nil && error != nil {
-                print("Directions error: \(error)")
                 
                 // TODO: HANDLE FAILURE FOR ALL CASES
                 failure()

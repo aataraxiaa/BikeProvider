@@ -16,22 +16,22 @@ import CoreLocation
  Location Provider delegate protocol
  */
 public protocol LocationProviderDelegate {
-    func retrieved(location: CLLocation)
+    func retrieved(_ location: CLLocation)
     func accessDenied()
     
     #if os(iOS)
-        func retrieved(heading: CLHeading)
+        func retrieved(_ heading: CLHeading)
     #endif
 
-    func locationAccess(isGranted: Bool)
+    func locationAccess(_ isGranted: Bool)
 }
 
 /**
  Empty extension to make some delegate methods optional
  */
 public extension LocationProviderDelegate {
-    func retrieved(heading: CLHeading) {}
-    func locationAccess(isGranted: Bool){}
+    func retrieved(_ heading: CLHeading) {}
+    func locationAccess(_ isGranted: Bool){}
 }
 
 /** 
@@ -53,13 +53,13 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
     }
     
     // MARK: - Private properties
-    private var locman = CLLocationManager()
-    private var startTime: Date!
-    private var trying = false
-    private var updatingHeading = false
+    fileprivate var locman = CLLocationManager()
+    fileprivate var startTime: Date!
+    fileprivate var trying = false
+    fileprivate var updatingHeading = false
     
     // MARK: - Initialization
-    private override init() {
+    fileprivate override init() {
         super.init()
         locman.delegate = self
         locman.desiredAccuracy = kCLLocationAccuracyBest
@@ -157,21 +157,21 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last, location.horizontalAccuracy > 0 && location.horizontalAccuracy < requiredAccuracy else { return }
         
-        delegate?.retrieved(location: location)
+        delegate?.retrieved(location)
     }
     
     #if os(iOS)
     public func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        self.delegate?.retrieved(heading: newHeading)
+        self.delegate?.retrieved(newHeading)
     }
     #endif
     
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
-            delegate?.locationAccess(isGranted: true)
+            delegate?.locationAccess(true)
         default:
-            delegate?.locationAccess(isGranted: false)
+            delegate?.locationAccess(false)
         }
     }
 

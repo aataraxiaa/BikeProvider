@@ -416,13 +416,13 @@
 				TargetAttributes = {
 					4657D63E1CFF0B7B004670B4 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					4657D6481CFF0B7C004670B4 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 49CJ89TL4W;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
 					};
 					465F270C1D65E08600B3B639 = {
@@ -438,6 +438,7 @@
 					65E7A1571D7DD37D0087C336 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 49CJ89TL4W;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
