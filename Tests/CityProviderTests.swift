@@ -37,7 +37,7 @@ class CityProviderTests: XCTestCase {
         let cityRetrievedExpectation = expectation(description: "Nearest city retrieved")
         
         CityProvider.city(near: dublinLocation, onSuccess: { nearestCity in
-            XCTAssert(nearestCity.name == CityProviderTestsConstants.dublinBikeName)
+            XCTAssert(nearestCity.location.name == CityProviderTestsConstants.dublinBikeName)
             
             cityRetrievedExpectation.fulfill()
             }, onFailure: { _ in

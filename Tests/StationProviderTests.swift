@@ -34,7 +34,7 @@ class StationProviderTests: XCTestCase {
         
         CityProvider.city(near: dublin, onSuccess: { nearestCity in
             
-            StationProvider.stations(fromCityURL: nearestCity.url, onSuccess: { stations in
+            StationProvider.stations(fromCityURL: nearestCity.href, onSuccess: { stations in
                 XCTAssert(stations.count > 0)
                 
                 stationsRetrieved.fulfill()

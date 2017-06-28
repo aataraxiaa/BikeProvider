@@ -14,8 +14,6 @@
 		659351111D840C5D0088C53D /* CityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659351081D840BAF0088C53D /* CityProviderTests.swift */; };
 		659351121D840C630088C53D /* StationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6593510B1D840BAF0088C53D /* StationProviderTests.swift */; };
 		659351131D840C640088C53D /* StationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6593510B1D840BAF0088C53D /* StationProviderTests.swift */; };
-		659351141D840C6A0088C53D /* iOSInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 659351091D840BAF0088C53D /* iOSInfo.plist */; };
-		659351161D840C700088C53D /* macOSInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6593510A1D840BAF0088C53D /* macOSInfo.plist */; };
 		65C631651E22D59800A32E43 /* CityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C631641E22D59800A32E43 /* CityError.swift */; };
 		65C631671E22D5B100A32E43 /* StationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C631661E22D5B100A32E43 /* StationError.swift */; };
 		65C6316A1E24244F00A32E43 /* CityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C631641E22D59800A32E43 /* CityError.swift */; };
@@ -43,6 +41,10 @@
 		65E7A1621D7DD37D0087C336 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65E7A1611D7DD37D0087C336 /* Assets.xcassets */; };
 		65E97E361D7F2415000CDD2A /* BikeProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4657D63F1CFF0B7B004670B4 /* BikeProvider.framework */; };
 		65E97E371D7F2415000CDD2A /* BikeProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4657D63F1CFF0B7B004670B4 /* BikeProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		65EC7F9C1F03BDF700BF845D /* CityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9B1F03BBFF00BF845D /* CityList.swift */; };
+		65EC7F9D1F03BDFD00BF845D /* CityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9B1F03BBFF00BF845D /* CityList.swift */; };
+		65EC7F9F1F03CAFE00BF845D /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9E1F03CAFE00BF845D /* StationList.swift */; };
+		65EC7FA01F03CAFE00BF845D /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9E1F03CAFE00BF845D /* StationList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		65E7A1581D7DD37D0087C336 /* BikeProviderSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeProviderSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E7A15A1D7DD37D0087C336 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Sample/AppDelegate.swift; sourceTree = "<group>"; };
 		65E7A1611D7DD37D0087C336 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Sample/Assets.xcassets; sourceTree = "<group>"; };
+		65EC7F9B1F03BBFF00BF845D /* CityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityList.swift; path = Code/Model/CityList.swift; sourceTree = SOURCE_ROOT; };
+		65EC7F9E1F03CAFE00BF845D /* StationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StationList.swift; path = Code/Model/StationList.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 			name = Tests;
 			path = SPBBikeProviderTests;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		4657D6591CFF0D8A004670B4 /* APIClient */ = {
 			isa = PBXGroup;
@@ -216,7 +221,9 @@
 			isa = PBXGroup;
 			children = (
 				65CE89351D7DD9C400AB1B53 /* City.swift */,
+				65EC7F9B1F03BBFF00BF845D /* CityList.swift */,
 				65CE89361D7DD9C400AB1B53 /* Station.swift */,
+				65EC7F9E1F03CAFE00BF845D /* StationList.swift */,
 				65C631641E22D59800A32E43 /* CityError.swift */,
 				65C631661E22D5B100A32E43 /* StationError.swift */,
 			);
@@ -227,9 +234,9 @@
 			isa = PBXGroup;
 			children = (
 				65CE893D1D7DD9E000AB1B53 /* CityProvider.swift */,
+				65CE89401D7DD9E000AB1B53 /* StationProvider.swift */,
 				65CE893E1D7DD9E000AB1B53 /* DirectionsProvider.swift */,
 				65CE893F1D7DD9E000AB1B53 /* LocationProvider.swift */,
-				65CE89401D7DD9E000AB1B53 /* StationProvider.swift */,
 			);
 			name = Provider;
 			path = Code/Providers;
@@ -411,7 +418,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Pete Smith";
 				TargetAttributes = {
 					4657D63E1CFF0B7B004670B4 = {
@@ -477,7 +484,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				659351141D840C6A0088C53D /* iOSInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +498,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				659351161D840C700088C53D /* macOSInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +523,8 @@
 				65CE893A1D7DD9CD00AB1B53 /* APIClient.swift in Sources */,
 				65C631671E22D5B100A32E43 /* StationError.swift in Sources */,
 				65CE893C1D7DD9D700AB1B53 /* Constants.swift in Sources */,
+				65EC7F9C1F03BDF700BF845D /* CityList.swift in Sources */,
+				65EC7F9F1F03CAFE00BF845D /* StationList.swift in Sources */,
 				65CE89421D7DD9E000AB1B53 /* DirectionsProvider.swift in Sources */,
 				65CE89441D7DD9E000AB1B53 /* StationProvider.swift in Sources */,
 				65C631651E22D59800A32E43 /* CityError.swift in Sources */,
@@ -544,6 +551,8 @@
 				65CE89491D7DD9EC00AB1B53 /* City.swift in Sources */,
 				65C6316B1E24245300A32E43 /* StationError.swift in Sources */,
 				65CE89481D7DD9E800AB1B53 /* StationProvider.swift in Sources */,
+				65EC7F9D1F03BDFD00BF845D /* CityList.swift in Sources */,
+				65EC7FA01F03CAFE00BF845D /* StationList.swift in Sources */,
 				65CE89461D7DD9E800AB1B53 /* DirectionsProvider.swift in Sources */,
 				65CE894A1D7DD9EC00AB1B53 /* Station.swift in Sources */,
 				65C6316A1E24244F00A32E43 /* CityError.swift in Sources */,
@@ -619,14 +628,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -672,14 +687,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -715,7 +736,7 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -741,7 +762,7 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;

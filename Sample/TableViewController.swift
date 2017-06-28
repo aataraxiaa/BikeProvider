@@ -76,7 +76,7 @@ extension APIRequester {
         
         // Get the nearest city
         CityProvider.city(near: location, onSuccess: { city in
-            StationProvider.stations(fromCityURL: city.url, onSuccess: { [weak self] stations in
+            StationProvider.stations(fromCityURL: city.href, onSuccess: { [weak self] stations in
                 guard let strongSelf = self else { return }
                 
                 strongSelf.stations = stations

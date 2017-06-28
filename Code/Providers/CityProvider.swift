@@ -33,7 +33,7 @@ public struct CityProvider {
         
         let successClosure = { (cities: [City]) in
             // Now calculate the nearest city based on user's location
-            let nearestCityAndDistance = cities.map({ ($0, distance(from: location, to: $0.location)) }).min() {
+            let nearestCityAndDistance = cities.map({ ($0, distance(from: location, to: $0.location.coordinates)) }).min() {
                 $0.1 < $1.1
             }
             
@@ -62,7 +62,7 @@ public struct CityProvider {
         
         let successClosure = { (cities: [City]) in
             // Now calculate the nearest city based on user's location
-            let nearestCities = cities.map({ ($0, distance(from: location, to: $0.location)) }).sorted(by: { $0.1 < $1.1 }).map() { return $0.0 }
+            let nearestCities = cities.map({ ($0, distance(from: location, to: $0.location.coordinates)) }).sorted(by: { $0.1 < $1.1 }).map() { return $0.0 }
             
             // Return early with all sorted cities if the number of cities we want (our limit) is greater than the total number of cities
             guard limit < nearestCities.count else {
@@ -94,7 +94,7 @@ public struct CityProvider {
         
         let successClosure = { (cities: [City]) in
             // Now calculate cities within the radius parameter
-            let citiesAndDistances = cities.map({ ($0, distance(from: location, to: $0.location)) })
+            let citiesAndDistances = cities.map({ ($0, distance(from: location, to: $0.location.coordinates)) })
             
             let citiesWithinRadius = citiesAndDistances.filter( { $0.1 < radius } ).map() { return $0.0 }
             
@@ -129,18 +129,15 @@ public struct CityProvider {
                                                     onFailure failure: @escaping (_ error: Error) -> Void) -> URLSessionDataTask? {
         let url = Constants.API.baseURL + Constants.API.networks
         
-        return APIClient.get(from: url, withSuccess: { (object) in
+        return APIClient.get(from: url, withSuccess: { data in
             
-            // Success, parse the city data
-            if let json = object, let networks = json["networks"] as? [[String : AnyObject]] {
-                
-                let cities = CityProvider.parseCities(fromJson: networks)
-                
-                if cities.count > 0 {
-                    success(cities)
-                } else {
-                    failure(CityError.noCitiesRetrieved)
-                }
+            let decoder = JSONDecoder()
+            let network = try? decoder.decode(CityList.self, from: data)
+            
+            if let cities = network?.cities, cities.count > 0 {
+                success(cities)
+            } else {
+                failure(CityError.noCitiesRetrieved)
             }
             
         }, andFailure: { error in
@@ -158,21 +155,6 @@ public struct CityProvider {
      */
     fileprivate static func distance(from locationA: CLLocation, to locationB: CLLocation) -> CLLocationDistance {
         return locationA.distance(from: locationB)
-    }
-    
-    fileprivate static func parseCities(fromJson json: [[String:AnyObject]]) -> [City] {
-        var cities = [City]()
-        
-        // Parse each city dictionary
-        for cityDict in json {
-            if let url = cityDict["href"] as? String, let locationDict = cityDict["location"] as? [String:AnyObject], let cityName = locationDict["city"] as? String, let latitude = locationDict["latitude"] as? Double, let longitude = locationDict["longitude"] as? Double {
-                let location = CLLocation(latitude: latitude, longitude: longitude)
-                let bikeCity = City(name: cityName, url: url, location: location)
-                cities.append(bikeCity)
-            }
-        }
-        
-        return cities
     }
 }
 
