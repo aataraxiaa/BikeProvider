@@ -53,7 +53,7 @@ public struct StationProvider {
     ///   - cities: Cities to fetch bike stations for
     ///   - success: Success closure
     ///   - failure: Failure closure
-    static public func stations(forCities cities: [City],
+    static public func stations(forCityList cityList: CityList,
                                 onSuccess success: @escaping (([Station]) -> Void),
                                 onFailure failure: @escaping ((_ error: Error) -> Void)) {
         
@@ -66,7 +66,7 @@ public struct StationProvider {
         var allStations = [Station]()
         var requestError: Error?
         
-        cities.forEach {
+        cityList.cities.forEach {
             
             // Enter dispatch group
             dispatchGroup.enter()

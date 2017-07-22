@@ -7,9 +7,13 @@
 
 import Foundation
 
-struct CityList: Decodable {
+public struct CityList: Codable {
     
-    let cities: [City]
+    public let cities: [City]
+    
+    public init(cities: [City]) {
+        self.cities = cities
+    }
     
     enum CodingKeys: String, CodingKey {
         case cities = "networks"

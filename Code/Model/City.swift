@@ -15,11 +15,11 @@ import CoreLocation
  
  A City represents a geographical city which has available bike share information
  */
-public struct City: Decodable {
+public struct City: Codable {
     
     // MARK: - Internal types
     
-    public struct Location: Decodable {
+    public struct Location: Codable {
         
         public let name: String
         public let latitude: Double
