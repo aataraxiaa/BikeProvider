@@ -37,7 +37,7 @@ class CityProviderTests: XCTestCase {
         let cityRetrievedExpectation = expectation(description: "Nearest city retrieved")
         
         CityProvider.city(near: dublinLocation, onSuccess: { nearestCity in
-            XCTAssert(nearestCity.name == CityProviderTestsConstants.dublinBikeName)
+            XCTAssert(nearestCity.location.name == CityProviderTestsConstants.dublinBikeName)
             
             cityRetrievedExpectation.fulfill()
             }, onFailure: { _ in
@@ -54,8 +54,8 @@ class CityProviderTests: XCTestCase {
         // Create expectation
         let nearestTwoCitiesExpectation = expectation(description: "Cities within radius retrieved")
         
-        CityProvider.cities(near: newYorkWestLocation, limit: 2, onSuccess: { cities in
-            XCTAssert(cities.count == 2)
+        CityProvider.cities(near: newYorkWestLocation, limit: 2, onSuccess: { cityList in
+            XCTAssert(cityList.cities.count == 2)
             
             nearestTwoCitiesExpectation.fulfill()
             
@@ -74,8 +74,8 @@ class CityProviderTests: XCTestCase {
         // Create expectation
         let citiesWithinRadiusExpectation = expectation(description: "Cities within radius retrieved")
         
-        CityProvider.cities(near: newYorkWestLocation, within: radius, limit: 2, onSuccess: { cities in
-            XCTAssert(cities.count == 2)
+        CityProvider.cities(near: newYorkWestLocation, within: radius, limit: 2, onSuccess: { cityList in
+            XCTAssert(cityList.cities.count == 2)
             
             citiesWithinRadiusExpectation.fulfill()
             

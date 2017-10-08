@@ -15,15 +15,29 @@ import CoreLocation
  
  A City represents a geographical city which has available bike share information
  */
-public struct City {
+public struct City: Codable {
     
-    public let name: String
-    public let url: String
-    public let location: CLLocation
+    // MARK: - Internal types
     
-    public init(name: String, url: String, location: CLLocation) {
-        self.name = name
-        self.url = url
-        self.location = location
+    public struct Location: Codable {
+        
+        public let name: String
+        public let latitude: Double
+        public let longitude: Double
+        
+        public var coordinates: CLLocation {
+            return CLLocation(latitude: latitude, longitude: longitude)
+        }
+        
+        enum CodingKeys: String, CodingKey {
+            case name = "city"
+            case latitude
+            case longitude
+        }
     }
+    
+    // MARK: - Properties (Public)
+    
+    public let href: String
+    public let location: Location
 }

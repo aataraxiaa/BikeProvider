@@ -24,7 +24,7 @@ struct APIClient {
      - parameter completion: Completion closure expression
      */
     static func get(from url: String,
-                    withSuccess success: @escaping (_ object: AnyObject?) -> Void,
+                    withSuccess success: @escaping (_ data: Data) -> Void,
                     andFailure failure: @escaping (_ error: Error) -> Void) -> URLSessionDataTask? {
         
         guard let request = clientURLRequest(url) else { return nil }
@@ -40,7 +40,7 @@ struct APIClient {
     }
     
     fileprivate static func dataTask(for request: URLRequest,
-                                     withSuccess success: @escaping (_ object: AnyObject?) -> Void,
+                                     withSuccess success: @escaping (_ data: Data) -> Void,
                                      andFailure failure: @escaping (_ error: Error) -> Void) -> URLSessionDataTask {
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -54,9 +54,9 @@ struct APIClient {
             
             DispatchQueue.main.async(execute: {
                 
-                if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []) , let response = response as? HTTPURLResponse,  200...299 ~= response.statusCode {
+                if let data = data, let response = response as? HTTPURLResponse,  200...299 ~= response.statusCode {
                     
-                    success(json as AnyObject)
+                    success(data)
                 }
             })
         }
