@@ -191,8 +191,7 @@
 				4657D6591CFF0D8A004670B4 /* APIClient */,
 				6566830B1D03F5AD005225EC /* SupportingFiles */,
 			);
-			name = Code;
-			path = SPBBikeProvider;
+			path = Code;
 			sourceTree = "<group>";
 		};
 		4657D64D1CFF0B7C004670B4 /* Tests */ = {
@@ -203,8 +202,7 @@
 				6593510A1D840BAF0088C53D /* macOSInfo.plist */,
 				6593510B1D840BAF0088C53D /* StationProviderTests.swift */,
 			);
-			name = Tests;
-			path = SPBBikeProviderTests;
+			path = Tests;
 			sourceTree = "<group>";
 			usesTabs = 0;
 		};
@@ -213,8 +211,7 @@
 			children = (
 				65CE89391D7DD9CD00AB1B53 /* APIClient.swift */,
 			);
-			name = APIClient;
-			path = Code/APIClient;
+			path = APIClient;
 			sourceTree = "<group>";
 		};
 		4657D65A1CFF0D93004670B4 /* Model */ = {
@@ -239,7 +236,7 @@
 				65CE893F1D7DD9E000AB1B53 /* LocationProvider.swift */,
 			);
 			name = Provider;
-			path = Code/Providers;
+			path = Providers;
 			sourceTree = "<group>";
 		};
 		6566830B1D03F5AD005225EC /* SupportingFiles */ = {
@@ -836,7 +833,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -863,7 +860,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -883,7 +880,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -903,7 +900,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

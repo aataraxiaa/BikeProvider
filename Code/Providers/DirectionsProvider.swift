@@ -46,17 +46,21 @@ public struct DirectionsProvider {
         req.transportType = MKDirectionsTransportType.walking
         activeDirectionsRequest = MKDirections(request:req)
         
-        // Perform the directions request
-        activeDirectionsRequest?.calculate { response, error in
-            if response == nil && error != nil {
-                
-                // TODO: HANDLE FAILURE FOR ALL CASES
-                failure()
-                return
-            }
+        // Perform the directions request asynchronously on a global 'utility' queue
+        DispatchQueue.global(qos: .utility).async {
             
-            if let route = response?.routes[0] {
-                success(route)
+            self.activeDirectionsRequest?.calculate { response, error in
+                
+                if response == nil && error != nil {
+                    
+                    // TODO: HANDLE FAILURE FOR ALL CASES
+                    failure()
+                    return
+                }
+                
+                if let route = response?.routes[0] {
+                    success(route)
+                }
             }
         }
     }

@@ -74,15 +74,15 @@ extension APIRequester {
     fileprivate func getStations() {
         guard let location = location else { return }
         
-        // Get the nearest city
-        CityProvider.city(near: location, onSuccess: { city in
-            StationProvider.stations(fromCityURL: city.href, onSuccess: { [weak self] stations in
-                guard let strongSelf = self else { return }
+        CityProvider.cities(near: location, within: 20000, limit: 2, onSuccess: { cityList in
+            
+            StationProvider.stations(forCityList: cityList, onSuccess: { stations in
                 
-                strongSelf.stations = stations
-                strongSelf.tableView.reloadData()
+                self.stations = stations
+                self.tableView.reloadData()
                 
-                }, onFailure: { _ in })
-            }, onFailure: { _ in })
+            }) { _ in}
+            
+        }) { _ in }
     }
 }
