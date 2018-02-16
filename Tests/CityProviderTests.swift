@@ -23,15 +23,7 @@ class CityProviderTests: XCTestCase {
     
     let radius: Double = 20000
 
-    override func setUp() {
-        super.setUp()
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-
-    func testNearestCity() {
+    func testCityNear() {
         
         // Create an expectation object.
         let cityRetrievedExpectation = expectation(description: "Nearest city retrieved")
@@ -49,7 +41,7 @@ class CityProviderTests: XCTestCase {
         })
     }
     
-    func testNearestTwoCities() {
+    func testCitiesNear() {
         
         // Create expectation
         let nearestTwoCitiesExpectation = expectation(description: "Cities within radius retrieved")
@@ -69,7 +61,25 @@ class CityProviderTests: XCTestCase {
         
     }
     
-    func testCitiesWithinRadius() {
+    func testAllCities() {
+        
+        // Create expectation
+        let allCitiesExpectation = expectation(description: "All cities retrieved")
+        
+        CityProvider.allCities(onSuccess: { cityList in
+            
+            XCTAssert(!cityList.cities.isEmpty)
+            
+            allCitiesExpectation.fulfill()
+            
+        }) { _ in
+            XCTFail("Failed to fetch all cities")
+        }
+        
+        waitForExpectations(timeout: 5, handler: { _ in })
+    }
+    
+    func testCitiesNearWithRadius() {
         
         // Create expectation
         let citiesWithinRadiusExpectation = expectation(description: "Cities within radius retrieved")
