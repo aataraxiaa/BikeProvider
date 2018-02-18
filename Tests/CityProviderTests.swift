@@ -61,24 +61,6 @@ class CityProviderTests: XCTestCase {
         
     }
     
-    func testAllCities() {
-        
-        // Create expectation
-        let allCitiesExpectation = expectation(description: "All cities retrieved")
-        
-        CityProvider.allCities(onSuccess: { cityList in
-            
-            XCTAssert(!cityList.cities.isEmpty)
-            
-            allCitiesExpectation.fulfill()
-            
-        }) { _ in
-            XCTFail("Failed to fetch all cities")
-        }
-        
-        waitForExpectations(timeout: 5, handler: { _ in })
-    }
-    
     func testCitiesNearWithRadius() {
         
         // Create expectation
@@ -96,6 +78,43 @@ class CityProviderTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: { error in
             
         })
-
+    }
+    
+    func testCityLimitedToOneNearWithRadius() {
+        
+        // Create expectation
+        let citiesWithinRadiusExpectation = expectation(description: "Cities within radius retrieved")
+        
+        CityProvider.cities(near: newYorkWestLocation, within: radius, limit: 1, onSuccess: { cityList in
+            
+            XCTAssert(cityList.cities.count == 1)
+            
+            citiesWithinRadiusExpectation.fulfill()
+            
+        }, onFailure: { _ in
+            XCTFail("Could not locate cities within radius")
+        })
+        
+        waitForExpectations(timeout: 5, handler: { error in
+            
+        })
+    }
+    
+    func testAllCities() {
+        
+        // Create expectation
+        let allCitiesExpectation = expectation(description: "All cities retrieved")
+        
+        CityProvider.allCities(onSuccess: { cityList in
+            
+            XCTAssert(!cityList.cities.isEmpty)
+            
+            allCitiesExpectation.fulfill()
+            
+        }) { _ in
+            XCTFail("Failed to fetch all cities")
+        }
+        
+        waitForExpectations(timeout: 5, handler: { _ in })
     }
 }
