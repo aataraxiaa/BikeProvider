@@ -22,6 +22,7 @@ class CityProviderTests: XCTestCase {
     let newYorkWestLocation = CLLocation(latitude: 40.746172, longitude: -73.992681)
     
     let radius: Double = 20000
+    let radiusSmall: Double = 10
 
     func testCityNear() {
         
@@ -86,6 +87,26 @@ class CityProviderTests: XCTestCase {
         let citiesWithinRadiusExpectation = expectation(description: "Cities within radius retrieved")
         
         CityProvider.cities(near: newYorkWestLocation, within: radius, limit: 1, onSuccess: { cityList in
+            
+            XCTAssert(cityList.cities.count == 1)
+            
+            citiesWithinRadiusExpectation.fulfill()
+            
+        }, onFailure: { _ in
+            XCTFail("Could not locate cities within radius")
+        })
+        
+        waitForExpectations(timeout: 5, handler: { error in
+            
+        })
+    }
+    
+    func testCityWithSmallRadius() {
+        
+        // Create expectation
+        let citiesWithinRadiusExpectation = expectation(description: "Cities within radius retrieved")
+        
+        CityProvider.cities(near: newYorkWestLocation, within: radiusSmall, limit: 1, onSuccess: { cityList in
             
             XCTAssert(cityList.cities.count == 1)
             
