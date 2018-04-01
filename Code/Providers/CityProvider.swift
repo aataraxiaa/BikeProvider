@@ -99,7 +99,7 @@ public struct CityProvider {
             let citiesAndDistances = cityList.cities.map({ ($0, distance(from: location, to: $0.location.coordinates)) })
             
             let citiesWithinRadius = citiesAndDistances.filter( { $0.1 < radius } ).map() { return $0.0 }
-            fo
+            
             // Call our success closure
             if citiesWithinRadius.count > 0 {
                 
