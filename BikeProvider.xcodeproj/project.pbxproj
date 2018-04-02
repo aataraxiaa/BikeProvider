@@ -46,6 +46,7 @@
 		65EC7F9F1F03CAFE00BF845D /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9E1F03CAFE00BF845D /* StationList.swift */; };
 		65EC7FA01F03CAFE00BF845D /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9E1F03CAFE00BF845D /* StationList.swift */; };
 		65FA990620726E9400E2F975 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA990520726E9400E2F975 /* Result.swift */; };
+		65FA990720727F9B00E2F975 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA990520726E9400E2F975 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -548,6 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CE89471D7DD9E800AB1B53 /* LocationProvider.swift in Sources */,
+				65FA990720727F9B00E2F975 /* Result.swift in Sources */,
 				65CE894B1D7DD9EF00AB1B53 /* APIClient.swift in Sources */,
 				65CE89491D7DD9EC00AB1B53 /* City.swift in Sources */,
 				65C6316B1E24245300A32E43 /* StationError.swift in Sources */,
