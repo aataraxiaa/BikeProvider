@@ -24,12 +24,11 @@ struct APIClient {
      - parameter completion: Completion closure expression
      */
     static func get(from url: String,
-                    withSuccess success: @escaping (_ data: Data) -> Void,
-                    andFailure failure: @escaping (_ error: Error) -> Void) -> URLSessionDataTask? {
+                                 withCompletion completion: @escaping (Result<Data>) -> Void) -> URLSessionDataTask? {
         
         guard let request = clientURLRequest(url) else { return nil }
         
-        return dataTask(for: request, withSuccess: success, andFailure: failure)
+        return dataTask(for: request, withCompletion: completion)
     }
     
     fileprivate static func clientURLRequest(_ url: String) -> URLRequest? {
@@ -40,23 +39,24 @@ struct APIClient {
     }
     
     fileprivate static func dataTask(for request: URLRequest,
-                                     withSuccess success: @escaping (_ data: Data) -> Void,
-                                     andFailure failure: @escaping (_ error: Error) -> Void) -> URLSessionDataTask {
+                                                  withCompletion completion: @escaping (Result<Data>) -> Void) -> URLSessionDataTask {
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             
             if let error = error {
-                failure(error)
+                completion(.failure(error))
                 return
             }
             
             DispatchQueue.main.async(execute: {
                 
-                if let data = data, let response = response as? HTTPURLResponse,  200...299 ~= response.statusCode {
+                if let data = data,
+                    let response = response as? HTTPURLResponse,
+                    200...299 ~= response.statusCode {
                     
-                    success(data)
+                    completion(.success(data))
                 }
             })
         }

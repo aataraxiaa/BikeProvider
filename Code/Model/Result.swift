@@ -8,7 +8,11 @@
 
 import Foundation
 
-enum Result<Value> {
+/// Enum type which encapsulates the result of an operation which can either succeed or fail
+///
+/// - success: Success case, with associated value of type Value
+/// - failure: Failure case, with associated value of type Error
+public enum Result<Value> {
     case success(Value)
     case failure(Error)
 }
