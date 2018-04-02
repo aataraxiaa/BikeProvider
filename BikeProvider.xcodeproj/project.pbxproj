@@ -45,6 +45,7 @@
 		65EC7F9D1F03BDFD00BF845D /* CityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9B1F03BBFF00BF845D /* CityList.swift */; };
 		65EC7F9F1F03CAFE00BF845D /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9E1F03CAFE00BF845D /* StationList.swift */; };
 		65EC7FA01F03CAFE00BF845D /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9E1F03CAFE00BF845D /* StationList.swift */; };
+		65FA990620726E9400E2F975 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA990520726E9400E2F975 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		65E7A1611D7DD37D0087C336 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Sample/Assets.xcassets; sourceTree = "<group>"; };
 		65EC7F9B1F03BBFF00BF845D /* CityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityList.swift; path = Code/Model/CityList.swift; sourceTree = SOURCE_ROOT; };
 		65EC7F9E1F03CAFE00BF845D /* StationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StationList.swift; path = Code/Model/StationList.swift; sourceTree = SOURCE_ROOT; };
+		65FA990520726E9400E2F975 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Model/Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 				65EC7F9E1F03CAFE00BF845D /* StationList.swift */,
 				65C631641E22D59800A32E43 /* CityError.swift */,
 				65C631661E22D5B100A32E43 /* StationError.swift */,
+				65FA990520726E9400E2F975 /* Result.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CE89381D7DD9C400AB1B53 /* Station.swift in Sources */,
+				65FA990620726E9400E2F975 /* Result.swift in Sources */,
 				65CE89371D7DD9C400AB1B53 /* City.swift in Sources */,
 				65CE893A1D7DD9CD00AB1B53 /* APIClient.swift in Sources */,
 				65C631671E22D5B100A32E43 /* StationError.swift in Sources */,
