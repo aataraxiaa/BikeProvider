@@ -29,12 +29,16 @@ class CityProviderTests: XCTestCase {
         // Create an expectation object.
         let cityRetrievedExpectation = expectation(description: "Nearest city retrieved")
         
-        CityProvider.city(near: dublinLocation, onSuccess: { nearestCity in
-            XCTAssert(nearestCity.location.name == CityProviderTestsConstants.dublinBikeName)
+        CityProvider.city(near: dublinLocation, withCompletion: { result in
             
-            cityRetrievedExpectation.fulfill()
-            }, onFailure: { _ in
-            XCTFail("Could not locate nearest city")
+            switch result {
+            case .success(let nearestCity):
+                XCTAssert(nearestCity.location.name == CityProviderTestsConstants.dublinBikeName)
+                
+                cityRetrievedExpectation.fulfill()
+            case .failure(_):
+                XCTFail("Could not locate nearest city")
+            }
         })
         
         waitForExpectations(timeout: 5, handler: { error in
@@ -47,13 +51,16 @@ class CityProviderTests: XCTestCase {
         // Create expectation
         let nearestTwoCitiesExpectation = expectation(description: "Cities within radius retrieved")
         
-        CityProvider.cities(near: newYorkWestLocation, limit: 2, onSuccess: { cityList in
-            XCTAssert(cityList.cities.count == 2)
+        CityProvider.cities(near: newYorkWestLocation, limit: 2, withCompletion: { result in
             
-            nearestTwoCitiesExpectation.fulfill()
-            
-            }, onFailure: { _ in
-                XCTFail("Could not locate cities within radius")
+            switch result {
+            case .success(let cityList):
+                XCTAssert(cityList.cities.count == 2)
+                
+                nearestTwoCitiesExpectation.fulfill()
+            case .failure(_):
+                 XCTFail("Could not locate cities within radius")
+            }
         })
         
         waitForExpectations(timeout: 5, handler: { error in
@@ -67,13 +74,16 @@ class CityProviderTests: XCTestCase {
         // Create expectation
         let citiesWithinRadiusExpectation = expectation(description: "Cities within radius retrieved")
         
-        CityProvider.cities(near: newYorkWestLocation, within: radius, limit: 2, onSuccess: { cityList in
-            XCTAssert(cityList.cities.count == 2)
+        CityProvider.cities(near: newYorkWestLocation, within: radius, limit: 2, withCompletion: { result in
             
-            citiesWithinRadiusExpectation.fulfill()
-            
-            }, onFailure: { _ in
-            XCTFail("Could not locate cities within radius")
+            switch result {
+            case .success(let cityList):
+                XCTAssert(cityList.cities.count == 2)
+                
+                citiesWithinRadiusExpectation.fulfill()
+            case .failure(_):
+                XCTFail("Could not locate cities within radius")
+            }
         })
         
         waitForExpectations(timeout: 5, handler: { error in
@@ -86,14 +96,16 @@ class CityProviderTests: XCTestCase {
         // Create expectation
         let citiesWithinRadiusExpectation = expectation(description: "Cities within radius retrieved")
         
-        CityProvider.cities(near: newYorkWestLocation, within: radius, limit: 1, onSuccess: { cityList in
+        CityProvider.cities(near: newYorkWestLocation, within: radius, limit: 1, withCompletion: { result in
             
-            XCTAssert(cityList.cities.count == 1)
-            
-            citiesWithinRadiusExpectation.fulfill()
-            
-        }, onFailure: { _ in
-            XCTFail("Could not locate cities within radius")
+            switch result {
+            case .success(let cityList):
+                XCTAssert(cityList.cities.count == 1)
+                
+                citiesWithinRadiusExpectation.fulfill()
+            case .failure(_):
+                XCTFail("Could not locate cities within radius")
+            }
         })
         
         waitForExpectations(timeout: 5, handler: { error in
@@ -106,14 +118,16 @@ class CityProviderTests: XCTestCase {
         // Create expectation
         let citiesWithinRadiusExpectation = expectation(description: "Cities within radius retrieved")
         
-        CityProvider.cities(near: newYorkWestLocation, within: radiusSmall, limit: 1, onSuccess: { cityList in
+        CityProvider.cities(near: newYorkWestLocation, within: radiusSmall, limit: 1, withCompletion: { result in
             
-            XCTAssert(cityList.cities.count == 1)
-            
-            citiesWithinRadiusExpectation.fulfill()
-            
-        }, onFailure: { _ in
-            XCTFail("Could not locate cities within radius")
+            switch result {
+            case .success(let cityList):
+                XCTAssert(cityList.cities.count == 1)
+                
+                citiesWithinRadiusExpectation.fulfill()
+            case .failure(_):
+                XCTFail("Could not locate cities within radius")
+            }
         })
         
         waitForExpectations(timeout: 5, handler: { error in
@@ -126,15 +140,19 @@ class CityProviderTests: XCTestCase {
         // Create expectation
         let allCitiesExpectation = expectation(description: "All cities retrieved")
         
-        CityProvider.allCities(onSuccess: { cityList in
+        CityProvider.allCities(withCompletion: { result in
             
-            XCTAssert(!cityList.cities.isEmpty)
-            
-            allCitiesExpectation.fulfill()
-            
-        }) { _ in
-            XCTFail("Failed to fetch all cities")
-        }
+            switch result {
+            case .success(let cityList):
+                
+                XCTAssert(!cityList.cities.isEmpty)
+                
+                allCitiesExpectation.fulfill()
+                
+            case .failure(_):
+                XCTFail("Failed to fetch all cities")
+            }
+        })
         
         waitForExpectations(timeout: 5, handler: { _ in })
     }

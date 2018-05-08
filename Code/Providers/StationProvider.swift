@@ -25,24 +25,26 @@ public struct StationProvider {
      - parameter failure: Failure closure
      */
     @discardableResult static public func stations(fromCityURL url: String,
-                                                   onSuccess success: @escaping (([Station]) -> Void),
-                                                   onFailure failure: @escaping ((_ error: Error) -> Void)) -> URLSessionDataTask? {
+                                                   withCompletion completion: @escaping (Result<[Station]>) -> Void) -> URLSessionDataTask? {
         
         let url = Constants.API.baseURL+url+Constants.API.requestOptions
         
-        return APIClient.get(from: url, withSuccess: { data in
+        return APIClient.get(from: url, withCompletion: { (result: Result<Data>) in
             
-            let decoder = JSONDecoder()
-            let stationList = try? decoder.decode(StationList.self, from: data)
-            
-            if let stations = stationList?.network.stations, stations.count > 0 {
-                success(stations)
-            } else {
-                failure(StationError.noStationsRetrieved)
+            switch result {
+            case .success(let data):
+                
+                let decoder = JSONDecoder()
+                let stationList = try? decoder.decode(StationList.self, from: data)
+                
+                if let stations = stationList?.network.stations, stations.count > 0 {
+                    completion(.success(stations))
+                }
+                
+            case .failure(_):
+                
+                completion(.failure(StationError.noStationsRetrieved))
             }
-
-        }, andFailure: { error in
-            failure(error)
         })
     }
     
@@ -54,8 +56,7 @@ public struct StationProvider {
     ///   - success: Success closure
     ///   - failure: Failure closure
     static public func stations(forCityList cityList: CityList,
-                                onSuccess success: @escaping (([Station]) -> Void),
-                                onFailure failure: @escaping ((_ error: Error) -> Void)) {
+                                withCompletion completion: @escaping (Result<[Station]>) -> Void) {
         
         /*
          Group our requests so that we can asynchronously
@@ -72,22 +73,26 @@ public struct StationProvider {
             dispatchGroup.enter()
             
             // Start request
-            StationProvider.stations(fromCityURL: $0.href, onSuccess: { stations in
+            StationProvider.stations(fromCityURL: $0.href, withCompletion: { result in
                 
-                // Add stations
-                allStations.append(contentsOf: stations)
-                
-                // Leave group
-                dispatchGroup.leave()
-                
-            }) { error in
-                
-                // Note error
-                requestError = error
-                
-                // Leave group
-                dispatchGroup.leave()
-            }
+                switch result {
+                case .success(let stations):
+                    
+                    // Add stations
+                    allStations.append(contentsOf: stations)
+                    
+                    // Leave group
+                    dispatchGroup.leave()
+                    
+                case .failure(let error):
+                    
+                    // Note error
+                    requestError = error
+                    
+                    // Leave group
+                    dispatchGroup.leave()
+                }
+            })
             
         }
         
@@ -97,10 +102,10 @@ public struct StationProvider {
             switch (requestError, allStations.count > 0) {
                 
             case (let error?, false):
-                failure(error)
+                completion(.failure(error))
                 
             case (_, true):
-                success(allStations)
+                completion(.success(allStations))
                 
             default:
                 break

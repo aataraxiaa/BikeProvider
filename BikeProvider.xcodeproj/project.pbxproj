@@ -45,6 +45,8 @@
 		65EC7F9D1F03BDFD00BF845D /* CityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9B1F03BBFF00BF845D /* CityList.swift */; };
 		65EC7F9F1F03CAFE00BF845D /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9E1F03CAFE00BF845D /* StationList.swift */; };
 		65EC7FA01F03CAFE00BF845D /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9E1F03CAFE00BF845D /* StationList.swift */; };
+		65FA990620726E9400E2F975 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA990520726E9400E2F975 /* Result.swift */; };
+		65FA990720727F9B00E2F975 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA990520726E9400E2F975 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,7 @@
 		65E7A1611D7DD37D0087C336 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Sample/Assets.xcassets; sourceTree = "<group>"; };
 		65EC7F9B1F03BBFF00BF845D /* CityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityList.swift; path = Code/Model/CityList.swift; sourceTree = SOURCE_ROOT; };
 		65EC7F9E1F03CAFE00BF845D /* StationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StationList.swift; path = Code/Model/StationList.swift; sourceTree = SOURCE_ROOT; };
+		65FA990520726E9400E2F975 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Model/Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +226,7 @@
 				65EC7F9E1F03CAFE00BF845D /* StationList.swift */,
 				65C631641E22D59800A32E43 /* CityError.swift */,
 				65C631661E22D5B100A32E43 /* StationError.swift */,
+				65FA990520726E9400E2F975 /* Result.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -415,7 +419,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Pete Smith";
 				TargetAttributes = {
 					4657D63E1CFF0B7B004670B4 = {
@@ -516,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CE89381D7DD9C400AB1B53 /* Station.swift in Sources */,
+				65FA990620726E9400E2F975 /* Result.swift in Sources */,
 				65CE89371D7DD9C400AB1B53 /* City.swift in Sources */,
 				65CE893A1D7DD9CD00AB1B53 /* APIClient.swift in Sources */,
 				65C631671E22D5B100A32E43 /* StationError.swift in Sources */,
@@ -544,6 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65CE89471D7DD9E800AB1B53 /* LocationProvider.swift in Sources */,
+				65FA990720727F9B00E2F975 /* Result.swift in Sources */,
 				65CE894B1D7DD9EF00AB1B53 /* APIClient.swift in Sources */,
 				65CE89491D7DD9EC00AB1B53 /* City.swift in Sources */,
 				65C6316B1E24245300A32E43 /* StationError.swift in Sources */,
@@ -629,12 +635,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -688,12 +696,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -747,7 +757,7 @@
 				PRODUCT_NAME = BikeProvider;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -773,7 +783,7 @@
 				PRODUCT_NAME = BikeProvider;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -789,7 +799,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProviderTests;
 				PRODUCT_NAME = BikeProviderTests;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -805,7 +815,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProviderTests;
 				PRODUCT_NAME = BikeProviderTests;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
@@ -919,7 +929,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProviderSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -939,7 +949,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.SPBBikeProviderSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
