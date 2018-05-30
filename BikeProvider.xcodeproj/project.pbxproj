@@ -10,6 +10,19 @@
 		4657D64A1CFF0B7C004670B4 /* BikeProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4657D63F1CFF0B7B004670B4 /* BikeProvider.framework */; };
 		465F27161D65E08600B3B639 /* BikeProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465F270D1D65E08600B3B639 /* BikeProvider.framework */; };
 		465F271D1D65E08600B3B639 /* SPBBikeProvidermacOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 465F270F1D65E08600B3B639 /* SPBBikeProvidermacOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		658CEE7E20BE81E3006C6CEA /* BikeProviderwatchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 658CEE7C20BE81E3006C6CEA /* BikeProviderwatchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		658CEE8220BE81FD006C6CEA /* CityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893D1D7DD9E000AB1B53 /* CityProvider.swift */; };
+		658CEE8320BE81FD006C6CEA /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89401D7DD9E000AB1B53 /* StationProvider.swift */; };
+		658CEE8520BE81FD006C6CEA /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893F1D7DD9E000AB1B53 /* LocationProvider.swift */; };
+		658CEE8620BE81FD006C6CEA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89351D7DD9C400AB1B53 /* City.swift */; };
+		658CEE8720BE81FD006C6CEA /* CityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9B1F03BBFF00BF845D /* CityList.swift */; };
+		658CEE8820BE81FD006C6CEA /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89361D7DD9C400AB1B53 /* Station.swift */; };
+		658CEE8920BE81FD006C6CEA /* StationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9E1F03CAFE00BF845D /* StationList.swift */; };
+		658CEE8A20BE81FD006C6CEA /* CityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C631641E22D59800A32E43 /* CityError.swift */; };
+		658CEE8B20BE81FD006C6CEA /* StationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C631661E22D5B100A32E43 /* StationError.swift */; };
+		658CEE8C20BE81FD006C6CEA /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FA990520726E9400E2F975 /* Result.swift */; };
+		658CEE8D20BE81FD006C6CEA /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89391D7DD9CD00AB1B53 /* APIClient.swift */; };
+		658CEE8E20BE81FD006C6CEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893B1D7DD9D700AB1B53 /* Constants.swift */; };
 		659351101D840C5C0088C53D /* CityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659351081D840BAF0088C53D /* CityProviderTests.swift */; };
 		659351111D840C5D0088C53D /* CityProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659351081D840BAF0088C53D /* CityProviderTests.swift */; };
 		659351121D840C630088C53D /* StationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6593510B1D840BAF0088C53D /* StationProviderTests.swift */; };
@@ -95,6 +108,9 @@
 		465F270F1D65E08600B3B639 /* SPBBikeProvidermacOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPBBikeProvidermacOS.h; path = Code/SupportingFiles/SPBBikeProvidermacOS.h; sourceTree = SOURCE_ROOT; };
 		465F27101D65E08600B3B639 /* macOSInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = macOSInfo.plist; path = Code/SupportingFiles/macOSInfo.plist; sourceTree = SOURCE_ROOT; };
 		465F27151D65E08600B3B639 /* BikeProvidermacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeProvidermacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		658CEE7A20BE81E3006C6CEA /* BikeProviderwatchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BikeProviderwatchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		658CEE7C20BE81E3006C6CEA /* BikeProviderwatchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BikeProviderwatchOS.h; sourceTree = "<group>"; };
+		658CEE7D20BE81E3006C6CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		659351081D840BAF0088C53D /* CityProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityProviderTests.swift; path = Tests/CityProviderTests.swift; sourceTree = SOURCE_ROOT; };
 		659351091D840BAF0088C53D /* iOSInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = iOSInfo.plist; path = Tests/iOSInfo.plist; sourceTree = SOURCE_ROOT; };
 		6593510A1D840BAF0088C53D /* macOSInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = macOSInfo.plist; path = Tests/macOSInfo.plist; sourceTree = SOURCE_ROOT; };
@@ -153,6 +169,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		658CEE7620BE81E3006C6CEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		65E7A1551D7DD37D0087C336 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,6 +193,7 @@
 				65E7A1531D7DD1BB0087C336 /* Sample */,
 				4657D6411CFF0B7B004670B4 /* Code */,
 				4657D64D1CFF0B7C004670B4 /* Tests */,
+				658CEE7B20BE81E3006C6CEA /* BikeProviderwatchOS */,
 				4657D6401CFF0B7B004670B4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -182,6 +206,7 @@
 				465F270D1D65E08600B3B639 /* BikeProvider.framework */,
 				465F27151D65E08600B3B639 /* BikeProvidermacOSTests.xctest */,
 				65E7A1581D7DD37D0087C336 /* BikeProviderSample.app */,
+				658CEE7A20BE81E3006C6CEA /* BikeProviderwatchOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,6 +279,15 @@
 			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		658CEE7B20BE81E3006C6CEA /* BikeProviderwatchOS */ = {
+			isa = PBXGroup;
+			children = (
+				658CEE7C20BE81E3006C6CEA /* BikeProviderwatchOS.h */,
+				658CEE7D20BE81E3006C6CEA /* Info.plist */,
+			);
+			path = BikeProviderwatchOS;
+			sourceTree = "<group>";
+		};
 		65CE89581D7DDAB900AB1B53 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +349,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				465F271D1D65E08600B3B639 /* SPBBikeProvidermacOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		658CEE7720BE81E3006C6CEA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				658CEE7E20BE81E3006C6CEA /* BikeProviderwatchOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +435,24 @@
 			productReference = 465F27151D65E08600B3B639 /* BikeProvidermacOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		658CEE7920BE81E3006C6CEA /* BikeProviderwatchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 658CEE8120BE81E3006C6CEA /* Build configuration list for PBXNativeTarget "BikeProviderwatchOS" */;
+			buildPhases = (
+				658CEE7520BE81E3006C6CEA /* Sources */,
+				658CEE7620BE81E3006C6CEA /* Frameworks */,
+				658CEE7720BE81E3006C6CEA /* Headers */,
+				658CEE7820BE81E3006C6CEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BikeProviderwatchOS;
+			productName = BikeProviderwatchOS;
+			productReference = 658CEE7A20BE81E3006C6CEA /* BikeProviderwatchOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		65E7A1571D7DD37D0087C336 /* BikeProviderSample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65E7A1671D7DD37D0087C336 /* Build configuration list for PBXNativeTarget "BikeProviderSample" */;
@@ -443,6 +503,11 @@
 						DevelopmentTeam = 49CJ89TL4W;
 						ProvisioningStyle = Automatic;
 					};
+					658CEE7920BE81E3006C6CEA = {
+						CreatedOnToolsVersion = 9.3.1;
+						DevelopmentTeam = 49CJ89TL4W;
+						ProvisioningStyle = Automatic;
+					};
 					65E7A1571D7DD37D0087C336 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 49CJ89TL4W;
@@ -469,6 +534,7 @@
 				465F270C1D65E08600B3B639 /* BikeProvidermacOS */,
 				465F27141D65E08600B3B639 /* BikeProvidermacOSTests */,
 				65E7A1571D7DD37D0087C336 /* BikeProviderSample */,
+				658CEE7920BE81E3006C6CEA /* BikeProviderwatchOS */,
 			);
 		};
 /* End PBXProject section */
@@ -496,6 +562,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		465F27131D65E08600B3B639 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		658CEE7820BE81E3006C6CEA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -570,6 +643,25 @@
 			files = (
 				659351111D840C5D0088C53D /* CityProviderTests.swift in Sources */,
 				659351131D840C640088C53D /* StationProviderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		658CEE7520BE81E3006C6CEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				658CEE8220BE81FD006C6CEA /* CityProvider.swift in Sources */,
+				658CEE8620BE81FD006C6CEA /* City.swift in Sources */,
+				658CEE8920BE81FD006C6CEA /* StationList.swift in Sources */,
+				658CEE8B20BE81FD006C6CEA /* StationError.swift in Sources */,
+				658CEE8520BE81FD006C6CEA /* LocationProvider.swift in Sources */,
+				658CEE8720BE81FD006C6CEA /* CityList.swift in Sources */,
+				658CEE8E20BE81FD006C6CEA /* Constants.swift in Sources */,
+				658CEE8A20BE81FD006C6CEA /* CityError.swift in Sources */,
+				658CEE8320BE81FD006C6CEA /* StationProvider.swift in Sources */,
+				658CEE8820BE81FD006C6CEA /* Station.swift in Sources */,
+				658CEE8C20BE81FD006C6CEA /* Result.swift in Sources */,
+				658CEE8D20BE81FD006C6CEA /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -914,6 +1006,68 @@
 			};
 			name = Release;
 		};
+		658CEE7F20BE81E3006C6CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 49CJ89TL4W;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = BikeProviderwatchOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.BikeProviderwatchOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		658CEE8020BE81E3006C6CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 49CJ89TL4W;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = BikeProviderwatchOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.petesmith.BikeProviderwatchOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
 		65E7A1681D7DD37D0087C336 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -998,6 +1152,15 @@
 			buildConfigurations = (
 				465F27201D65E08600B3B639 /* Debug */,
 				465F27211D65E08600B3B639 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		658CEE8120BE81E3006C6CEA /* Build configuration list for PBXNativeTarget "BikeProviderwatchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				658CEE7F20BE81E3006C6CEA /* Debug */,
+				658CEE8020BE81E3006C6CEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
