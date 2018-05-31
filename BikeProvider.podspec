@@ -33,10 +33,13 @@ Pod::Spec.new do |s|
 
   s.platform = :ios
   s.platform = :osx
+  s.platform = :watchos
   s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.11'
   s.watchos.deployment_target = '4.2'
 
-  s.source_files = "Code/**/*.{swift}"
+  s.ios.source_files = "Code/**/*.{swift}"
+  s.osx.source_files = "Code/**/*.{swift}"
+  s.watchos.source_files = "Code/Providers/*.{swift}", "Code/Model/*.{swift}", "Code/Location/*.{swift}", "Code/APIClient/*.{swift}", "Code/SupportingFiles/*.{swift}"
   s.frameworks = 'CoreLocation'
 end

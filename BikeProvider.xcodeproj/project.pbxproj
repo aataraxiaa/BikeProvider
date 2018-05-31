@@ -10,10 +10,14 @@
 		4657D64A1CFF0B7C004670B4 /* BikeProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4657D63F1CFF0B7B004670B4 /* BikeProvider.framework */; };
 		465F27161D65E08600B3B639 /* BikeProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 465F270D1D65E08600B3B639 /* BikeProvider.framework */; };
 		465F271D1D65E08600B3B639 /* SPBBikeProvidermacOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 465F270F1D65E08600B3B639 /* SPBBikeProvidermacOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6521B64720BFAA490076F357 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521B64420BFAA480076F357 /* LocationProvider.swift */; };
+		6521B64820BFAA490076F357 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521B64420BFAA480076F357 /* LocationProvider.swift */; };
+		6521B64920BFAA490076F357 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521B64420BFAA480076F357 /* LocationProvider.swift */; };
+		6521B64A20BFAA490076F357 /* DirectionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521B64620BFAA490076F357 /* DirectionsProvider.swift */; };
+		6521B64B20BFAA490076F357 /* DirectionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521B64620BFAA490076F357 /* DirectionsProvider.swift */; };
 		658CEE7E20BE81E3006C6CEA /* BikeProviderwatchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 658CEE7C20BE81E3006C6CEA /* BikeProviderwatchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		658CEE8220BE81FD006C6CEA /* CityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893D1D7DD9E000AB1B53 /* CityProvider.swift */; };
 		658CEE8320BE81FD006C6CEA /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89401D7DD9E000AB1B53 /* StationProvider.swift */; };
-		658CEE8520BE81FD006C6CEA /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893F1D7DD9E000AB1B53 /* LocationProvider.swift */; };
 		658CEE8620BE81FD006C6CEA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89351D7DD9C400AB1B53 /* City.swift */; };
 		658CEE8720BE81FD006C6CEA /* CityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EC7F9B1F03BBFF00BF845D /* CityList.swift */; };
 		658CEE8820BE81FD006C6CEA /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89361D7DD9C400AB1B53 /* Station.swift */; };
@@ -36,12 +40,8 @@
 		65CE893A1D7DD9CD00AB1B53 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89391D7DD9CD00AB1B53 /* APIClient.swift */; };
 		65CE893C1D7DD9D700AB1B53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893B1D7DD9D700AB1B53 /* Constants.swift */; };
 		65CE89411D7DD9E000AB1B53 /* CityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893D1D7DD9E000AB1B53 /* CityProvider.swift */; };
-		65CE89421D7DD9E000AB1B53 /* DirectionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893E1D7DD9E000AB1B53 /* DirectionsProvider.swift */; };
-		65CE89431D7DD9E000AB1B53 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893F1D7DD9E000AB1B53 /* LocationProvider.swift */; };
 		65CE89441D7DD9E000AB1B53 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89401D7DD9E000AB1B53 /* StationProvider.swift */; };
 		65CE89451D7DD9E800AB1B53 /* CityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893D1D7DD9E000AB1B53 /* CityProvider.swift */; };
-		65CE89461D7DD9E800AB1B53 /* DirectionsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893E1D7DD9E000AB1B53 /* DirectionsProvider.swift */; };
-		65CE89471D7DD9E800AB1B53 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE893F1D7DD9E000AB1B53 /* LocationProvider.swift */; };
 		65CE89481D7DD9E800AB1B53 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89401D7DD9E000AB1B53 /* StationProvider.swift */; };
 		65CE89491D7DD9EC00AB1B53 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89351D7DD9C400AB1B53 /* City.swift */; };
 		65CE894A1D7DD9EC00AB1B53 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CE89361D7DD9C400AB1B53 /* Station.swift */; };
@@ -108,6 +108,8 @@
 		465F270F1D65E08600B3B639 /* SPBBikeProvidermacOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPBBikeProvidermacOS.h; path = Code/SupportingFiles/SPBBikeProvidermacOS.h; sourceTree = SOURCE_ROOT; };
 		465F27101D65E08600B3B639 /* macOSInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = macOSInfo.plist; path = Code/SupportingFiles/macOSInfo.plist; sourceTree = SOURCE_ROOT; };
 		465F27151D65E08600B3B639 /* BikeProvidermacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BikeProvidermacOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6521B64420BFAA480076F357 /* LocationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		6521B64620BFAA490076F357 /* DirectionsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionsProvider.swift; sourceTree = "<group>"; };
 		658CEE7A20BE81E3006C6CEA /* BikeProviderwatchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BikeProviderwatchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		658CEE7C20BE81E3006C6CEA /* BikeProviderwatchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BikeProviderwatchOS.h; sourceTree = "<group>"; };
 		658CEE7D20BE81E3006C6CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -122,8 +124,6 @@
 		65CE89391D7DD9CD00AB1B53 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = Code/APIClient/APIClient.swift; sourceTree = SOURCE_ROOT; };
 		65CE893B1D7DD9D700AB1B53 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Code/SupportingFiles/Constants.swift; sourceTree = SOURCE_ROOT; };
 		65CE893D1D7DD9E000AB1B53 /* CityProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityProvider.swift; path = Code/Providers/CityProvider.swift; sourceTree = SOURCE_ROOT; };
-		65CE893E1D7DD9E000AB1B53 /* DirectionsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DirectionsProvider.swift; path = Code/Providers/DirectionsProvider.swift; sourceTree = SOURCE_ROOT; };
-		65CE893F1D7DD9E000AB1B53 /* LocationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationProvider.swift; path = Code/Providers/LocationProvider.swift; sourceTree = SOURCE_ROOT; };
 		65CE89401D7DD9E000AB1B53 /* StationProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StationProvider.swift; path = Code/Providers/StationProvider.swift; sourceTree = SOURCE_ROOT; };
 		65CE894D1D7DDA2200AB1B53 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = Sample/TableViewController.swift; sourceTree = "<group>"; };
 		65CE89501D7DDA5B00AB1B53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sample/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -214,6 +214,8 @@
 		4657D6411CFF0B7B004670B4 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				6521B64520BFAA490076F357 /* Directions */,
+				6521B64320BFAA480076F357 /* Location */,
 				4657D65B1CFF0D97004670B4 /* Provider */,
 				4657D65A1CFF0D93004670B4 /* Model */,
 				4657D6591CFF0D8A004670B4 /* APIClient */,
@@ -261,11 +263,25 @@
 			children = (
 				65CE893D1D7DD9E000AB1B53 /* CityProvider.swift */,
 				65CE89401D7DD9E000AB1B53 /* StationProvider.swift */,
-				65CE893E1D7DD9E000AB1B53 /* DirectionsProvider.swift */,
-				65CE893F1D7DD9E000AB1B53 /* LocationProvider.swift */,
 			);
 			name = Provider;
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		6521B64320BFAA480076F357 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				6521B64420BFAA480076F357 /* LocationProvider.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		6521B64520BFAA490076F357 /* Directions */ = {
+			isa = PBXGroup;
+			children = (
+				6521B64620BFAA490076F357 /* DirectionsProvider.swift */,
+			);
+			path = Directions;
 			sourceTree = "<group>";
 		};
 		6566830B1D03F5AD005225EC /* SupportingFiles */ = {
@@ -596,15 +612,15 @@
 				65FA990620726E9400E2F975 /* Result.swift in Sources */,
 				65CE89371D7DD9C400AB1B53 /* City.swift in Sources */,
 				65CE893A1D7DD9CD00AB1B53 /* APIClient.swift in Sources */,
+				6521B64A20BFAA490076F357 /* DirectionsProvider.swift in Sources */,
 				65C631671E22D5B100A32E43 /* StationError.swift in Sources */,
 				65CE893C1D7DD9D700AB1B53 /* Constants.swift in Sources */,
 				65EC7F9C1F03BDF700BF845D /* CityList.swift in Sources */,
 				65EC7F9F1F03CAFE00BF845D /* StationList.swift in Sources */,
-				65CE89421D7DD9E000AB1B53 /* DirectionsProvider.swift in Sources */,
 				65CE89441D7DD9E000AB1B53 /* StationProvider.swift in Sources */,
+				6521B64720BFAA490076F357 /* LocationProvider.swift in Sources */,
 				65C631651E22D59800A32E43 /* CityError.swift in Sources */,
 				65CE89411D7DD9E000AB1B53 /* CityProvider.swift in Sources */,
-				65CE89431D7DD9E000AB1B53 /* LocationProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,17 +637,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65CE89471D7DD9E800AB1B53 /* LocationProvider.swift in Sources */,
 				65FA990720727F9B00E2F975 /* Result.swift in Sources */,
 				65CE894B1D7DD9EF00AB1B53 /* APIClient.swift in Sources */,
 				65CE89491D7DD9EC00AB1B53 /* City.swift in Sources */,
 				65C6316B1E24245300A32E43 /* StationError.swift in Sources */,
+				6521B64B20BFAA490076F357 /* DirectionsProvider.swift in Sources */,
 				65CE89481D7DD9E800AB1B53 /* StationProvider.swift in Sources */,
 				65EC7F9D1F03BDFD00BF845D /* CityList.swift in Sources */,
 				65EC7FA01F03CAFE00BF845D /* StationList.swift in Sources */,
-				65CE89461D7DD9E800AB1B53 /* DirectionsProvider.swift in Sources */,
 				65CE894A1D7DD9EC00AB1B53 /* Station.swift in Sources */,
 				65C6316A1E24244F00A32E43 /* CityError.swift in Sources */,
+				6521B64820BFAA490076F357 /* LocationProvider.swift in Sources */,
 				65CE89451D7DD9E800AB1B53 /* CityProvider.swift in Sources */,
 				65CE894C1D7DD9F500AB1B53 /* Constants.swift in Sources */,
 			);
@@ -654,12 +670,12 @@
 				658CEE8620BE81FD006C6CEA /* City.swift in Sources */,
 				658CEE8920BE81FD006C6CEA /* StationList.swift in Sources */,
 				658CEE8B20BE81FD006C6CEA /* StationError.swift in Sources */,
-				658CEE8520BE81FD006C6CEA /* LocationProvider.swift in Sources */,
 				658CEE8720BE81FD006C6CEA /* CityList.swift in Sources */,
 				658CEE8E20BE81FD006C6CEA /* Constants.swift in Sources */,
 				658CEE8A20BE81FD006C6CEA /* CityError.swift in Sources */,
 				658CEE8320BE81FD006C6CEA /* StationProvider.swift in Sources */,
 				658CEE8820BE81FD006C6CEA /* Station.swift in Sources */,
+				6521B64920BFAA490076F357 /* LocationProvider.swift in Sources */,
 				658CEE8C20BE81FD006C6CEA /* Result.swift in Sources */,
 				658CEE8D20BE81FD006C6CEA /* APIClient.swift in Sources */,
 			);
