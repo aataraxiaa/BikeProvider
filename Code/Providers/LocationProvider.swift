@@ -20,6 +20,7 @@ public protocol LocationProviderDelegate {
     func accessDenied()
     
     #if os(iOS)
+        @available(iOS 9, *)
         func retrieved(_ heading: CLHeading)
     #endif
 
@@ -30,7 +31,9 @@ public protocol LocationProviderDelegate {
  Empty extension to make some delegate methods optional
  */
 public extension LocationProviderDelegate {
-    func retrieved(_ heading: CLHeading) {}
+    #if os(iOS)
+        func retrieved(_ heading: CLHeading) {}
+    #endif
     func locationAccess(_ isGranted: Bool){}
 }
 
@@ -128,16 +131,19 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
     /**
      Get the current heading
      */
+    @available(iOS 9, *)
     public func getHeading() {
-        if !CLLocationManager.headingAvailable() {
-            return
-        }
-        
-        if updatingHeading {
-            return
-        }
         
         #if os(iOS)
+        
+            if !CLLocationManager.headingAvailable() {
+                return
+            }
+        
+            if updatingHeading {
+                return
+            }
+        
             self.locman.headingFilter = 5
             self.locman.headingOrientation = .portrait
             self.locman.startUpdatingHeading()

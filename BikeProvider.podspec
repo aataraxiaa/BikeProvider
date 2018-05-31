@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BikeProvider'
-  s.version          = '4.1'
+  s.version          = '4.2'
   s.summary          = 'Tiny Swift provider for fetching city bike share information based on the citybik.es API'
 
 # This description is used to generate tags and improve search results.
