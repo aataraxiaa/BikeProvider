@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
 
   s.platform = :ios
   s.platform = :osx
-  s.ios.deployment_target = '8.1'
+  s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.11'
 
   s.source_files = "Code/**/*.{swift}"

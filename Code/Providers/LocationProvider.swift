@@ -167,6 +167,7 @@ final public class LocationProvider: NSObject, CLLocationManagerDelegate {
     }
     
     #if os(iOS)
+     @available(iOS 9, *)
     public func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         self.delegate?.retrieved(newHeading)
     }

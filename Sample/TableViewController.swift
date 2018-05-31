@@ -74,15 +74,18 @@ extension APIRequester {
     fileprivate func getStations() {
         guard let location = location else { return }
         
-        CityProvider.cities(near: location, within: 20000, limit: 2, onSuccess: { cityList in
+        CityProvider.cities(near: location, within: 20000, limit: 2, withCompletion: { result in
             
-            StationProvider.stations(forCityList: cityList, onSuccess: { stations in
+            guard case let .success(cityList) = result else { return }
+            
+            StationProvider.stations(forCityList: cityList, withCompletion: { result in
+                
+                guard case let .success(stations) = result else { return }
                 
                 self.stations = stations
                 self.tableView.reloadData()
                 
-            }) { _ in}
-            
-        }) { _ in }
+            })
+        })
     }
 }
