@@ -40,7 +40,7 @@ public struct DirectionsProvider {
         let destinationPlacemark: MKPlacemark = MKPlacemark(coordinate: end.coordinate, addressDictionary:nil)
         let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
         
-        let req = MKDirectionsRequest()
+        let req = MKDirections.Request()
         req.source = sourceMapItem
         req.destination = destinationMapItem
         req.transportType = MKDirectionsTransportType.walking
