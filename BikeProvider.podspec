@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
   s.platform = :osx
   s.platform = :watchos
   s.ios.deployment_target = '9.0'
-  s.osx.deployment_target = '10.11'
+  # s.osx.deployment_target = '10.11'
   s.watchos.deployment_target = '4.2'
 
   s.ios.source_files = "Code/**/*.{swift}"
